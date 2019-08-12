@@ -9,30 +9,40 @@ App({
     console.log('beginning login')
 
     // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log(res)
-        wx.request({
-          url: host + 'login',
-          method: 'post',
-          data: {
-            code: res.code
-          },
-          success: (res) => {
+    wx.getStorage({
+      key: 'userid',
+      success: function(res) {
+        console.log('existing user')
+      },
+      fail: function(err) {
+        console.log('new user')
+        wx.login({
+          success: res => {
+            // 发送 res.code 到后台换取 openId, sessionKey, unionId
             console.log(res)
-            this.globalData.userId = res.data.userId
-            wx.setStorage({
-              key: 'userid',
-              data: res.data.userId,
+            wx.request({
+              url: host + 'login',
+              method: 'post',
+              data: {
+                code: res.code
+              },
+              success: (res) => {
+                console.log(res)
+                // this.globalData.userId = res.data.userId
+                wx.setStorage({
+                  key: 'userid',
+                  data: res.data.userId,
+                })
+              },
+              fail: (err) => {
+                console.log(err)
+              }
             })
-          },
-          fail: (err) => {
-            console.log(err)
           }
         })
       }
     })
+    
     // 获取用户信息
     wx.getSetting({
       success: res => {
