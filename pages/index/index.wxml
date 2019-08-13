@@ -36,7 +36,6 @@
       </view>
     </view>
   </view>
-
   
   <view class="cu-card case {{isCard?'no-card':''}}">
     <view class="cu-item shadow">
