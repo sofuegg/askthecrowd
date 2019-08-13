@@ -1,6 +1,6 @@
 <cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
     <view slot="backText">Back</view>
-    <view slot="content">Home</view>
+    <view slot="content">Ask the Crowd</view>
 </cu-custom>
 
 <view class="page">
@@ -43,6 +43,8 @@
       <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
         <swiper-item wx:for="{{swiperList}}" wx:key>
         <image src="{{item.url}}" mode="aspectFit" wx:if="{{item.type=='image'}}"></image>
+        <!-- <text class="text-lg text-black d-flex align-items-center justify-content-center">Heyyyy</text> -->
+        <text class="abs top-left text-lg text-cut pad bg-green radius" >{{item.choice}}</text>
         </swiper-item>
       </swiper>
       <view class="cu-list menu-avatar">
