@@ -69,16 +69,12 @@
   
   <view class="cu-card case {{isCard?'no-card':''}}">
     <view class="cu-item shadow">
-      <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
-        <swiper-item wx:for="{{swiperList}}" wx:key>
-        <image src="{{item.url}}" mode="aspectFit" wx:if="{{item.type=='image'}}"></image>
-        </swiper-item>
-      </swiper>
+        <image src="{{swiperList2.url}}" mode="aspectFit"></image>
       <view class="cu-list menu-avatar">
         <view class="cu-item">
           <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
           <view class="content flex-sub">
-            <view class="text-grey">What food should I eat tonight??</view>
+            <view class="text-grey">Should pineapple ever go on pizza??</view>
             <view class="text-gray text-sm flex justify-between">
               10 minutes ago...
               <view class="text-gray text-sm">
@@ -89,6 +85,8 @@
             </view>
           </view>
         </view>
+        <view class="text-xl padding">{{swiperList2.choice1}}</view>
+        <view class="text-xl padding">{{swiperList2.choice2}}</view>
       </view>
     </view>
   </view>

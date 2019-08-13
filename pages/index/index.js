@@ -29,18 +29,12 @@ Page({
       choice: 'B'
     },
     ],
-    swiperList2: [{
+    swiperList2: {
       id: 0,
-      type: 'image',
-      url: '../../img/pineapple-pizza',
-      choice: 'A',
-    }, {
-      id: 1,
-      type: 'text',
-      url: '../../img/red-dress.jpg',
-      choice: 'B'
+      url: '../../img/pineapple-pizza.jpg',
+      choice1: 'A: Yes',
+      choice2: 'B: No'
     },
-    ],
   },
   //事件处理函数
   bindViewTap: function() {
