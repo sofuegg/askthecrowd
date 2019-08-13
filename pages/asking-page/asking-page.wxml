@@ -1,0 +1,110 @@
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">导航栏</view>
+</cu-custom>
+<view>
+<view class="cu-bar bg-white margin-top">
+  <view class="action" >
+    <text class="cuIcon-title text-blue"></text>Write a question to ask the crowd!
+  </view>
+</view>
+
+<view class="cu-form-group ">
+		<view class="title"></view>
+		<input placeholder="Here"></input>
+	</view>
+<view class="cu-bar bg-white ">
+		<view class="action">
+			Upload an image (optional)
+		</view>
+		<view class="cu-form-group">
+		<view class="title"></view>
+		<checkbox class="round blue" checked></checkbox>
+	</view>
+	</view>
+
+  </view>
+
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+<view class="cu-bar bg-white margin-top">
+  <view class="action" >
+    <text class="cuIcon-title text-blue"></text>Write your answers!
+  </view>
+</view>
+
+<view class="cu-form-group margin-top">
+		<view class="title"></view>
+		<input placeholder="Answer A"></input>
+	</view>
+
+<form>
+  <view class="cu-bar bg-white ">
+		<view class="action">
+			Upload an image
+		</view>
+		<view class="cu-form-group">
+		<view class="title"></view>
+		<checkbox class="round blue" checked></checkbox>
+	</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+  </form>
+
+<view class="cu-form-group margin-top">
+		<view class="title"></view>
+		<input placeholder="Answer B"></input>
+	</view>
+
+
+
+
+<form>
+  <view class="cu-bar bg-white ">
+		<view class="action">
+			Upload an image
+		</view>
+		<view class="cu-form-group">
+		<view class="title"></view>
+		<checkbox class="round blue" checked></checkbox>
+	</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+  </form>
+
+  <button class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg"  type="">Submit</button>

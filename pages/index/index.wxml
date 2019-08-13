@@ -15,4 +15,7 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+
+
+  <navigator url="../../pages/asking-page/asking-page">text</navigator>
 </view>
