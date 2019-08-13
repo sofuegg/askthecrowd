@@ -4,10 +4,37 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    cardCur: 0,
+    swiperList: [{
+      id: 0,
+      type: 'image',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg',
+      choice: 'A'
+    }, {
+      id: 1,
+      type: 'image',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
+      choice: 'B'
+    },
+    ],
+    swiperList1: [{
+      id: 0,
+      type: 'image',
+      url: '../../img/black-dress.jpg',
+      choice: 'A',
+    }, {
+      id: 1,
+      type: 'image',
+      url: '../../img/red-dress.jpg',
+      choice: 'B'
+    },
+    ],
+    swiperList2: {
+      id: 0,
+      url: '../../img/pineapple-pizza.jpg',
+      choice1: 'A: Yes',
+      choice2: 'B: No'
+    },
   },
   //事件处理函数
   bindViewTap: function() {

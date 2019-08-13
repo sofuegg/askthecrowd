@@ -1,21 +1,98 @@
 <cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
-    <view slot="backText">返回</view>
-    <view slot="content">导航栏</view>
+    <view slot="backText">Back</view>
+    <view slot="content">Ask the Crowd</view>
 </cu-custom>
 
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+<view class="page">
+
+  <view class="solid-bottom text-xl padding text-center">
+    <text class="text-black text-bold">Hot Topics！</text>
   </view>
 
+  <view class="cu-card case {{isCard?'no-card':''}}">
+    <view class="cu-item shadow">
+      <swiper class="rel screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+        <swiper-item wx:for="{{swiperList1}}" wx:key>
+          <image src="{{item.url}}" mode="aspectFit" wx:if="{{item.type=='image'}}"></image>
+        <!-- <text class="text-lg text-black d-flex align-items-center justify-content-center">Heyyyy</text> -->
+        <text class="abs top-left text-lg text-cut pad bg-green radius" >{{item.choice}}</text>
+        </swiper-item>
+      </swiper>
+      <view class="cu-list menu-avatar">
+        <view class="cu-item">
+          <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+          <view class="content flex-sub">
+            <view class="text-grey">Which dress should I choose for a party tonight?</view>
+            <view class="text-gray text-sm flex justify-between">
+              10 minutes ago...
+              <view class="text-gray text-sm">
+                <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+                <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
+                <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="cu-card case {{isCard?'no-card':''}}">
+    <view class="cu-item shadow">
+      <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+        <swiper-item wx:for="{{swiperList}}" wx:key>
+        <image src="{{item.url}}" mode="aspectFit" wx:if="{{item.type=='image'}}"></image>
+        <!-- <text class="text-lg text-black d-flex align-items-center justify-content-center">Heyyyy</text> -->
+        <text class="abs top-left text-lg text-cut pad bg-green radius" >{{item.choice}}</text>
+        </swiper-item>
+      </swiper>
+      <view class="cu-list menu-avatar">
+        <view class="cu-item">
+          <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+          <view class="content flex-sub">
+            <view class="text-grey">Which new game should I buy for my computer?</view>
+            <view class="text-gray text-sm flex justify-between">
+              17 minutes ago...
+              <view class="text-gray text-sm">
+                <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+                <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
+                <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
 
-  <navigator url="../../pages/asking-page/asking-page">text</navigator>
+  
+  <view class="cu-card case {{isCard?'no-card':''}}">
+    <view class="cu-item shadow">
+        <image src="{{swiperList2.url}}" mode="aspectFit"></image>
+      <view class="cu-list menu-avatar">
+        <view class="cu-item">
+          <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+          <view class="content flex-sub">
+            <view class="text-grey">Should pineapple ever go on pizza??</view>
+            <view class="text-gray text-sm flex justify-between">
+              10 minutes ago...
+              <view class="text-gray text-sm">
+                <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+                <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
+                <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="text-xl padding">{{swiperList2.choice1}}</view>
+        <view class="text-xl padding">{{swiperList2.choice2}}</view>
+      </view>
+    </view>
+  </view>
+
+<view class="div-fixed bg-gray d-flex justify-around">
+  <button class="cu-btn bg-blue lg btn-fixed1">Ask your crowd!</button>
+  <button class="cu-btn bg-blue lg btn-fixed2">Ask the crowd!</button>
+</view>
+
 </view>
