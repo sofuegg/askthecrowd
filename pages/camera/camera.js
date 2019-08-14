@@ -81,8 +81,13 @@ Page({
           },
         }).save().then(
           file => console.log(file.url())
+          // wx.request to your rails API
         ).catch(console.error);
       }
     })
   }
 })
+
+export default {
+  getPhoto
+}
