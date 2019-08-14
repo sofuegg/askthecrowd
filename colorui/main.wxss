@@ -2227,6 +2227,7 @@ button.icon.lg {
 .cu-card {
 	display: block;
 	overflow: hidden;
+  /* height: 100vh; */
 }
 
 .cu-card>.cu-item {
@@ -2602,7 +2603,7 @@ swiper.round-dot .wx-swiper-dot.wx-swiper-dot-active {
 }
 
 .screen-swiper {
-	min-height: 375rpx;
+	min-height: 60vh;
 }
 
 .screen-swiper image,

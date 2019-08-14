@@ -1,4 +1,5 @@
 /**index.wxss**/
+@import '../../dist/styles/index.wxss';
 
 .btn-fixed1 {
   position: fixed;
@@ -44,17 +45,22 @@
 }
 
 .top-left {
-  top: 15rpx;
-  left: 15rpx;
+  top: 20rpx;
+  left: 20rpx;
+}
+
+.top-right {
+  top: 20rpx;
+  right: 20rpx;
 }
 
 .pad {
-  padding: 10rpx 10rpx;
+  padding: 20rpx 20rpx;
 }
 
 .b-left {
-  bottom: 10rpx;
-  left: 10rpx;
+  bottom: 20rpx;
+  left: 20rpx;
 }
 
 .center {
@@ -67,6 +73,55 @@
 .text-shadow {
   text-shadow: 3rpx 1rpx 15px #000000;
 }
-/* .cu-item {
-  height: 300px;
-} */
+
+.choice-background {
+  background-color: rgba(240,240,240,0.7)
+}
+
+.flex-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.single-chart {
+  width: 33%;
+  justify-content: space-around ;
+}
+
+.circular-chart {
+  display: block;
+  margin: 10px auto;
+  max-width: 80%;
+  max-height: 250px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+
+.circular-chart.green .circle {
+  stroke: #4CC790;
+}
+
+.percentage {
+  fill: #666;
+  font-family: sans-serif;
+  font-size: 0.5em;
+  text-anchor: middle;
+}
