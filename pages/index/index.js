@@ -9,12 +9,14 @@ Page({
       id: 0,
       type: 'image',
       url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg',
-      choice: 'A'
+      choice: 'A',
+      choice_percent: '90',
     }, {
       id: 1,
       type: 'image',
       url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
-      choice: 'B'
+      choice: 'B',
+      choice_percent: '10'
     },
     ],
     swiperList1: [{
@@ -22,19 +24,24 @@ Page({
       type: 'image',
       url: '../../img/black-dress.jpg',
       choice: 'A',
+      choice_percent: '45'
     }, {
       id: 1,
       type: 'image',
       url: '../../img/red-dress.jpg',
-      choice: 'B'
+      choice: 'B',
+      choice_percent: '55'
     },
     ],
-    swiperList2: {
-      id: 0,
-      url: '../../img/pineapple-pizza.jpg',
-      choice1: 'A: Yes',
-      choice2: 'B: No'
-    },
+    swiperList2: [{
+      choice: 'A',
+      choice1percent: "70",
+      text: 'Yes'},
+      { choice: 'B',
+      choice2percent: '30',
+      text: 'No'
+      }
+    ],
   },
   //事件处理函数
   bindViewTap: function() {
