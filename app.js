@@ -18,6 +18,7 @@ App({
     })
     
     // 登录
+    const app = this
     wx.getStorage({
       key: 'userid',
       success: function(res) {
@@ -37,7 +38,7 @@ App({
               },
               success: (res) => {
                 console.log(res)
-                // this.globalData.userId = res.data.userId
+                app.globalData.userId = res.data.userId
                 wx.setStorage({
                   key: 'userid',
                   data: res.data.userId,

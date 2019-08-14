@@ -105,19 +105,12 @@ Page({
   submitQ: function (e) {
     const page = this
     const app = getApp()
+    // const userid = wx.getStorageSync('userid')
     const { title, photoq, texta, photoa, textb, photob } = page.data
-    const newQ = {
-      question: {title: title, photo: photoq},
-      choices: [
-        {text: texta, photo: photoa},
-        {text: textb, photo: photob}
-        ]
-    }
-    console.log(newQ)
     wx.request({
       url: baseUrl + 'questions',
       method: 'post',
-      data: newQ,
+      data: page.data,
       success: function (res) {
         console.log(res.data)
       },
