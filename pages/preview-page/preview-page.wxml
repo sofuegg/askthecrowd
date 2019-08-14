@@ -1,0 +1,39 @@
+<!--pages/preview-page/preview-page.wxml-->
+fjfjhfj
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">导航栏</view>
+</cu-custom>
+
+<view class="cu-bar bg-white margin-top">
+  <view class="action" >
+    <text class="cuIcon-title text-blue"></text>Your Question: Which dress do you like?
+  </view>
+ </view>
+<swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{swiperList}}" wx:key>
+    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+  </swiper-item>
+</swiper>
+
+
+<view class="cu-bar bg-white">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>Answers:
+  </view>
+  <view class="action">
+    <radio-group bindchange="SetBorderSize">
+      <label class="margin-left-sm">
+        <radio class="blue sm radio" value="" checked></radio>
+        <text> A</text>
+      </label>
+      <label class="margin-left-sm">
+        <radio class="blue sm radio" value="s"></radio>
+        <text> B</text>
+      </label>
+    </radio-group>
+  </view>
+</view>
+
+<button class="cu-btn block bg-blue margin-top-xl  lg submit-btn"  type="">Submit</button>
