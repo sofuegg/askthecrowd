@@ -2,13 +2,18 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/camera/camera"
+    "pages/camera/camera",
+    "pages/asking-page/asking-page"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
   },
   "sitemapLocation": "sitemap.json"
 }
