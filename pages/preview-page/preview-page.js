@@ -9,12 +9,27 @@ Page({
     swiperList: [{
       id: 0,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg',
+      choice: 'A'
     }, {
       id: 1,
       type: 'image',
       url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
-    }],
+      choice: 'B'
+    },
+    ],
+    swiperList1: [{
+      id: 0,
+      type: 'image',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg',
+      choice: 'A',
+    }, {
+      id: 1,
+      type: 'image',
+        url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
+      choice: 'B'
+    },
+    ],
   },
 
   /**
