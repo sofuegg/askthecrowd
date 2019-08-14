@@ -1,0 +1,4 @@
+<!--pages/camera/camera.wxml-->
+
+<button type="primary" bindtap="getPhoto">拍照</button>
+

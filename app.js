@@ -77,3 +77,12 @@ App({
     userInfo: null
   }
 })
+
+const AV = require('./utils/av-weapp-min.js')
+const config = require('./utils/key')
+// Initialization of the app
+
+AV.init({
+  appId: config.appId,
+  appKey: config.appKey,
+});
