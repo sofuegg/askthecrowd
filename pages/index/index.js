@@ -1,5 +1,6 @@
 //index.js
-//获取应用实例
+import apiClient from "../../utils/apiClient.js"
+
 const app = getApp()
 
 Page({
@@ -49,6 +50,7 @@ Page({
       url: '../logs/logs'
     })
   },
+  
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
@@ -76,6 +78,23 @@ Page({
         }
       })
     }
+
+    const page = this
+    const options = {
+      success: function (res) {
+        const questions = res.data.question_lists
+
+        page.setData({
+          questions
+        })
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+    }
+
+    apiClient.getQuestions(options)
+
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -85,4 +104,5 @@ Page({
       hasUserInfo: true
     })
   }
+
 })

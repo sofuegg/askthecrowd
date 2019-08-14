@@ -82,9 +82,26 @@
     </view>
   </view>
 
+  <block wx:for="{{questions}}" wx:for-item="question">
+    <view class="card-product" data-id="{{question.id}}" >
+      <h2>{{question.title}}</h2>
+<!-- question.photo is a url, which is a string -->      
+      <ol>{{question.photo}}</ol> 
+<!-- photo, text and stats for the first choice -->
+      <ol>{{question.choice_info[0].photo}}</ol>
+      <ol>{{question.choice_info[0].text}}</ol> 
+      <ol>{{question.percentage_one}}</ol>
+<!-- photo, text and stats for the second choice -->
+      <ol>{{question.choice_info[1].photo}}</ol>
+      <ol>{{question.choice_info[1].text}}</ol>
+      <ol>{{question.percentage_two}}</ol>
+    </view>
+  </block>
+
 <view class="div-fixed bg-gray d-flex justify-around">
   <button class="cu-btn bg-blue lg btn-fixed1">Ask a Question!</button>
   <button class="cu-btn bg-blue lg btn-fixed2">Answer a Question!</button>
 </view>
 
 </view>
+

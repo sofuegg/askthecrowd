@@ -87,7 +87,3 @@ Page({
     })
   }
 })
-
-export default {
-  getPhoto
-}
