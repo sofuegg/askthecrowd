@@ -52,6 +52,21 @@
   padding: 10rpx 10rpx;
 }
 
+.b-left {
+  bottom: 10rpx;
+  left: 10rpx;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.text-shadow {
+  text-shadow: 3rpx 1rpx 15px #000000;
+}
 /* .cu-item {
   height: 300px;
 } */
