@@ -1,6 +1,6 @@
 <cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
-    <view slot="backText">返回</view>
-    <view slot="content">导航栏</view>
+    <view slot="backText">Back</view>
+    <view slot="content">Ask the Crowd</view>
 </cu-custom>
 <view>
 <view class="cu-bar bg-white margin-top">
@@ -108,3 +108,5 @@
   </form>
 
   <button class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg"  type="">Submit</button>
+  
+  

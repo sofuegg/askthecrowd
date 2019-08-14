@@ -1,14 +1,35 @@
-// pages/camera/camera.js
-const app = getApp()
-const AV = require('../../utils/av-weapp-min.js');
-
+// pages/answering-page/answering-page.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-
+    cardCur: 0,
+    swiperList: [{
+      id: 0,
+      type: 'image',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg',
+      choice: 'A'
+    }, {
+      id: 1,
+      type: 'image',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
+      choice: 'B'
+    },
+    ],
+    swiperList1: [{
+      id: 0,
+      type: 'image',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg',
+      choice: 'A',
+    }, {
+      id: 1,
+      type: 'image',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
+      choice: 'B'
+    },
+    ],
   },
 
   /**
@@ -65,25 +86,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  getPhoto () {
-    wx.chooseImage({
-      count: 2,
-      sizeType: ['compressed'],
-      sourceType: ['album', 'camera'],
-      success(res) {
-        // tempFilePath可以作为img标签的src属性显示图片
-        let tempFilePath = res.tempFilePaths[0];
-        new AV.File('file-name', {
-          blob: {
-            uri: tempFilePath,
-          },
-        }).save().then(
-          file => console.log(file.url())
-          // wx.request to your rails API
-        ).catch(console.error);
-      }
-    })
   }
 })
