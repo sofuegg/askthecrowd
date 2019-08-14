@@ -1,0 +1,16 @@
+<!--pages/result-page/result.wxml-->
+<text>pages/result-page/result.wxml</text>
+
+<view class="card-product" data-id="{{question.id}}" >
+    <h2>{{question.title}}</h2>
+<!-- question.photo is a url, which is a string -->      
+    <ol>{{question.photo}}</ol> 
+<!-- photo, text and stats for the first choice -->
+    <ol>{{question.choice_info[0].photo}}</ol>
+    <ol>{{question.choice_info[0].text}}</ol> 
+    <ol>{{question.percentage_one}}</ol>
+<!-- photo, text and stats for the second choice -->
+    <ol>{{question.choice_info[1].photo}}</ol>
+    <ol>{{question.choice_info[1].text}}</ol>
+    <ol>{{question.percentage_two}}</ol>
+</view>

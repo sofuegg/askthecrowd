@@ -11,6 +11,19 @@ const getQuestions = (options) => {
   })
 }
 
+// this function is used on the result page, which would be like the same structure of each card on the index page.
+const getResult = options => {
+  const { id, success, fail } = options
+
+  return wx.request({
+    url: baseUrl + `questions/${id}`,
+    method: "get",
+    success,
+    fail
+  })
+}
+
 export default {
-  getQuestions
+  getQuestions,
+  getResult
 }
