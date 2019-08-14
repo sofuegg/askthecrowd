@@ -88,6 +88,6 @@ Page({
   }
 })
 
-export default {
-  getPhoto
-}
+// export default {
+//   getPhoto
+// }

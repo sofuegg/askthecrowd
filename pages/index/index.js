@@ -35,13 +35,14 @@ Page({
     ],
     swiperList2: [{
       choice: 'A',
-      choice1percent: "70",
+      percent: "70",
       text: 'Yes'},
       { choice: 'B',
-      choice2percent: '30',
+      percent: '30',
       text: 'No'
       }
     ],
+    percent: 50
   },
   //事件处理函数
   bindViewTap: function() {
