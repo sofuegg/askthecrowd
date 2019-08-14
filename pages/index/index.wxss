@@ -44,17 +44,17 @@
 }
 
 .top-left {
-  top: 15rpx;
-  left: 15rpx;
+  top: 20rpx;
+  left: 20rpx;
 }
 
 .pad {
-  padding: 10rpx 10rpx;
+  padding: 20rpx 20rpx;
 }
 
 .b-left {
-  bottom: 10rpx;
-  left: 10rpx;
+  bottom: 20rpx;
+  left: 20rpx;
 }
 
 .center {
@@ -66,6 +66,10 @@
 
 .text-shadow {
   text-shadow: 3rpx 1rpx 15px #000000;
+}
+
+.choice-background {
+  background-color: rgba(240,240,240,0.7)
 }
 /* .cu-item {
   height: 300px;
