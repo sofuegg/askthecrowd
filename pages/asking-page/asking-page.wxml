@@ -11,7 +11,7 @@
 
 <view class="cu-form-group ">
 		<view class="title"></view>
-		<input placeholder="Here"></input>
+		<input placeholder="Here" bindinput="handleChange" data-name="title"></input>
 	</view>
 <view class="cu-bar bg-white ">
 		<view class="action">
@@ -33,7 +33,7 @@
 					<text class="cuIcon-close"></text>
 				</view>
 			</view>
-			<view class="solids" bindtap="ChooseImage">
+			<view class="solids" bindtap="getPhoto" data-name="photoq">
 				<text class="cuIcon-cameraadd"></text>
 			</view>
 		</view>
@@ -46,7 +46,7 @@
 
 <view class="cu-form-group margin-top">
 		<view class="title"></view>
-		<input placeholder="Answer A"></input>
+		<input placeholder="Answer A" bindinput="handleChange" data-name="texta"></input>
 	</view>
 
 <form>
@@ -67,7 +67,7 @@
 					<text class="cuIcon-close"></text>
 				</view>
 			</view>
-			<view class="solids" bindtap="ChooseImage">
+			<view class="solids" bindtap="getPhoto" data-name="photoa">
 				<text class="cuIcon-cameraadd"></text>
 			</view>
 		</view>
@@ -76,11 +76,8 @@
 
 <view class="cu-form-group margin-top">
 		<view class="title"></view>
-		<input placeholder="Answer B"></input>
+		<input placeholder="Answer B" bindinput="handleChange" data-name="textb"></input>
 	</view>
-
-
-
 
 <form>
   <view class="cu-bar bg-white ">
@@ -100,11 +97,11 @@
 					<text class="cuIcon-close"></text>
 				</view>
 			</view>
-			<view class="solids" bindtap="ChooseImage">
+			<view class="solids" bindtap="getPhoto" data-name="photob">
 				<text class="cuIcon-cameraadd"></text>
 			</view>
 		</view>
 	</view>
   </form>
 
-  <button class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg"  type="">Submit</button>
+  <button class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg"  type="" bindtap="submitQ">Submit</button>
