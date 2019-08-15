@@ -145,5 +145,5 @@
 
 .sticky {
   position: sticky;
-  bottom: 0rpx;
+  top: 0rpx;
 }

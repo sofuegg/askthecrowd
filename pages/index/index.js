@@ -54,7 +54,9 @@ Page({
       {
         pageName: "My Asked Questions"
       }
-    ]
+    ],
+    TabCur: 1,
+    scrollLeft: 0
   },
   //事件处理函数
   bindViewTap: function() {
@@ -115,6 +117,11 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  tabSelect(e) {
+    this.setData({
+      TabCur: e.currentTarget.dataset.id,
+      scrollLeft: (e.currentTarget.dataset.id - 1) * 60
+    })
   }
-
 })
