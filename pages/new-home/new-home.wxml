@@ -1,0 +1,36 @@
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+    <view slot="backText">Back</view>
+    <view slot="content">Ask the Crowd</view>
+</cu-custom>
+
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <view class="padding margin-left-lg" >Which dress do you like?</view>
+  </view>
+</view>
+<view class="bg-img bg-mask padding-tb-xl" style="background-image: url('{{imageurl}}');height: 414rpx;">
+  <view class="padding-xl text-white">
+    <view class="padding-xs text-xl">
+    </view>
+    <view class="padding-xs">
+    </view>
+  </view>
+</view>
+
+<view class="cu-bar bg-white flex solid-bottom padding justify-around" >
+  
+
+  
+<view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive1}}" id="1" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);" bindtap="SwitchImage1">
+  </view>
+
+  <view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive2}}" id="2" style="background-image:url(https://m.media-amazon.com/images/M/MV5BZTJmMTIxNDMtMDY5Mi00YjYzLThiZjgtODM5NzdiZDIwNWJmXkEyXkFqcGdeQXVyODEwMTc2ODQ@._V1_UY268_CR146,0,182,268_AL_.jpg);" bindtap="SwitchImage2">
+  </view>
+
+ 
+</view>
+
+<view class="cu-bar bg-white flex solid-bottom padding justify-around" >
+<button class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg justify-center"  type="">Choose</button>
+  
+</view>
