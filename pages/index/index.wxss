@@ -125,3 +125,25 @@
   font-size: 0.5em;
   text-anchor: middle;
 }
+
+.width {
+  width: 100%;
+}
+
+.height-title {
+  height: 100rpx;
+}
+
+.custom-dot {
+  position: absolute;
+  top: 50rpx !important;
+}
+
+.round-dot {
+  top: -100rpx !important;
+}
+
+.sticky {
+  position: sticky;
+  bottom: 0rpx;
+}

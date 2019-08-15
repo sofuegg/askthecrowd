@@ -43,7 +43,18 @@ Page({
       text: 'No'
       }
     ],
-    percent: 50
+    percent: 50,
+    pages: [
+      {
+        pageName: "My Answered Questions"
+      },
+      {
+        pageName: "Public"
+      },
+      {
+        pageName: "My Asked Questions"
+      }
+    ]
   },
   //事件处理函数
   bindViewTap: function() {
