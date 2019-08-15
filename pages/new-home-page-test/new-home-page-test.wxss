@@ -1,0 +1,38 @@
+/* pages/new-home-page-test/new-home-page-test.wxss */
+
+
+
+#btnflex {
+  width: 100%;
+}
+
+.rel {
+  position: relative;
+}
+
+.abs {
+  position: absolute;
+}
+
+.top-left {
+  top: 15rpx;
+  left: 15rpx;
+}
+
+.pad {
+  padding: 10rpx 10rpx;
+}
+
+.radiusg {
+  border-radius: 15rpx
+}
+
+.borderg {
+  border-color:lightblue;
+  border-width: 5rpx;
+  border-style: solid;
+}
+
+.active {
+  border: 2px solid yellow;
+}
