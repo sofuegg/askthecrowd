@@ -99,14 +99,14 @@ Page({
     const value = e.detail.value
     const oldData = page.data
     oldData[field] = value
+    oldData['userid'] = wx.getStorageSync('userid')
     page.setData({ ...oldData })
   },
 
   submitQ: function (e) {
     const page = this
     const app = getApp()
-    // const userid = wx.getStorageSync('userid')
-    const { title, photoq, texta, photoa, textb, photob } = page.data
+    const { title, photoq, texta, photoa, textb, photob, userid } = page.data
     wx.request({
       url: baseUrl + 'questions',
       method: 'post',
