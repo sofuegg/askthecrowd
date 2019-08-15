@@ -1,7 +1,7 @@
 // pages/asking-page/asking-page.js
 const app = getApp()
 const AV = require('../../utils/av-weapp-min.js');
-const baseUrl = "http://localhost:3000/api/v1/"
+const baseUrl = "https://ask-the-crowd.wogengapp.cn/api/v1/"
 
 Page({
 
