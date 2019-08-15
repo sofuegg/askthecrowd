@@ -1,4 +1,8 @@
 // pages/asking-page/asking-page.js
+const app = getApp()
+const AV = require('../../utils/av-weapp-min.js');
+const baseUrl = "http://localhost:3000/api/v1/"
+
 Page({
 
   /**
@@ -63,22 +67,59 @@ Page({
   onShareAppMessage: function () {
 
   },
-  ChooseImage() {
+
+  getPhoto(e) {
+    const page = this
     wx.chooseImage({
-      count: 4, //默认9
-      sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
-      sourceType: ['album'], //从相册选择
-      success: (res) => {
-        if (this.data.imgList.length != 0) {
-          this.setData({
-            imgList: this.data.imgList.concat(res.tempFilePaths)
-          })
-        } else {
-          this.setData({
-            imgList: res.tempFilePaths
-          })
-        }
+      count: 2,
+      sizeType: ['compressed'],
+      sourceType: ['album', 'camera'],
+      success(res) {
+        // tempFilePath可以作为img标签的src属性显示图片
+        let tempFilePath = res.tempFilePaths[0];
+        new AV.File('file-name', {
+          blob: {
+            uri: tempFilePath,
+          },
+        }).save().then(
+          file => {console.log(file.url())
+            const field = e.currentTarget.dataset.name
+            const oldData = page.data
+            oldData[field] = file.url()
+            page.setData({ ...oldData })
+          }
+        ).catch(console.error);
       }
-    });
+    })
+  },
+
+  handleChange: function (e) {
+    const page = this
+    const field = e.currentTarget.dataset.name
+    const value = e.detail.value
+    const oldData = page.data
+    oldData[field] = value
+    oldData['userid'] = wx.getStorageSync('userid')
+    page.setData({ ...oldData })
+  },
+
+  submitQ: function (e) {
+    const page = this
+    const app = getApp()
+    const { title, photoq, texta, photoa, textb, photob, userid } = page.data
+    wx.request({
+      url: baseUrl + 'questions',
+      method: 'post',
+      data: page.data,
+      success: function (res) {
+        console.log(res.data)
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+    })
+    // wx.navigateTo({
+    //   url: '../preview-page/preview-page',
+    // })
   }
 })
