@@ -2,45 +2,41 @@
     <view slot="backText">Back</view>
     <view slot="content">Ask the Crowd</view>
 </cu-custom>
+
 <view>
-<view class="cu-bar bg-white margin-top">
-  <view class="action" >
-    <text class="cuIcon-title text-blue"></text>Write a question to ask the crowd!
+  <view class="cu-bar bg-white margin-top">
+    <view class="action" >
+      <text class="text-blue"></text>Write a question to ask the crowd!
+    </view>
+  </view>
+  <view class="cu-form-group ">
+    <view class="title"></view>
+    <input placeholder="Type here" bindinput="handleChange" data-name="title"></input>
+    <view class="grid col-4 grid-square flex-sub">
+      <view class="solids" bindtap="getPhoto" data-name="photoq">
+        <text class="cuIcon-cameraadd"></text>
+      </view>
+    </view>
   </view>
 </view>
 
-<view class="cu-form-group ">
-		<view class="title"></view>
-		<input placeholder="Here" bindinput="handleChange" data-name="title"></input>
-	</view>
-<view class="cu-bar bg-white ">
-		<view class="action">
-			Upload an image (optional)
-		</view>
-		<view class="cu-form-group">
-		<view class="title"></view>
-		<checkbox class="round blue" checked></checkbox>
-	</view>
-	</view>
-
-  </view>
-
-	<view class="cu-form-group">
+	<!-- <view class="cu-form-group">
 		<view class="grid col-4 grid-square flex-sub">
 			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
 				<image src='{{imgList[index]}}' mode='aspectFill'></image>
-				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
-					<text class="cuIcon-close"></text>
-				</view>
-			</view>
-			<view class="solids" bindtap="getPhoto" data-name="photoq">
+			  <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+				  <text class="cuIcon-close"></text>
+			  </view>
+		  </view>
+	    <view class="solids" bindtap="getPhoto" data-name="photoq">
 				<text class="cuIcon-cameraadd"></text>
-			</view>
-		</view>
-	</view>
+		  </view>
+	  </view>
+	</view> -->
+
 <view class="cu-bar bg-white margin-top">
   <view class="action" >
-    <text class="cuIcon-title text-blue"></text>Write your answers!
+    <text class="text-blue"></text>Write your answers!
   </view>
 </view>
 
@@ -50,15 +46,6 @@
 	</view>
 
 <form>
-  <view class="cu-bar bg-white ">
-		<view class="action">
-			Upload an image
-		</view>
-		<view class="cu-form-group">
-		<view class="title"></view>
-		<checkbox class="round blue" checked></checkbox>
-	</view>
-	</view>
 	<view class="cu-form-group">
 		<view class="grid col-4 grid-square flex-sub">
 			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
@@ -80,15 +67,6 @@
 	</view>
 
 <form>
-  <view class="cu-bar bg-white ">
-		<view class="action">
-			Upload an image
-		</view>
-		<view class="cu-form-group">
-		<view class="title"></view>
-		<checkbox class="round blue" checked></checkbox>
-	</view>
-	</view>
 	<view class="cu-form-group">
 		<view class="grid col-4 grid-square flex-sub">
 			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
@@ -102,6 +80,6 @@
 			</view>
 		</view>
 	</view>
-  </form>
+</form>
 
-  <button class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg"  type="" bindtap="submitQ">Submit</button>
+<button class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg"  type="" bindtap="submitQ">Submit</button>
