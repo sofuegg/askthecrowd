@@ -1,0 +1,17 @@
+/* pages/preview-page/preview-page.wxss */
+.rel {
+  position: relative;
+}
+
+.abs {
+  position: absolute;
+}
+
+.top-left {
+  top: 15rpx;
+  left: 15rpx;
+}
+
+.pad {
+  padding: 10rpx 10rpx;
+}
