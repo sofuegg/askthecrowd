@@ -11,6 +11,31 @@ const getQuestions = (options) => {
   })
 }
 
+const createAnswer = options => {
+  const { data, success, fail } = options
+
+  return wx.request({
+    url: baseUrl + "answers",
+    method: "post",
+    data,
+    success,
+    fail
+  })
+}
+
+const shareQuestion = options => {
+  const { id, success, fail } = options
+
+  return wx.request({
+    url: baseUrl + `answers/${id}`,
+    method: "get",
+    success,
+    fail
+  })
+}
+
 export default {
-  getQuestions
+  getQuestions,
+  createAnswer,
+  shareQuestion
 }
