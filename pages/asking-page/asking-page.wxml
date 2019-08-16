@@ -1,107 +1,43 @@
 <cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
-    <view slot="backText">Back</view>
-    <view slot="content">Ask the Crowd</view>
+  <view slot="backText">Back</view>
+  <view slot="content">Ask the Crowd</view>
 </cu-custom>
-<view>
+
 <view class="cu-bar bg-white margin-top">
   <view class="action" >
-    <text class="cuIcon-title text-blue"></text>Write a question to ask the crowd!
+    <text class="text-blue"></text>Write a question to ask the crowd!
   </view>
 </view>
 
-<view class="cu-form-group ">
-		<view class="title"></view>
-		<input placeholder="Here" bindinput="handleChange" data-name="title"></input>
-	</view>
-<view class="cu-bar bg-white ">
-		<view class="action">
-			Upload an image (optional)
-		</view>
-		<view class="cu-form-group">
-		<view class="title"></view>
-		<checkbox class="round blue" checked></checkbox>
-	</view>
-	</view>
+<view class="cu-form-group input-card">
+  <textarea class="input-text" placeholder="Type here" bindinput="handleChange" data-name="title"></textarea>
+  <!-- <view class="solids cam-box {{shadowq}}" bindtap="getPhoto" data-name="photoq">
+    <text class="cuIcon-cameraadd cam-icon {{shadowq}}"></text>
+  </view> -->
+</view>
 
-  </view>
-
-	<view class="cu-form-group">
-		<view class="grid col-4 grid-square flex-sub">
-			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
-				<image src='{{imgList[index]}}' mode='aspectFill'></image>
-				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
-					<text class="cuIcon-close"></text>
-				</view>
-			</view>
-			<view class="solids" bindtap="getPhoto" data-name="photoq">
-				<text class="cuIcon-cameraadd"></text>
-			</view>
-		</view>
-	</view>
 <view class="cu-bar bg-white margin-top">
   <view class="action" >
-    <text class="cuIcon-title text-blue"></text>Write your answers!
+    <text class="text-blue"></text>Write your answers!
   </view>
 </view>
 
-<view class="cu-form-group margin-top">
-		<view class="title"></view>
-		<input placeholder="Answer A" bindinput="handleChange" data-name="texta"></input>
-	</view>
+<view class="cu-form-group input-card">
+  <textarea class="input-text" placeholder="Answer A" bindinput="handleChange" data-name="texta"></textarea>
+  <view class="solids cam-box {{shadowa}}" bindtap="getPhoto" data-name="photoa">
+    <text class="cuIcon-cameraadd cam-icon {{shadowa}}"></text>
+  </view>
+</view>
 
-<form>
-  <view class="cu-bar bg-white ">
-		<view class="action">
-			Upload an image
-		</view>
-		<view class="cu-form-group">
-		<view class="title"></view>
-		<checkbox class="round blue" checked></checkbox>
-	</view>
-	</view>
-	<view class="cu-form-group">
-		<view class="grid col-4 grid-square flex-sub">
-			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
-				<image src='{{imgList[index]}}' mode='aspectFill'></image>
-				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
-					<text class="cuIcon-close"></text>
-				</view>
-			</view>
-			<view class="solids" bindtap="getPhoto" data-name="photoa">
-				<text class="cuIcon-cameraadd"></text>
-			</view>
-		</view>
-	</view>
-  </form>
+<view class="cu-form-group input-card">
+  <textarea class="input-text" placeholder="Answer B" bindinput="handleChange" data-name="textb"></textarea>
+  <view class="solids cam-box {{shadowb}}" bindtap="getPhoto" data-name="photob">
+    <text class="cuIcon-cameraadd cam-icon {{shadowb}}"></text>
+  </view>
+</view>
 
-<view class="cu-form-group margin-top">
-		<view class="title"></view>
-		<input placeholder="Answer B" bindinput="handleChange" data-name="textb"></input>
-	</view>
 
-<form>
-  <view class="cu-bar bg-white ">
-		<view class="action">
-			Upload an image
-		</view>
-		<view class="cu-form-group">
-		<view class="title"></view>
-		<checkbox class="round blue" checked></checkbox>
-	</view>
-	</view>
-	<view class="cu-form-group">
-		<view class="grid col-4 grid-square flex-sub">
-			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
-				<image src='{{imgList[index]}}' mode='aspectFill'></image>
-				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
-					<text class="cuIcon-close"></text>
-				</view>
-			</view>
-			<view class="solids" bindtap="getPhoto" data-name="photob">
-				<text class="cuIcon-cameraadd"></text>
-			</view>
-		</view>
-	</view>
-  </form>
+<view class="submit-pos">
+  <button class="button pulse" hover-class="btn-hover" bindtap="submitQ">Submit</button>
+</view>
 
-  <button class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg"  type="" bindtap="submitQ" bindtap="submitQ">Submit</button>
