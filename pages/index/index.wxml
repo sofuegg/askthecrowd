@@ -15,10 +15,38 @@
 
 
 <view class="page rel m-top">
+  <block wx:for="{{questions}}" wx:for-item="question">
+  <view class="cu-bar bg-white margin-top">
+    <view class="action">
+      <view class="padding margin-left-lg" >{{question.title}}</view>
+    </view>
+  </view>
+  <view class="bg-img bg-mask padding-tb-xl" style="background-image: url('{{imageurl}}');height: 414rpx;">
+    <view class="padding-xl text-white">
+      <view class="padding-xs text-xl">
+    </view>
+      <view class="padding-xs"></view>
+    </view>
+  </view>
 
-    <!-- <view class="width flex height-title justify-center align-center">
-    <text class="text-bold text-xxl">{{item.pageName}}</text>
-    </view> -->
+<view class="cu-bar bg-white flex solid-bottom padding justify-around" >
+  
+
+  
+<view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive1}}" id="1" style="background-image:url({{question.choice_info[0].photo}});" data-url="{{question.choice_info[0].photo}}" bindtap="SwitchImage1">
+  </view>
+
+  <view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive2}}" id="2" style="background-image:url({{question.choice_info[1].photo}});" data-url="{{question.choice_info[1].photo}}" bindtap="SwitchImage2">
+  </view>
+
+ 
+</view>
+
+<view class="cu-bar bg-white flex solid-bottom padding justify-around" >
+<button class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg justify-center"  type="">Choose</button>
+  
+</view>
+  </block>
 
 
   <block wx:for="{{questions}}" wx:for-item="question">

@@ -100,7 +100,7 @@ Page({
     const options = {
       success: function (res) {
         const questions = res.data.question_lists
-
+        console.log(questions)
         page.setData({
           questions
         })
@@ -109,7 +109,6 @@ Page({
         console.log(err)
       }
     }
-
     apiClient.getQuestions(options)
 
   },
@@ -156,5 +155,23 @@ Page({
     }
     apiClient.getQuestions(options)
 
+  },
+  SwitchImage1: function (e) {
+    // console.log(111111, e)
+    // console.log(e.target.dataset.url)
+    this.setData({
+      toggleactive1: "active",
+      toggleactive2: "",
+      imageurl: e.target.dataset.url
+    })
+  },
+  SwitchImage2: function (e) {
+    console.log(e)
+    // console.log(1111, page)
+    this.setData({
+      toggleactive1: "",
+      toggleactive2: "active",
+      imageurl: e.target.dataset.url
+    })
   }
 })
