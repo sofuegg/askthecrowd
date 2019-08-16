@@ -72,7 +72,7 @@
   </block>
 
   <view class="div-fixed width bg-gray d-flex justify-around">
-    <button class="cu-btn bg-blue lg">Ask a Question!</button>
+    <button class="cu-btn bg-blue lg" bindtap="goToAsk">Ask a Question!</button>
   </view>
 
 </view>
