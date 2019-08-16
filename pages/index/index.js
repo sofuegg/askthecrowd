@@ -157,21 +157,38 @@ Page({
 
   },
   SwitchImage1: function (e) {
-    // console.log(111111, e)
+    console.log(111111, e)
     // console.log(e.target.dataset.url)
+    const q = this.data.questions
+    const new_qs = q.map(function (element) {
+      if (element.id == e.currentTarget.dataset.qid) {
+        element.photo = e.currentTarget.dataset.url
+        return element
+      } else {
+        return element
+      }
+    });
+    console.log(new_qs)
+    
+   
     this.setData({
-      toggleactive1: "active",
-      toggleactive2: "",
-      imageurl: e.target.dataset.url
+      questions: new_qs
     })
   },
   SwitchImage2: function (e) {
-    console.log(e)
+    // console.log(e)
     // console.log(1111, page)
+    const q = this.data.questions
+    const new_qs = q.map(function (element) {
+      if (element.id == e.currentTarget.dataset.qid) {
+        element.photo = e.currentTarget.dataset.url
+        return element
+      } else {
+        return element
+      }
+    });
     this.setData({
-      toggleactive1: "",
-      toggleactive2: "active",
-      imageurl: e.target.dataset.url
+      questions: new_qs
     })
   }
 })
