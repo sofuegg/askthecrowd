@@ -163,6 +163,7 @@ Page({
     const new_qs = q.map(function (element) {
       if (element.id == e.currentTarget.dataset.qid) {
         element.photo = e.currentTarget.dataset.url
+        element.choice_text = e.currentTarget.dataset.text
         return element
       } else {
         return element
@@ -182,6 +183,7 @@ Page({
     const new_qs = q.map(function (element) {
       if (element.id == e.currentTarget.dataset.qid) {
         element.photo = e.currentTarget.dataset.url
+        element.choice_text = e.currentTarget.dataset.text
         return element
       } else {
         return element
