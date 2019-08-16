@@ -14,16 +14,16 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
     const page = this
     const { id } = options
-    
+    this.setData({
+      question_id: id
+    })
     const getOptions = {
       id,
       success: function (res) {
-        console.log(res.data)
         const question = res.data.question_info
-
+        console.log(question)
         page.setData({
           question
         })
@@ -33,8 +33,7 @@ Page({
       }
     }
 
-    apiClient.shareQuestion(getOptions)
-
+    apiClient.getQuestion(getOptions)
   },
 
   /**
