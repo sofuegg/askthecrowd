@@ -5,7 +5,9 @@
     "pages/camera/camera",
     "pages/asking-page/asking-page",
     "pages/preview-page/preview-page",
-    "pages/answering-page/answering-page"
+    "pages/answering-page/answering-page",
+    "pages/sharing-to-frnd/sharing-to-frnd",
+    "pages/new-home/new-home"
   ],
   "window": {
     "backgroundTextStyle": "light",

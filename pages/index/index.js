@@ -121,11 +121,40 @@ Page({
       hasUserInfo: true
     })
   },
+
   tabSelect(e) {
     console.log(e)
     this.setData({
       TabCur: e.currentTarget.dataset.id,
       scrollLeft: (e.currentTarget.dataset.id - 1) * 60
     })
+
+  newAnswer: function (e) {
+    const page = this
+    const app = getApp()
+    const question_id = e.currentTarget.dataset.id
+    const choice_id = e.currentTarget.dataset.choice_id
+    const user_id = wx.getStorageSync('userid')
+    const newAnswer = {
+      question_id,
+      choice_id,
+      user_id
+    }
+    apiClient.createAnswer({data:newAnswer})
+
+    const options = {
+      success: function (res) {
+        const questions = res.data.question_lists
+
+        page.setData({
+          questions
+        })
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+    }
+    apiClient.getQuestions(options)
+
   }
 })

@@ -5,7 +5,8 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    const host = 'http://localhost:3000/'
+    // const host = 'http://localhost:3000/'
+    const host = 'https://ask-the-crowd.wogengapp.cn/'
     console.log('beginning login')
 
     wx.getSystemInfo({
@@ -18,6 +19,7 @@ App({
     })
     
     // 登录
+    const app = this
     wx.getStorage({
       key: 'userid',
       success: function(res) {
@@ -31,13 +33,13 @@ App({
             console.log(res)
             wx.request({
               url: host + 'login',
-              method: 'post',
+              method: 'POST',
               data: {
                 code: res.code
               },
               success: (res) => {
                 console.log(res)
-                // this.globalData.userId = res.data.userId
+                app.globalData.userId = res.data.userId
                 wx.setStorage({
                   key: 'userid',
                   data: res.data.userId,
