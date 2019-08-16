@@ -1,4 +1,5 @@
-const baseUrl = "https://ask-the-crowd.wogengapp.cn/api/v1/"
+// const baseUrl = "https://ask-the-crowd.wogengapp.cn/api/v1/"
+const baseUrl = 'http://localhost:3000/'
 
 const getQuestions = (options) => {
   const { success, fail } = options

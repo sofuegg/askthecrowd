@@ -21,7 +21,9 @@
       <view class="padding margin-left-lg" >{{question.title}}</view>
     </view>
   </view>
-  <view class="bg-img bg-mask padding-tb-xl" style="background-image: url('{{question.photo}}');height: 414rpx;">
+  <view class="bg-img bg-mask padding-tb-xl flex justify- center align-center" style="background-image: url('{{question.photo}}'); height: 414rpx;">
+    <view class="text-sl text-white">{{question.choice_info[0].text}}</view>
+    <view class="text-sl text-white">{{question.choice_info[0].text}}</view>
     <view class="padding-xl text-white">
       <view class="padding-xs text-xl">
     </view>

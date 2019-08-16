@@ -172,7 +172,7 @@ Page({
     
    
     this.setData({
-      questions: new_qs
+      questions: new_qs,
     })
   },
   SwitchImage2: function (e) {
@@ -188,7 +188,7 @@ Page({
       }
     });
     this.setData({
-      questions: new_qs
+      questions: new_qs,
     })
   }
 })
