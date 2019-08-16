@@ -11,9 +11,9 @@
 
 <view class="cu-form-group input-card">
   <textarea class="input-text" placeholder="Type here" bindinput="handleChange" data-name="title"></textarea>
-  <view class="solids cam-box {{shadowq}}" bindtap="getPhoto" data-name="photoq">
+  <!-- <view class="solids cam-box {{shadowq}}" bindtap="getPhoto" data-name="photoq">
     <text class="cuIcon-cameraadd cam-icon {{shadowq}}"></text>
-  </view>
+  </view> -->
 </view>
 
 <view class="cu-bar bg-white margin-top">
