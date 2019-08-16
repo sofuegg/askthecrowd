@@ -190,5 +190,10 @@ Page({
     this.setData({
       questions: new_qs,
     })
+  },
+  goToAsk () {
+    wx.navigateTo({
+      url: '/pages/asking-page/asking-page',
+    })
   }
 })
