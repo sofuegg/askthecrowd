@@ -104,4 +104,4 @@
 	</view>
   </form>
 
-  <button class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg"  type="" bindtap="submitQ">Submit</button>
+  <button class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg"  type="" bindtap="submitQ" bindtap="submitQ">Submit</button>
