@@ -1,5 +1,5 @@
 <!--pages/sharing-to-frnd/sharing-to-frnd.wxml-->
-<text>pages/sharing-to-frnd/sharing-to-frnd.wxml</text>
+<view class="empty"></view>
 
 <view class="card-product"  >
       <h2>{{question.title}}</h2>

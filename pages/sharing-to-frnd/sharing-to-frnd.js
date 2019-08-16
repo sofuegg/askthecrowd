@@ -14,17 +14,18 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
     const page = this
     const { id } = options
-
+    this.setData({
+      question_id: id
+    })
     const getOptions = {
       id,
       success: function (res) {
-        const question_choice_info = res.data.question_info
-
+        const question = res.data.question_info
+        console.log(question)
         page.setData({
-          question_choice_info
+          question
         })
       },
       fail: function (err) {
@@ -32,8 +33,7 @@ Page({
       }
     }
 
-    apiClient.shareQuestion(getOptions)
-
+    apiClient.getQuestion(getOptions)
   },
 
   /**
@@ -88,7 +88,9 @@ Page({
   newAnswer: function (e) {
     const page = this
     const app = getApp()
-    const question_id = e.currentTarget.dataset.id
+    console.log(e)
+    const question_id = page.data.question_id
+    console.log(question_id)
     const choice_id = e.currentTarget.dataset.choice_id
     const user_id = wx.getStorageSync('userid')
     const newAnswer = {
@@ -97,16 +99,13 @@ Page({
       user_id
     }
     apiClient.createAnswer({ data: newAnswer })
-    
 
-    const { id } = options
     const getOptions = {
-      id,
+      id: question_id,
       success: function (res) {
-        const question_choice_info = res.data.question_info
-
+        const question = res.data.question_info
         page.setData({
-          question_choice_info
+          question
         })
       },
       fail: function (err) {
@@ -114,6 +113,6 @@ Page({
       }
     }
 
-    apiClient.shareQuestion(getOptions)
+    apiClient.getQuestion(getOptions)
   }
 })

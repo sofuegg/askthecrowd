@@ -36,6 +36,8 @@
   </view>
 </view>
 
+
 <view class="submit-pos">
   <button class="button pulse" hover-class="btn-hover" bindtap="submitQ">Submit</button>
 </view>
+
