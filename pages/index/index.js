@@ -100,7 +100,7 @@ Page({
     const options = {
       success: function (res) {
         const questions = res.data.question_lists
-
+        console.log(questions)
         page.setData({
           questions
         })
@@ -109,7 +109,6 @@ Page({
         console.log(err)
       }
     }
-
     apiClient.getQuestions(options)
 
   },
@@ -122,12 +121,12 @@ Page({
     })
   },
 
-  tabSelect(e) {
-    console.log(e)
-    this.setData({
-      TabCur: e.currentTarget.dataset.id,
-      scrollLeft: (e.currentTarget.dataset.id - 1) * 60
-    })
+  // tabSelect(e) {
+  //   console.log(e)
+  //   this.setData({
+  //     TabCur: e.currentTarget.dataset.id,
+  //     scrollLeft: (e.currentTarget.dataset.id - 1) * 60
+  //   })
 
   newAnswer: function (e) {
     const page = this
@@ -156,5 +155,40 @@ Page({
     }
     apiClient.getQuestions(options)
 
+  },
+  SwitchImage1: function (e) {
+    console.log(111111, e)
+    // console.log(e.target.dataset.url)
+    const q = this.data.questions
+    const new_qs = q.map(function (element) {
+      if (element.id == e.currentTarget.dataset.qid) {
+        element.photo = e.currentTarget.dataset.url
+        return element
+      } else {
+        return element
+      }
+    });
+    console.log(new_qs)
+    
+   
+    this.setData({
+      questions: new_qs,
+    })
+  },
+  SwitchImage2: function (e) {
+    // console.log(e)
+    // console.log(1111, page)
+    const q = this.data.questions
+    const new_qs = q.map(function (element) {
+      if (element.id == e.currentTarget.dataset.qid) {
+        element.photo = e.currentTarget.dataset.url
+        return element
+      } else {
+        return element
+      }
+    });
+    this.setData({
+      questions: new_qs,
+    })
   }
 })

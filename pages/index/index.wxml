@@ -1,3 +1,4 @@
+<view>
 <cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
     <view slot="backText">Back</view>
     <view slot="content">Ask the Crowd</view>
@@ -10,40 +11,44 @@
     </view>
   </view>
 </scroll-view>
+</view>
 
-<view class="page rel">
 
-    <view class="width flex height-title justify-center align-center">
-    <text class="text-bold text-xxl">{{item.pageName}}</text>
+<view class="page rel m-top">
+  <block wx:for="{{questions}}" wx:for-item="question">
+  <view class="cu-bar bg-white margin-top">
+    <view class="action">
+      <view class="padding margin-left-lg" >{{question.title}}</view>
     </view>
-    <view class="cu-card case {{isCard?'no-card':''}}">
-  <view class="cu-item shadow">
-    <view class="image">
-      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="widthFix"></image>
-      <view class="cu-tag bg-blue">史诗</view>
-      <view class="cu-bar bg-shadeBottom">
-        <text class="text-cut">我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。</text>
-      </view>
+  </view>
+  <view class="bg-img bg-mask padding-tb-xl flex justify- center align-center" style="background-image: url('{{question.photo}}'); height: 414rpx;">
+    <view class="text-sl text-white">{{question.choice_info[0].text}}</view>
+    <view class="text-sl text-white">{{question.choice_info[0].text}}</view>
+    <view class="padding-xl text-white">
+      <view class="padding-xs text-xl">
     </view>
-    <view class="cu-list menu-avatar">
-      <view class="cu-item">
-        <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
-        <view class="content flex-sub">
-          <view class="text-grey">正义天使 凯尔</view>
-          <view class="text-gray text-sm flex justify-between">
-            十天前
-            <view class="text-gray text-sm">
-              <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
-              <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
-              <text class="cuIcon-messagefill margin-lr-xs"></text> 30
-            </view>
-          </view>
-        </view>
-      </view>
+      <view class="padding-xs"></view>
     </view>
   </view>
 
+<view class="cu-bar bg-white flex solid-bottom padding justify-around" >
+  
+
+  
+<view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive1}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_info[0].photo}});" data-url="{{question.choice_info[0].photo}}" bindtap="SwitchImage1">
+  </view>
+
+  <view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive2}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_info[1].photo}});" data-url="{{question.choice_info[1].photo}}" bindtap="SwitchImage2">
+  </view>
+
+ 
 </view>
+
+<view class="cu-bar bg-white flex solid-bottom padding justify-around" >
+<button class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg justify-center"  type="">Choose</button>
+  
+</view>
+  </block>
 
 
   <block wx:for="{{questions}}" wx:for-item="question">

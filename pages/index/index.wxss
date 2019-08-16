@@ -144,8 +144,9 @@
 }
 
 .sticky {
-  position: sticky;
-  top: 0rpx;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
 }
 
 .img {
@@ -155,4 +156,20 @@
 
 .col {
   color: #4CC790;
+}
+
+.m-top {
+  margin-top: 100rpx;
+}
+
+.radiusg {
+ border-radius: 15rpx
+}
+.borderg {
+ border-color:lightblue;
+ border-width: 5rpx;
+ border-style: solid;
+}
+.active {
+ display: none;
 }
