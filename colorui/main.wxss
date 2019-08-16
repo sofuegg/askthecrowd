@@ -2579,7 +2579,8 @@ swiper.square-dot .wx-swiper-dot.wx-swiper-dot-active {
 swiper.round-dot .wx-swiper-dot {
 	width: 10rpx;
 	height: 10rpx;
-	position: relative;
+	position: sticky;
+  top: -900rpx;
 	margin: 4rpx 8rpx !important;
 }
 

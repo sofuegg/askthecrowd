@@ -43,7 +43,23 @@ Page({
       text: 'No'
       }
     ],
-    percent: 50
+    percent: 50,
+    navbaricon: [
+      {
+        title: "My questions",
+        icon: "/icons/Question.png"
+      },
+      {
+        title: "Public",
+        icon: "/icons/svg_global.png"
+      },
+      {
+        title: "Asked Questions",
+        icon: "/icons/question-answer-line.png"
+      }
+    ],
+    TabCur: 1,
+    scrollLeft: 0
   },
   //事件处理函数
   bindViewTap: function() {
@@ -106,6 +122,13 @@ Page({
     })
   },
 
+  tabSelect(e) {
+    console.log(e)
+    this.setData({
+      TabCur: e.currentTarget.dataset.id,
+      scrollLeft: (e.currentTarget.dataset.id - 1) * 60
+    })
+
   newAnswer: function (e) {
     const page = this
     const app = getApp()
@@ -132,6 +155,6 @@ Page({
       }
     }
     apiClient.getQuestions(options)
-  }
 
+  }
 })
