@@ -53,7 +53,7 @@
 
 <view class="flex solid-bottom padding justify-around">
 <!-- AskYourCrowd: select several frnds so that a card would be forward to the sharing-to-frnd page  -->
-<button style='opacity: 100;' class="cu-btn bg-blue lg margin-top-lg margin-bottom-lg" bindtap='onShareAppMessage' open-type="share">Ask Ur Friend</button>
+<button style='opacity: 100;' class="button pulse" hover-class="btn-hover" bindtap='onShareAppMessage' open-type="share">Ask Ur Friend</button>
 <!-- AskTheCrowd: a link would be shared to the friends circle so that frnds would be forward to the sharing-to-frnd page  -->
-  <button class="cu-btn bg-blue lg margin-top-lg margin-bottom-lg" bindtap="toIndex">Ask The Crowd</button>
+  <button class="button pulse" hover-class="btn-hover" bindtap="toIndex">Ask The Crowd</button>
  </view>

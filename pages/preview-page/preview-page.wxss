@@ -15,3 +15,26 @@
 .pad {
   padding: 10rpx 10rpx;
 }
+
+
+.button {
+  /* display: inline-flex; */
+  align-items: center;
+  background: #C06C84;
+  box-shadow: 0 3px 2px 0 rgba(0,0,0,0.1);
+  border-radius: 20px;
+  height: 45px;
+  padding: 0 30px;
+  color: #fff;
+  font-family: Lato, Arial, sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background .3s, transform .3s, box-shadow .3s;
+  will-change: transform;
+  margin: 15rpx;
+}
+.btn-hover {
+  background: darken(#C06C84,10%);
+  box-shadow: 0 4px 17px rgba(0,0,0,0.2);
+  transform: translate3d(0, 4px, 0);
+}
