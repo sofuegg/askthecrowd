@@ -87,6 +87,9 @@ Page({
             const oldData = page.data
             oldData[field] = file.url()
             page.setData({ ...oldData })
+            if (field == 'photoq') { page.setData({ shadowq: "active" }); }
+            if (field == 'photoa') { page.setData({ shadowa: "active" }); }
+            if (field == 'photob') { page.setData({ shadowb: "active" }); }           
           }
         ).catch(console.error);
       }
@@ -118,8 +121,8 @@ Page({
         console.log(err)
       }
     })
-    // wx.navigateTo({
-    //   url: '../preview-page/preview-page',
-    // })
+    wx.navigateTo({
+      url: '../preview-page/preview-page',
+    })
   }
 })
