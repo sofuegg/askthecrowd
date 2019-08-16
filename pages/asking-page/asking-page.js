@@ -1,8 +1,8 @@
 // pages/asking-page/asking-page.js
 const app = getApp()
 const AV = require('../../utils/av-weapp-min.js');
+const baseUrl = "http://localhost:3000/api/v1/"
 // const baseUrl = "https://ask-the-crowd.wogengapp.cn/api/v1/"
-const baseUrl = "http://localhost:3000/api/v1"
 
 Page({
 
@@ -88,6 +88,9 @@ Page({
             const oldData = page.data
             oldData[field] = file.url()
             page.setData({ ...oldData })
+            if (field == 'photoq') { page.setData({ shadowq: "active" }); }
+            if (field == 'photoa') { page.setData({ shadowa: "active" }); }
+            if (field == 'photob') { page.setData({ shadowb: "active" }); }           
           }
         ).catch(console.error);
       }
@@ -114,13 +117,20 @@ Page({
       data: page.data,
       success: function (res) {
         console.log(res.data)
+        const id = res.data.question_info.id
+        console.log(id)
+        wx.navigateTo({
+          url: `/pages/preview-page/preview-page?id=${id}`,
+        })
       },
       fail: function (err) {
         console.log(err)
       }
     })
-    // wx.navigateTo({
-    //   url: '../preview-page/preview-page',
-    // })
+
+    wx.navigateTo({
+      url: '../preview-page/preview-page',
+    })
   }
+
 })
