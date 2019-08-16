@@ -147,3 +147,12 @@
   position: sticky;
   top: 0rpx;
 }
+
+.img {
+  width: 20px;
+  height: 20px;
+}
+
+.col {
+  color: #4CC790;
+}

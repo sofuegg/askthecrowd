@@ -44,15 +44,18 @@ Page({
       }
     ],
     percent: 50,
-    pages: [
+    navbaricon: [
       {
-        pageName: "My Answered Questions"
+        title: "My questions",
+        icon: "/icons/Question.png"
       },
       {
-        pageName: "Public"
+        title: "Public",
+        icon: "/icons/svg_global.png"
       },
       {
-        pageName: "My Asked Questions"
+        title: "Asked Questions",
+        icon: "/icons/question-answer-line.png"
       }
     ],
     TabCur: 1,
@@ -119,6 +122,7 @@ Page({
     })
   },
   tabSelect(e) {
+    console.log(e)
     this.setData({
       TabCur: e.currentTarget.dataset.id,
       scrollLeft: (e.currentTarget.dataset.id - 1) * 60
