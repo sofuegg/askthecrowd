@@ -40,6 +40,8 @@ Page({
    */
   
   onLoad: function (options) {
+    console.log(6666666, options)
+
     const page = this
     const { id } = options
     this.setData({
@@ -48,8 +50,9 @@ Page({
     const getOptions = {
       id,
       success: function (res) {
+        console.log(res)
         const question = res.data.question_info
-        console.log(question)
+        console.log(9999, question)
         page.setData({
           question
         })

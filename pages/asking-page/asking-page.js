@@ -116,11 +116,11 @@ Page({
       method: 'post',
       data: page.data,
       success: function (res) {
-        console.log(res.data)
+        console.log(res)
         const id = res.data.question_info.id
         console.log(id)
-        wx.navigateTo({
-          url: `/pages/preview-page/preview-page?id=${id}`,
+        wx.reLaunch({
+          url: `/pages/preview-page/preview-page?id=${id}`
         })
       },
       fail: function (err) {
