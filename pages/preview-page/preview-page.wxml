@@ -1,7 +1,10 @@
-<!--pages/preview-page/preview-page.wxml-->
-<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
-    <view slot="backText">Back</view>
-    <view slot="content">Ask the Crowd</view>
+<cu-custom bgColor="bg-gradual-pink" class="topbar" isBack="{{true}}">
+  <view slot="backText">
+    <text class="font font-20">Back</text>
+  </view>
+  <view slot="content">
+    <text class="font">Ask the Crowd 问群众</text>
+  </view>
 </cu-custom>
 
 <view class="cu-bar bg-white margin-top">
@@ -51,9 +54,9 @@
 
 
 
-<view class="flex solid-bottom padding justify-around">
-<!-- AskYourCrowd: select several frnds so that a card would be forward to the sharing-to-frnd page  -->
-<button style='opacity: 100;' class="cu-btn bg-blue lg margin-top-lg margin-bottom-lg" bindtap='onShareAppMessage' open-type="share">Ask Ur Friend</button>
-<!-- AskTheCrowd: a link would be shared to the friends circle so that frnds would be forward to the sharing-to-frnd page  -->
-  <button class="cu-btn bg-blue lg margin-top-lg margin-bottom-lg" bindtap="toIndex">Ask The Crowd</button>
+<view class="flex solid-bottom justify-around">
+  <!-- AskYourCrowd: select several frnds so that a card would be forward to the sharing-to-frnd page  -->
+  <button style='opacity: 100;' class="button" hover-class="btn-hover" bindtap='onShareAppMessage' open-type="share">Ask Ur Friends 问朋友</button>
+  <!-- AskTheCrowd: a link would be shared to the friends circle so that frnds would be forward to the sharing-to-frnd page  -->
+  <button class="button" hover-class="btn-hover" bindtap="toIndex">Ask the Crowd 问群众</button>
  </view>
