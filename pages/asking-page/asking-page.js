@@ -90,7 +90,12 @@ Page({
             page.setData({ ...oldData })
             if (field == 'photoq') { page.setData({ shadowq: "active" }); }
             if (field == 'photoa') { page.setData({ shadowa: "active" }); }
-            if (field == 'photob') { page.setData({ shadowb: "active" }); }           
+            if (field == 'photob') { page.setData({ shadowb: "active" }); }
+            wx.showToast({
+              title: '上传成功',
+              icon: 'success',
+              duration: 1200
+            })
           }
         ).catch(console.error);
       }
@@ -131,6 +136,6 @@ Page({
     wx.navigateTo({
       url: '../preview-page/preview-page',
     })
-  }
+  },
 
 })
