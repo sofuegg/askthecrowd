@@ -1,16 +1,20 @@
-<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
-  <view slot="backText">Back</view>
-  <view slot="content">Ask the Crowd</view>
+<cu-custom bgColor="bg-gradual-pink" class="topbar" isBack="{{true}}">
+  <view slot="backText">
+    <text class="font font-20">Back</text>
+  </view>
+  <view slot="content">
+    <text class="font">Ask the Crowd 问群众</text>
+  </view>
 </cu-custom>
 
 <view class="cu-bar bg-white margin-top">
-  <view class="action" >
-    <text class="text-blue"></text>Write a question to ask the crowd!
+  <view class="action">
+    <text class="font font-18">Write a question to ask the crowd!</text>
   </view>
 </view>
 
 <view class="cu-form-group input-card">
-  <textarea class="input-text" placeholder="Type here" bindinput="handleChange" data-name="title"></textarea>
+  <textarea class="input-text font font-input" placeholder="Type here" bindinput="handleChange" data-name="title"></textarea>
   <!-- <view class="solids cam-box {{shadowq}}" bindtap="getPhoto" data-name="photoq">
     <text class="cuIcon-cameraadd cam-icon {{shadowq}}"></text>
   </view> -->
@@ -18,19 +22,19 @@
 
 <view class="cu-bar bg-white margin-top">
   <view class="action" >
-    <text class="text-blue"></text>Write your answers!
+    <text class="font font-18">Write your answers!</text>
   </view>
 </view>
 
 <view class="cu-form-group input-card">
-  <textarea class="input-text" placeholder="Answer A" bindinput="handleChange" data-name="texta"></textarea>
+  <textarea class="input-text font" placeholder="Answer A" bindinput="handleChange" data-name="texta"></textarea>
   <view class="solids cam-box {{shadowa}}" bindtap="getPhoto" data-name="photoa">
     <text class="cuIcon-cameraadd cam-icon {{shadowa}}"></text>
   </view>
 </view>
 
 <view class="cu-form-group input-card">
-  <textarea class="input-text" placeholder="Answer B" bindinput="handleChange" data-name="textb"></textarea>
+  <textarea class="input-text font" placeholder="Answer B" bindinput="handleChange" data-name="textb"></textarea>
   <view class="solids cam-box {{shadowb}}" bindtap="getPhoto" data-name="photob">
     <text class="cuIcon-cameraadd cam-icon {{shadowb}}"></text>
   </view>

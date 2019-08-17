@@ -74,6 +74,11 @@ App({
         }
       }
     })
+    // wx.loadFontFace({
+    //   family: 'Concert One',
+    //   source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/d8eab2fdfbc672c39e71/ConcertOne-Regular.ttf")',
+    //   success: console.log
+    // })
   },
   globalData: {
     userInfo: null

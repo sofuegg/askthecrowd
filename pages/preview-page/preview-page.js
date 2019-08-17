@@ -63,6 +63,17 @@ Page({
     }
 
     apiClient.getQuestion(getOptions)
+
+    wx.loadFontFace({
+      family: 'Concert One',
+      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/d8eab2fdfbc672c39e71/ConcertOne-Regular.ttf")',
+      success: console.log
+    })
+    wx.loadFontFace({
+      family: 'BenMo',
+      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/74ad43d3a3b717fba000/BenMoYouYuan-2.ttf")',
+      success: console.log
+    })
   },
 
   /**
@@ -116,7 +127,7 @@ Page({
     }
     return {
       title: 'Help me out',
-      imageUrl: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565865307522&di=7d9a32e3475ecd9a1ece81c95cb60583&imgtype=0&src=http%3A%2F%2Fcbu01.alicdn.com%2Fimg%2Fibank%2F2016%2F039%2F604%2F2719406930_2104120472.jpg',//图片地址
+      imageUrl: 'http://lc-qinkssxt.cn-n1.lcfile.com/5b92e495b1e6e350805a/timg.jpg',//图片地址
       path: `/pages/sharing-to-frnd/sharing-to-frnd?id=${question_id}`,// 用户点击首先进入的当前页面
       success: function (res) {
         console.log("转发成功:");
