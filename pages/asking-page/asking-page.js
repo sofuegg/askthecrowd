@@ -72,7 +72,7 @@ Page({
   getPhoto(e) {
     const page = this
     wx.chooseImage({
-      count: 2,
+      count: 1,
       sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
       success(res) {
