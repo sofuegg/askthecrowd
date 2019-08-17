@@ -154,6 +154,11 @@
   height: 20px;
 }
 
+.stats {
+  width: 30px;
+  height: 30px;
+}
+
 .col {
   color: #4CC790;
 }
@@ -172,4 +177,12 @@
 }
 .active {
  display: none;
+}
+
+.display {
+  display: block !important;
+}
+
+.column {
+  flex-direction: column;
 }

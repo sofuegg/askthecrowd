@@ -6,8 +6,11 @@
 
 <scroll-view scroll-x class="bg-white nav sticky">
   <view class="flex text-center">
-    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{navbaricon}}" wx:key bindtap="tabSelect" data-id="{{index}}">
-      <image class="img" src="{{item.icon}}"></image>
+    <view class="cu-item flex-sub {{index==TabCur?'text-black cur':''}}" wx:for="{{navbaricon}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      <view class="column flex align-center justify-center">
+      <image style="margin-top: 5px;" class="img" src="{{item.icon}}"></image>
+      <text style="margin: -10px;" class="text-xs">{{item.title}}</text>
+      </view>
     </view>
   </view>
 </scroll-view>
@@ -21,17 +24,13 @@
       <view class="padding margin-left-lg" >{{question.title}}</view>
     </view>
   </view>
-  <view class="bg-img bg-mask padding-tb-xl flex justify- center align-center" style="background-image: url('{{question.photo}}'); height: 414rpx;">
+  <view class="bg-img bg-mask padding-tb-xl flex justify-center align-center" style="background-image: url('{{question.photo}}'); height: 414rpx;">
     <view class="text-sl text-white">{{question.choice_text}}</view>
-    <view class="padding-xl text-white">
-      <view class="padding-xs text-xl">
-    </view>
-      <view class="padding-xs"></view>
-    </view>
   </view>
 
 <view class="cu-bar bg-white flex solid-bottom padding justify-around" >
   
+
 <view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive1}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_info[0].photo}});" data-text="{{question.choice_info[0].text}}" data-url="{{question.choice_info[0].photo}}" bindtap="SwitchImage1">
   </view>
 
@@ -42,8 +41,13 @@
 </view>
 
 <view class="cu-bar bg-white flex solid-bottom padding justify-around" >
-<button class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg justify-center"  type="">Choose</button>
+
+<wux-circle class="active {{display}}" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_one }}">{{ question.percentage_one + '%' }}</wux-circle>
+
+<button class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg justify-center" bindtap="choose" type="">Choose</button>
   
+  <wux-circle class="active" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_two }}">{{ question.percentage_two + '%' }}</wux-circle>
+
 </view>
   </block>
 

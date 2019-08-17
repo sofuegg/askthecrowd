@@ -101,6 +101,7 @@ Page({
       success: function (res) {
         const questions = res.data.question_lists
         console.log(questions)
+        
         page.setData({
           questions
         })
@@ -121,12 +122,13 @@ Page({
     })
   },
 
-  // tabSelect(e) {
-  //   console.log(e)
-  //   this.setData({
-  //     TabCur: e.currentTarget.dataset.id,
-  //     scrollLeft: (e.currentTarget.dataset.id - 1) * 60
-  //   })
+  tabSelect(e) {
+    console.log(e)
+    this.setData({
+      TabCur: e.currentTarget.dataset.id,
+      scrollLeft: (e.currentTarget.dataset.id - 1) * 60
+    })
+  },
 
   newAnswer: function (e) {
     const page = this
@@ -193,6 +195,19 @@ Page({
       questions: new_qs,
     })
   },
+  // choose: function (e) {
+  //   const q = this.data.questions
+  //   const new_qs = q.map(function (element) {
+  //     const display = "display" + e.currentTarget.dataset.qid
+  //     if (element.id == e.currentTarget.dataset.qid) {
+  //       this.setData({
+  //         display: "display",
+  //       })
+  //     } else {
+  //       return element
+  //     }
+  //   }
+  // )},
   goToAsk () {
     wx.navigateTo({
       url: '/pages/asking-page/asking-page',
