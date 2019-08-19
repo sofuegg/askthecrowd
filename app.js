@@ -19,14 +19,6 @@ App({
     })
     
     // 登录
-    // try {
-    //   var value = wx.getStorageSync('userid')
-    //   if (value) {
-    //     // Do something with return value
-    //   }
-    // } catch (e) {
-    //   // Do something when catch error
-    // }
     const app = this
     wx.getStorage({
       key: 'userid',
