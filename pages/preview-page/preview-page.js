@@ -16,6 +16,7 @@ Page({
   
   onLoad: function (options) {
     const page = this
+    console.log(options)
     const { id } = options
     this.setData({
       question_id:id
