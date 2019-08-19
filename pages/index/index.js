@@ -82,16 +82,17 @@ Page({
     console.log('tab change', e)
   },
   kindToggle: function (e) {
-    // console.log(e)
+    console.log(e)
     const q = this.data.questions
     const new_qs1 = q.map(function (element) {
-      // console.log(element)
-        console.log(111111, element.id == e.currentTarget.dataset.id)
-        console.log(element.id)
-      console.log(5555, e.currentTarget.dataset)
+      console.log(element)
+        // console.log(111111, element.id == e.currentTarget.dataset.id)
+        // console.log(element.id)
+      // console.log(5555, e.currentTarget.dataset)
       if (element.id == e.currentTarget.dataset.id) {
         element.open = true
-
+        element.percentage_one = Math.round(element.percentage_one)
+        element.percentage_two = Math.round(element.percentage_two)
         return element
       } else {
         return element
