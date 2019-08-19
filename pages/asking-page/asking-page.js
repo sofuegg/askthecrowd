@@ -19,12 +19,12 @@ Page({
   onLoad: function (options) {
     wx.loadFontFace({
       family: 'Concert One',
-      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/d8eab2fdfbc672c39e71/ConcertOne-Regular.ttf")',
+      source: 'url("/img/ConcertOne-Regular.ttf")',
       success: console.log
     })
     wx.loadFontFace({
       family: 'BenMo',
-      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/74ad43d3a3b717fba000/BenMoYouYuan-2.ttf")',
+      source: 'url("/img/BenMoYouYuan-2.ttf")',
       success: console.log
     })
   },
