@@ -59,7 +59,46 @@ Page({
       }
     ],
     TabCur: 1,
-    scrollLeft: 0
+    scrollLeft: 0,
+    active: "active",
+    // open: false,
+    list: [
+      {
+        id: 'form',
+        name: '表单',
+        open: false,
+      },
+    ]
+  },
+  kindToggle: function (e) {
+    console.log(e)
+    // const questions = this.data.questions
+    // var id = e.currentTarget.id
+    // console.log(id)
+    // for (var i = 0, len = questions.length; i < len; ++i) {
+    //   if (questions[i].id == id) {
+    //     questions[i].open = !questions[i].open
+    //   } else {
+    //     questions[i].open = false
+    //   }
+    // }
+    const q = this.data.questions
+    const new_qs1 = q.map(function (element) {
+      // console.log(element)
+        console.log(111111, element.id == e.currentTarget.dataset.id)
+        console.log(element.id)
+      console.log(e.currentTarget.dataset.id)
+      if (element.id == e.currentTarget.dataset.id) {
+        element.open = true
+        return element
+      } else {
+        return element
+      }
+      console.log(1111111, new_qs1)
+      this.setData({
+        questions: new_qs1
+      });
+    })
   },
   //事件处理函数
   bindViewTap: function() {
@@ -195,19 +234,12 @@ Page({
       questions: new_qs,
     })
   },
-  // choose: function (e) {
-  //   const q = this.data.questions
-  //   const new_qs = q.map(function (element) {
-  //     const display = "display" + e.currentTarget.dataset.qid
-  //     if (element.id == e.currentTarget.dataset.qid) {
-  //       this.setData({
-  //         display: "display",
-  //       })
-  //     } else {
-  //       return element
-  //     }
-  //   }
-  // )},
+  choose: function (e) {
+    this.setData({
+      display: "display",
+      active: ""
+    })
+  },
   goToAsk () {
     wx.navigateTo({
       url: '/pages/asking-page/asking-page',

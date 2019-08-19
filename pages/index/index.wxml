@@ -18,6 +18,9 @@
 
 
 <view class="page rel m-top">
+<text>{{TabCur}}</text>
+<text>{{TabCur == 1}}</text>
+  <view wx:if="{{TabCur == 1}}">
   <block wx:for="{{questions}}" wx:for-item="question">
   <view class="cu-bar bg-white margin-top">
     <view class="action">
@@ -40,16 +43,25 @@
  
 </view>
 
-<view class="cu-bar bg-white flex solid-bottom padding justify-around" >
+<view class="cu-bar bg-white flex solid-bottom padding justify-around">
+          <view class="kind-list">
+                <view class="kind-list__item">
+                    <view class="weui-flex kind-list__item-hd">
+                        <button data-id="{{question.id}}" class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg justify-center weui-flex__item {{question.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">Vote</button>
+                    </view>
+                    <view class="kind-list__item-bd {{question.open ? 'kind-list__item-bd_show' : ''}}">
+                        <view class="weui-cells {{question.open ? 'weui-cells_show' : ''}}">
+                           <wux-circle class="{{display}}" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_one }}">{{ question.percentage_one + '%' }}</wux-circle>
+                           <wux-circle class="{{display}}" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_two }}">{{ question.percentage_two + '%' }}</wux-circle>
 
-<wux-circle class="active {{display}}" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_one }}">{{ question.percentage_one + '%' }}</wux-circle>
-
-<button class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg justify-center" bindtap="choose" type="">Choose</button>
-  
-  <wux-circle class="active" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_two }}">{{ question.percentage_two + '%' }}</wux-circle>
+                        </view>
+                    </view>
+                </view>
+        </view>
 
 </view>
   </block>
+  </view>
 
 
   <block wx:for="{{questions}}" wx:for-item="question">
