@@ -29,18 +29,18 @@
 <view class="cu-form-group input-card">
   <textarea class="input-text font" placeholder="Answer A" bindinput="handleChange" data-name="texta"></textarea>
   <view class="solids cam-box {{shadowa}}" bindtap="getPhoto" data-name="photoa">
-    <text class="cuIcon-cameraadd cam-icon {{shadowa}}"></text>
+    <text class="cuIcon-cameraadd cam-icon"></text>
   </view>
 </view>
 
 <view class="cu-form-group input-card">
   <textarea class="input-text font" placeholder="Answer B" bindinput="handleChange" data-name="textb"></textarea>
   <view class="solids cam-box {{shadowb}}" bindtap="getPhoto" data-name="photob">
-    <text class="cuIcon-cameraadd cam-icon {{shadowb}}"></text>
+    <text class="cuIcon-cameraadd cam-icon"></text>
   </view>
 </view>
 
 
 <view class="submit-pos">
-  <button class="button pulse" hover-class="btn-hover" bindtap="submitQ">Submit</button>
+  <button class="button pulse" hover-class="btn-hover" bindtap="submitQ">Submit 提交</button>
 </view>

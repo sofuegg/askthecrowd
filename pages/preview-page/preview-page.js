@@ -1,5 +1,4 @@
 // pages/preview-page/preview-page.js
-
 import apiClient from "../../utils/apiClient.js"
 
 Page({
@@ -8,31 +7,7 @@ Page({
    * Page initial data
    */
   data: {
-    cardCur: 0,
-    swiperList: [{
-      id: 0,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg',
-      choice: 'A'
-    }, {
-      id: 1,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
-      choice: 'B'
-    },
-    ],
-    swiperList1: [{
-      id: 0,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg',
-      choice: 'A',
-    }, {
-      id: 1,
-      type: 'image',
-        url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
-      choice: 'B'
-    },
-    ],
+    
   },
 
   /**
@@ -40,8 +15,6 @@ Page({
    */
   
   onLoad: function (options) {
-    console.log(6666666, options)
-
     const page = this
     const { id } = options
     this.setData({
@@ -50,12 +23,21 @@ Page({
     const getOptions = {
       id,
       success: function (res) {
-        console.log(res)
         const question = res.data.question_info
-        console.log(9999, question)
+        if (question.choice_one.photo == null) { 
+          question.choice_one.photo = '/img/black.jpg', 
+          page.setData({ c1text: question.choice_one.text })
+          }
+        if (question.choice_two.photo == null) { 
+          question.choice_two.photo = '/img/black.jpg',
+          page.setData({ c2text: question.choice_two.text })
+          }
         page.setData({
-          question
+          question,
+          bigphoto: question.choice_one.photo,
+          bigtext: question.choice_one.text
         })
+        console.log(question)
       },
       fail: function (err) {
         console.log(err)
@@ -66,13 +48,13 @@ Page({
 
     wx.loadFontFace({
       family: 'Concert One',
-      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/d8eab2fdfbc672c39e71/ConcertOne-Regular.ttf")',
-      success: console.log
+      source: 'url("/img/ConcertOne-Regular.ttf")',
+      success: console.log()
     })
     wx.loadFontFace({
       family: 'BenMo',
-      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/74ad43d3a3b717fba000/BenMoYouYuan-2.ttf")',
-      success: console.log
+      source: 'url("/img/BenMoYouYuan-2.ttf")',
+      success: console.log()
     })
   },
 
@@ -127,7 +109,7 @@ Page({
     }
     return {
       title: 'Help me out',
-      imageUrl: 'http://lc-qinkssxt.cn-n1.lcfile.com/5b92e495b1e6e350805a/timg.jpg',//图片地址
+      imageUrl: '/img/timg.jpg',//图片地址
       path: `/pages/sharing-to-frnd/sharing-to-frnd?id=${question_id}`,// 用户点击首先进入的当前页面
       success: function (res) {
         console.log("转发成功:");
@@ -137,39 +119,21 @@ Page({
         console.log("转发失败:");
       }
     }
-
   },
-
-  // newAnswer: function (e) {
-  //   const page = this
-  //   const app = getApp()
-  //   console.log(e)
-  //   const question_id = page.data.question_id
-  //   console.log(question_id)
-  //   const choice_id = e.currentTarget.dataset.choice_id
-  //   const user_id = wx.getStorageSync('userid')
-  //   const newAnswer = {
-  //     question_id,
-  //     choice_id,
-  //     user_id
-  //   }
-  //   apiClient.createAnswer({ data: newAnswer })
-
-  //   const getOptions = {
-  //     id:question_id,
-  //     success: function (res) {
-  //       const question = res.data.question_info
-  //       page.setData({
-  //         question
-  //       })
-  //     },
-  //     fail: function (err) {
-  //       console.log(err)
-  //     }
-  //   }
-
-  //   apiClient.getQuestion(getOptions)
-  // },
+  SwitchImage1: function (e) {
+    const question = this.data.question
+    this.setData({ 
+      bigphoto: question.choice_one.photo,
+      bigtext: question.choice_one.text
+    })
+  },
+  SwitchImage2: function (e) {
+    const question = this.data.question
+    this.setData({
+      bigphoto: question.choice_two.photo,
+      bigtext: question.choice_two.text
+    })
+  },
 
   toIndex: function() {
     wx.navigateTo({

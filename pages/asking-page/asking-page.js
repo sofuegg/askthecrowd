@@ -19,13 +19,13 @@ Page({
   onLoad: function (options) {
     wx.loadFontFace({
       family: 'Concert One',
-      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/d8eab2fdfbc672c39e71/ConcertOne-Regular.ttf")',
-      success: console.log
+      source: 'url("/img/ConcertOne-Regular.ttf")',
+      success: console.log()
     })
     wx.loadFontFace({
       family: 'BenMo',
-      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/74ad43d3a3b717fba000/BenMoYouYuan-2.ttf")',
-      success: console.log
+      source: 'url("/img/BenMoYouYuan-2.ttf")',
+      success: console.log()
     })
   },
 
@@ -126,13 +126,11 @@ Page({
     const app = getApp()
     const { title, photoq, texta, photoa, textb, photob, userid } = page.data
     wx.request({
-      url: baseUrl + 'questions',
+      url: baseUrl + 'questions/',
       method: 'post',
       data: page.data,
       success: function (res) {
-        console.log(res)
         const id = res.data.question_info.id
-        console.log(id)
         wx.reLaunch({
           url: `/pages/preview-page/preview-page?id=${id}`
         })

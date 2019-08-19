@@ -20,8 +20,9 @@
 </scroll-view>
 </view>
 
+
 <view class="page rel m-top">
-  <block wx:for="{{questions}}" wx:for-item="question">
+  <!-- <block wx:for="{{questions}}" wx:for-item="question">
   <view class="cu-bar bg-white margin-top">
     <view class="action">
       <view class="padding margin-left-lg" >{{question.title}}</view>
@@ -60,7 +61,7 @@
         </view>
 
 </view>
-  </block>
+  </block> -->
 
 
   <block wx:for="{{questions}}" wx:for-item="question">
@@ -88,4 +89,3 @@
   </view>
 
 </view>
-
