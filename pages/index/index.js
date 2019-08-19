@@ -1,6 +1,5 @@
 //index.js
 import apiClient from "../../utils/apiClient.js"
-
 const app = getApp()
 
 Page({
@@ -146,7 +145,6 @@ Page({
       success: function (res) {
         const questions = res.data.question_lists
         console.log(questions)
-        
         page.setData({
           questions
         })

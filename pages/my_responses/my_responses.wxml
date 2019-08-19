@@ -1,3 +1,4 @@
+
 <view>
   <cu-custom bgColor="bg-gradual-pink" class="topbar" isBack="{{true}}">
     <view slot="backText">
@@ -63,7 +64,6 @@
 </view>
   </block> -->
 
-
   <block wx:for="{{questions}}" wx:for-item="question">
     <view class="card-product"  >
       <h2>{{question.title}}</h2>
@@ -82,6 +82,7 @@
       <ol>{{question.choice_info[1].text}}</ol>
       <ol>{{question.percentage_two}}</ol>
     </view>
+
   </block>
 
   <view class="div-fixed width bg-gray d-flex justify-around">
@@ -89,3 +90,4 @@
   </view>
 
 </view>
+

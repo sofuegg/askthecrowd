@@ -1,4 +1,5 @@
-//index.js
+
+// pages/asked_questions/asked_questions.js
 import apiClient from "../../utils/apiClient.js"
 
 const app = getApp()
@@ -137,36 +138,86 @@ Page({
           })
         }
       })
-    }
-
-    const page = this
-    const options = {
+      
+      wx.loadFontFace({
+      family: 'Concert One',
+      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/d8eab2fdfbc672c39e71/ConcertOne-Regular.ttf")',
+      success: console.log
+      })
+      wx.loadFontFace({
+      family: 'BenMo',
+      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/74ad43d3a3b717fba000/BenMoYouYuan-2.ttf")',
+      success: console.log
+      })
+      
+       const page = this
+       const user_id = wx.getStorageSync('userid')
+       console.log(user_id)
+       const options = {
+       userid: {user_id},
       success: function (res) {
         const questions = res.data.question_lists
         console.log(questions)
-
-        page.setData({
+         page.setData({
           questions
-        })
-      },
+         })
+      }, 
       fail: function (err) {
         console.log(err)
       }
     }
-    apiClient.getQuestions(options)
+    apiClient.getAskedquestions(options)
+  },
 
-    wx.loadFontFace({
-      family: 'Concert One',
-      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/d8eab2fdfbc672c39e71/ConcertOne-Regular.ttf")',
-      success: console.log
-    })
-    wx.loadFontFace({
-      family: 'BenMo',
-      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/74ad43d3a3b717fba000/BenMoYouYuan-2.ttf")',
-      success: console.log
-    })
+  /**
+   * Lifecycle function--Called when page is initially rendered
+   */
+  onReady: function () {
 
   },
+
+  /**
+   * Lifecycle function--Called when page show
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * Lifecycle function--Called when page hide
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * Lifecycle function--Called when page unload
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * Page event handler function--Called when user drop down
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * Called when page reach bottom
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * Called when user click on the top right corner to share
+   */
+  onShareAppMessage: function () {
+
+  },
+   
   onShow: function () {
     this.setData({
       TabCur: app.globalData.TabCur
@@ -203,34 +254,7 @@ Page({
     }
   },
 
-  newAnswer: function (e) {
-    const page = this
-    const app = getApp()
-    const question_id = e.currentTarget.dataset.id
-    const choice_id = e.currentTarget.dataset.choice_id
-    const user_id = wx.getStorageSync('userid')
-    const newAnswer = {
-      question_id,
-      choice_id,
-      user_id
-    }
-    apiClient.createAnswer({ data: newAnswer })
-
-    const options = {
-      success: function (res) {
-        const questions = res.data.question_lists
-
-        page.setData({
-          questions
-        })
-      },
-      fail: function (err) {
-        console.log(err)
-      }
-    }
-    apiClient.getQuestions(options)
-
-  },
+ 
   SwitchImage1: function (e) {
     console.log(111111, e)
     // console.log(e.target.dataset.url)
@@ -278,5 +302,6 @@ Page({
     wx.navigateTo({
       url: '/pages/asking-page/asking-page',
     })
+
   }
 })
