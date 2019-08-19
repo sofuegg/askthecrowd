@@ -1,21 +1,46 @@
 /* pages/preview-page/preview-page.wxss */
+#btnflex {
+ width: 100%;
+}
 .rel {
-  position: relative;
+ position: relative;
 }
-
 .abs {
-  position: absolute;
+ position: absolute;
 }
-
 .top-left {
-  top: 15rpx;
-  left: 15rpx;
+ top: 15rpx;
+ left: 15rpx;
 }
-
+.bottom-box {
+  padding: 50rpx;
+}
 .pad {
-  padding: 10rpx 10rpx;
+ padding: 10rpx 10rpx;
 }
-
+.select-box {
+  padding: 50rpx;
+}
+.radiusg {
+ border-radius: 15rpx
+}
+.borderg {
+ border-color:lightblue;
+ border-width: 5rpx;
+ border-style: solid;
+}
+.active {
+ border: 2px solid yellow;
+}
+.select-btn {
+  width: 200rpx;
+  height: 200rpx;
+  padding: 15rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: cover;
+}
 .button {
   font-family: 'Concert One', 'BenMo';
   font-size: 40rpx;
@@ -55,10 +80,15 @@
   font-weight: 400;
 }
 
+.font-36{
+  font-size: 36px;
+}
+.font-26 {
+  font-size: 26px;
+}
 .font-20 {
   font-size: 20px;
 }
-
 .font-18 {
-  font-size: 20px;
+  font-size: 18px;
 }

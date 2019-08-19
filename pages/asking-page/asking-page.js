@@ -20,12 +20,12 @@ Page({
     wx.loadFontFace({
       family: 'Concert One',
       source: 'url("/img/ConcertOne-Regular.ttf")',
-      success: console.log
+      success: console.log()
     })
     wx.loadFontFace({
       family: 'BenMo',
       source: 'url("/img/BenMoYouYuan-2.ttf")',
-      success: console.log
+      success: console.log()
     })
   },
 
@@ -126,13 +126,11 @@ Page({
     const app = getApp()
     const { title, photoq, texta, photoa, textb, photob, userid } = page.data
     wx.request({
-      url: baseUrl + 'questions',
+      url: baseUrl + 'questions/',
       method: 'post',
       data: page.data,
       success: function (res) {
-        console.log(res)
         const id = res.data.question_info.id
-        console.log(id)
         wx.reLaunch({
           url: `/pages/preview-page/preview-page?id=${id}`
         })

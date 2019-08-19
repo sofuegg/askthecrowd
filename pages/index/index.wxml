@@ -20,11 +20,7 @@
 </scroll-view>
 </view>
 
-
 <view class="page rel m-top">
-<text>{{TabCur}}</text>
-<text>{{TabCur == 1}}</text>
-  <view wx:if="{{TabCur == 1}}">
   <block wx:for="{{questions}}" wx:for-item="question">
   <view class="cu-bar bg-white margin-top">
     <view class="action">
@@ -65,7 +61,6 @@
 
 </view>
   </block>
-  </view>
 
 
   <block wx:for="{{questions}}" wx:for-item="question">

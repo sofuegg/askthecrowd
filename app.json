@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/landingpage/landingpage",
     "pages/index/index",
     "pages/logs/logs",
     "pages/camera/camera",
@@ -17,6 +18,23 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/my_responses/my_responses",
+        "text": "wut"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/asked_questions/asked_questions",
+        "text": "其他"
+      }
+    ]
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"

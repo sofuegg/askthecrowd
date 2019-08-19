@@ -57,47 +57,49 @@ Page({
         icon: "/icons/question-answer-line.png"
       }
     ],
+    list: [{
+      text: "My questions",
+      iconPath: "/icons/Question.png",
+      selectedIconPath: "",
+    },
+    {
+      text: "Public",
+      iconPath: "/icons/svg_global.png",
+      selectedIconPath: "",
+    },
+    {
+      text: "Asked Questions",
+      iconPath: "/icons/question-answer-line.png",
+      selectedIconPath: "",
+    },
+    ],
     TabCur: 1,
     scrollLeft: 0,
-    active: "active",
-    // open: false,
-    list: [
-      {
-        id: 'form',
-        name: '表单',
-        open: false,
-      },
-    ]
+    active: "active"
+  },
+  tabChange(e) {
+    console.log('tab change', e)
   },
   kindToggle: function (e) {
-    console.log(e)
-    // const questions = this.data.questions
-    // var id = e.currentTarget.id
-    // console.log(id)
-    // for (var i = 0, len = questions.length; i < len; ++i) {
-    //   if (questions[i].id == id) {
-    //     questions[i].open = !questions[i].open
-    //   } else {
-    //     questions[i].open = false
-    //   }
-    // }
+    // console.log(e)
     const q = this.data.questions
     const new_qs1 = q.map(function (element) {
       // console.log(element)
         console.log(111111, element.id == e.currentTarget.dataset.id)
         console.log(element.id)
-      console.log(e.currentTarget.dataset.id)
+      console.log(5555, e.currentTarget.dataset)
       if (element.id == e.currentTarget.dataset.id) {
         element.open = true
+
         return element
       } else {
         return element
       }
-      console.log(1111111, new_qs1)
-      this.setData({
-        questions: new_qs1
-      });
     })
+    console.log(1111111, new_qs1)
+    this.setData({
+      questions: new_qs1
+    });
   },
   //事件处理函数
   bindViewTap: function() {
@@ -132,6 +134,10 @@ Page({
           })
         }
       })
+      
+      this.setData({
+        TabCur: app.globalData.TabCur
+      })
     }
 
     const page = this
@@ -161,6 +167,11 @@ Page({
     })
 
   },
+  onShow: function () {
+    this.setData({
+      TabCur: app.globalData.TabCur
+    })
+  },
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -169,13 +180,26 @@ Page({
       hasUserInfo: true
     })
   },
-
   tabSelect(e) {
     console.log(e)
-    this.setData({
-      TabCur: e.currentTarget.dataset.id,
-      scrollLeft: (e.currentTarget.dataset.id - 1) * 60
-    })
+    app.globalData.TabCur = e.currentTarget.dataset.id
+    const TabCur = app.globalData.TabCur
+    console.log(111111, TabCur)
+    if (TabCur == 1) {
+      wx.switchTab({
+        url: '/pages/index/index'
+      })
+    } else {
+      if (TabCur == 0) {
+        wx.switchTab({
+          url: '/pages/my_responses/my_responses'
+        })
+      } else {
+        wx.switchTab({
+          url: '/pages/asked_questions/asked_questions'
+        }) 
+      }
+    }
   },
 
   newAnswer: function (e) {

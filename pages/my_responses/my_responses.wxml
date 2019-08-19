@@ -1,4 +1,69 @@
-<!--pages/my_responses/my_responses.wxml-->
+
+<view>
+  <cu-custom bgColor="bg-gradual-pink" class="topbar" isBack="{{true}}">
+    <view slot="backText">
+      <text class="font font-20">Back</text>
+    </view>
+    <view slot="content">
+      <text class="font">Ask the Crowd 问群众</text>
+    </view>
+  </cu-custom>
+
+<scroll-view scroll-x class="bg-white nav sticky">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-black cur':''}}" wx:for="{{navbaricon}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      <view class="column flex align-center justify-center">
+      <image style="margin-top: 5px;" class="img" src="{{item.icon}}"></image>
+      <text style="margin: -10px;" class="text-xs">{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+</view>
+
+
+<view class="page rel m-top">
+  <!-- <block wx:for="{{questions}}" wx:for-item="question">
+  <view class="cu-bar bg-white margin-top">
+    <view class="action">
+      <view class="padding margin-left-lg" >{{question.title}}</view>
+    </view>
+  </view>
+  <view class="bg-img bg-mask padding-tb-xl flex justify-center align-center" style="background-image: url('{{question.photo}}'); height: 414rpx;">
+    <view class="text-sl text-white">{{question.choice_text}}</view>
+  </view>
+
+<view class="cu-bar bg-white flex solid-bottom padding justify-around" >
+  
+
+<view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive1}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_info[0].photo}});" data-text="{{question.choice_info[0].text}}" data-url="{{question.choice_info[0].photo}}" bindtap="SwitchImage1">
+  </view>
+
+  <view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive2}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_info[1].photo}});" data-text="{{question.choice_info[1].text}}" data-url="{{question.choice_info[1].photo}}" bindtap="SwitchImage2">
+  </view>
+
+ 
+</view>
+
+<view class="cu-bar bg-white flex solid-bottom padding justify-around">
+          <view class="kind-list">
+                <view class="kind-list__item">
+                    <view class="weui-flex kind-list__item-hd">
+                        <button data-id="{{question.id}}" class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg justify-center weui-flex__item {{question.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">Vote</button>
+                    </view>
+                    <view class="kind-list__item-bd {{question.open ? 'kind-list__item-bd_show' : ''}}">
+                        <view class="weui-cells {{question.open ? 'weui-cells_show' : ''}}">
+                           <wux-circle class="{{display}}" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_one }}">{{ question.percentage_one + '%' }}</wux-circle>
+                           <wux-circle class="{{display}}" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_two }}">{{ question.percentage_two + '%' }}</wux-circle>
+
+                        </view>
+                    </view>
+                </view>
+        </view> -->
+<!-- 
+</view>
+  </block> -->
+
   <block wx:for="{{questions}}" wx:for-item="question">
     <view class="card-product"  >
       <h2>{{question.title}}</h2>
@@ -17,4 +82,12 @@
       <ol>{{question.choice_info[1].text}}</ol>
       <ol>{{question.percentage_two}}</ol>
     </view>
+
   </block>
+
+  <view class="div-fixed width bg-gray d-flex justify-around">
+    <button class="button" hover-class="btn-hover" bindtap="goToAsk">Ask a Question!</button>
+  </view>
+
+</view>
+
