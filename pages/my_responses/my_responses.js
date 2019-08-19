@@ -37,11 +37,13 @@ Page({
     swiperList2: [{
       choice: 'A',
       percent: "70",
-      text: 'Yes'},
-      { choice: 'B',
+      text: 'Yes'
+    },
+    {
+      choice: 'B',
       percent: '30',
       text: 'No'
-      }
+    }
     ],
     percent: 50,
     navbaricon: [
@@ -86,8 +88,8 @@ Page({
     const q = this.data.questions
     const new_qs1 = q.map(function (element) {
       // console.log(element)
-        console.log(111111, element.id == e.currentTarget.dataset.id)
-        console.log(element.id)
+      console.log(111111, element.id == e.currentTarget.dataset.id)
+      console.log(element.id)
       console.log(5555, e.currentTarget.dataset)
       if (element.id == e.currentTarget.dataset.id) {
         element.open = true
@@ -103,19 +105,19 @@ Page({
     });
   },
   //事件处理函数
-  bindViewTap: function() {
+  bindViewTap: function () {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
-  
+
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -135,18 +137,13 @@ Page({
           })
         }
       })
-      
-      this.setData({
-        TabCur: app.globalData.TabCur
-      })
     }
-
     const page = this
     const options = {
       success: function (res) {
         const questions = res.data.question_lists
         console.log(questions)
-        
+
         page.setData({
           questions
         })
@@ -174,7 +171,7 @@ Page({
       TabCur: app.globalData.TabCur
     })
   },
-  getUserInfo: function(e) {
+  getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
@@ -182,6 +179,7 @@ Page({
       hasUserInfo: true
     })
   },
+
   tabSelect(e) {
     console.log(e)
     app.globalData.TabCur = e.currentTarget.dataset.id
@@ -199,7 +197,7 @@ Page({
       } else {
         wx.switchTab({
           url: '/pages/asked_questions/asked_questions'
-        }) 
+        })
       }
     }
   },
@@ -215,7 +213,7 @@ Page({
       choice_id,
       user_id
     }
-    apiClient.createAnswer({data:newAnswer})
+    apiClient.createAnswer({ data: newAnswer })
 
     const options = {
       success: function (res) {
@@ -246,8 +244,8 @@ Page({
       }
     });
     console.log(new_qs)
-    
-   
+
+
     this.setData({
       questions: new_qs,
     })
@@ -275,7 +273,7 @@ Page({
       active: ""
     })
   },
-  goToAsk () {
+  goToAsk() {
     wx.navigateTo({
       url: '/pages/asking-page/asking-page',
     })
