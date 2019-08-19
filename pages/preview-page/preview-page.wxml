@@ -7,56 +7,28 @@
   </view>
 </cu-custom>
 
-<view class="cu-bar bg-white margin-top">
-  <view class="action" >
-    <text class="cuIcon-title text-blue"></text>Your Question: Which dress do you like?
+<view class="page rel m-top">
+  <view class="cu-bar bg-white margin-top">
+    <view class="padding margin-left-lg font font-26">{{question.title}}</view>
   </view>
-  <view class="action">
-			{{imgList.length}}/3
-		</view>
- </view>
 
-
-<swiper class="rel screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
-        <swiper-item wx:for="{{swiperList1}}" wx:key>
-          <image src="{{item.url}}" mode="aspectFit" wx:if="{{item.type=='image'}}"></image>
-        <text class="abs top-left text-lg text-cut pad bg-green radius" >{{item.choice}}</text>
-        </swiper-item>
-      </swiper>
-
-
-
-<view class="cu-bar bg-white">
-  <view class="action">
-  
+  <view class="bg-img bg-mask padding-tb-xl flex justify-center align-center" style="background-image: url('{{bigphoto}}'); height: 414rpx;">
+    <view class="text-sl text-white font font-36">{{bigtext}}</view>
   </view>
-  
-</view>
 
-    <view class="card-product"  >
-      <h2>{{question.title}}</h2>
-<!-- question.photo is a url, which is a string -->      
-      <ol>{{question.photo}}</ol> 
-<!-- here is a button to vote, which will trigger the action createAnswer -->
-      <!-- <button class="btn btn-flat" bindtap="newAnswer" data-id="{{question.id}}" data-choice_id="{{question.choice_info[0].id}}">Vote A</button> -->
-<!-- photo, text and stats for the first choice -->
-      <ol>{{question.choice_one.photo}} </ol>
-      <ol>{{question.choice_one.text}}</ol> 
-      <ol>{{question.percentage_one}}</ol>
-<!-- here is a button to vote, which will trigger the action createAnswer -->
-      <!-- <button class="btn btn-flat" bindtap="newAnswer" data-id="{{question.id}}" data-choice_id="{{question.choice_info[1].id}}">Vote B</button> -->
-<!-- photo, text and stats for the second choice -->
-      <ol>{{question.choice_two.photo}}</ol>
-      <ol>{{question.choice_two.text}}</ol>
-      <ol>{{question.percentage_two}}</ol>
+  <view class="cu-bar bg-white flex solid-bottom padding justify-around select-box">
+    <view class="radiusg borderg shadow-blur-lg select-btn {{toggleactive1}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_one.photo}});" data-text="{{question.choice_one.text}}" data-url="{{question.choice_one.photo}}" bindtap="SwitchImage1">
+      <view class="text-sl text-white font">{{c1text}}</view>
     </view>
 
+    <view class="radiusg borderg shadow-blur-lg select-btn {{toggleactive2}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_two.photo}});" data-text="{{question.choice_two.text}}" data-url="{{question.choice_two.photo}}" bindtap="SwitchImage2">
+      <view class="text-sl text-white font">{{c2text}}</view>
+    </view>
+  </view>
 
+</view>
 
-
-<view class="flex solid-bottom justify-around">
-  <!-- AskYourCrowd: select several frnds so that a card would be forward to the sharing-to-frnd page  -->
+<view class="flex solid-bottom justify-around button-bar">
   <button style='opacity: 100;' class="button" hover-class="btn-hover" bindtap='onShareAppMessage' open-type="share">Ask Ur Friends 问朋友</button>
-  <!-- AskTheCrowd: a link would be shared to the friends circle so that frnds would be forward to the sharing-to-frnd page  -->
   <button class="button" hover-class="btn-hover" bindtap="toIndex">Ask the Crowd 问群众</button>
- </view>
+</view>

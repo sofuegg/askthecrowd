@@ -40,7 +40,7 @@
   background: rgba(125, 0, 163, 0.763);
   box-shadow: 0 3px 2px 0 rgba(0,0,0,0.1);
   border-radius: 10px;
-  height: 52px;
+  height: 60px;
   width: 180px;
   padding: 0 30px;
   color: #fff;
