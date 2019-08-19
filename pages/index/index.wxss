@@ -187,7 +187,6 @@
 
 .column {
   flex-direction: column;
- display: none;
 }
 
 
