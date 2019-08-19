@@ -59,7 +59,46 @@ Page({
       }
     ],
     TabCur: 1,
-    scrollLeft: 0
+    scrollLeft: 0,
+    active: "active",
+    // open: false,
+    list: [
+      {
+        id: 'form',
+        name: '表单',
+        open: false,
+      },
+    ]
+  },
+  kindToggle: function (e) {
+    console.log(e)
+    // const questions = this.data.questions
+    // var id = e.currentTarget.id
+    // console.log(id)
+    // for (var i = 0, len = questions.length; i < len; ++i) {
+    //   if (questions[i].id == id) {
+    //     questions[i].open = !questions[i].open
+    //   } else {
+    //     questions[i].open = false
+    //   }
+    // }
+    const q = this.data.questions
+    const new_qs1 = q.map(function (element) {
+      // console.log(element)
+        console.log(111111, element.id == e.currentTarget.dataset.id)
+        console.log(element.id)
+      console.log(e.currentTarget.dataset.id)
+      if (element.id == e.currentTarget.dataset.id) {
+        element.open = true
+        return element
+      } else {
+        return element
+      }
+      console.log(1111111, new_qs1)
+      this.setData({
+        questions: new_qs1
+      });
+    })
   },
   //事件处理函数
   bindViewTap: function() {
@@ -101,6 +140,7 @@ Page({
       success: function (res) {
         const questions = res.data.question_lists
         console.log(questions)
+        
         page.setData({
           questions
         })
@@ -132,12 +172,13 @@ Page({
     })
   },
 
-  // tabSelect(e) {
-  //   console.log(e)
-  //   this.setData({
-  //     TabCur: e.currentTarget.dataset.id,
-  //     scrollLeft: (e.currentTarget.dataset.id - 1) * 60
-  //   })
+  tabSelect(e) {
+    console.log(e)
+    this.setData({
+      TabCur: e.currentTarget.dataset.id,
+      scrollLeft: (e.currentTarget.dataset.id - 1) * 60
+    })
+  },
 
   newAnswer: function (e) {
     const page = this
@@ -202,6 +243,12 @@ Page({
     });
     this.setData({
       questions: new_qs,
+    })
+  },
+  choose: function (e) {
+    this.setData({
+      display: "display",
+      active: ""
     })
   },
   goToAsk () {
