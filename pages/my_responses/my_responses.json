@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "wux-circle": "../../dist/circle/index"
+  }
+}
