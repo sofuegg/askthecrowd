@@ -2,8 +2,8 @@
 
 <cover-image class="landing-page" src="https://blackberry.uk.com/wp-content/uploads/2017/11/blackberry-target-audience-blog.jpg"></cover-image>
 <view class="div">
-<view class="title">Ask The Crowd</view>
-<view class="slogan" >Making Decision Easier</view>
+<view class="title font font-80">Ask The Crowd</view>
+<view class="slogan font font-40">Making Decision Easier</view>
 </view>
-<button class="start-btn lg" bindtap="goToIndex">Start Now</button>
+<button class="start-btn lg font" bindtap="goToIndex">Start Now</button>
 

@@ -38,3 +38,17 @@ page {
 margin-top: 150rpx;
 border-radius: 10rpx;
 }
+
+.font {
+  font-family: 'Concert One';
+  font-style: cursive;
+  font-weight: 400;
+}
+
+.font-80 {
+  font-size: 80rpx;
+}
+
+.font-40 {
+  font-size: 40rpx;
+}
