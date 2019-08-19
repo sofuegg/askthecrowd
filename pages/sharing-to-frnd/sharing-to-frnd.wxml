@@ -6,13 +6,13 @@
 <!-- question.photo is a url, which is a string -->      
       <ol>{{question.photo}}</ol> 
 <!-- here is a button to vote, which will trigger the action createAnswer -->
-      <button class="btn btn-flat" bindtap="newAnswer" data-id="{{question.id}}" data-choice_id="{{question.choice_info[0].id}}">Vote A</button>
+      <button class="btn btn-flat" bindtap="newAnswer" data-id="{{question.id}}" data-choice_id="{{question.choice_one.id}}">Vote A</button>
 <!-- photo, text and stats for the first choice -->
       <ol>{{question.choice_info[0].photo}} </ol>
       <ol>{{question.choice_info[0].text}}</ol> 
       <ol>{{question.percentage_one}}</ol>
 <!-- here is a button to vote, which will trigger the action createAnswer -->
-      <button class="btn btn-flat" bindtap="newAnswer" data-id="{{question.id}}" data-choice_id="{{question.choice_info[1].id}}">Vote B</button>
+      <button class="btn btn-flat" bindtap="newAnswer" data-id="{{question.id}}" data-choice_id="{{question.choice_two.id}}">Vote B</button>
 <!-- photo, text and stats for the second choice -->
       <ol>{{question.choice_info[1].photo}}</ol>
       <ol>{{question.choice_info[1].text}}</ol>

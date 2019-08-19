@@ -23,7 +23,7 @@ Page({
       id,
       success: function (res) {
         const question = res.data.question_info
-        console.log(question)
+        console.log(678, question)
         page.setData({
           question
         })
@@ -88,16 +88,17 @@ Page({
   newAnswer: function (e) {
     const page = this
     const app = getApp()
-    console.log(e)
     const question_id = page.data.question_id
-    console.log(question_id)
+    console.log(888, question_id)
     const choice_id = e.currentTarget.dataset.choice_id
+    console.log(23132, choice_id)
     const user_id = wx.getStorageSync('userid')
     const newAnswer = {
       question_id,
       choice_id,
       user_id
     }
+    console.log(23241, newAnswer)
     apiClient.createAnswer({ data: newAnswer })
 
     const getOptions = {

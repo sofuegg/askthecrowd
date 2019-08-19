@@ -17,7 +17,16 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    wx.loadFontFace({
+      family: 'Concert One',
+      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/d8eab2fdfbc672c39e71/ConcertOne-Regular.ttf")',
+      success: console.log
+    })
+    wx.loadFontFace({
+      family: 'BenMo',
+      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/74ad43d3a3b717fba000/BenMoYouYuan-2.ttf")',
+      success: console.log
+    })
   },
 
   /**
@@ -72,7 +81,7 @@ Page({
   getPhoto(e) {
     const page = this
     wx.chooseImage({
-      count: 2,
+      count: 1,
       sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
       success(res) {
@@ -90,7 +99,12 @@ Page({
             page.setData({ ...oldData })
             if (field == 'photoq') { page.setData({ shadowq: "active" }); }
             if (field == 'photoa') { page.setData({ shadowa: "active" }); }
-            if (field == 'photob') { page.setData({ shadowb: "active" }); }           
+            if (field == 'photob') { page.setData({ shadowb: "active" }); }
+            wx.showToast({
+              title: '上传成功',
+              icon: 'success',
+              duration: 1200
+            })
           }
         ).catch(console.error);
       }
@@ -116,11 +130,11 @@ Page({
       method: 'post',
       data: page.data,
       success: function (res) {
-        console.log(res.data)
+        console.log(res)
         const id = res.data.question_info.id
         console.log(id)
-        wx.navigateTo({
-          url: `/pages/preview-page/preview-page?id=${id}`,
+        wx.reLaunch({
+          url: `/pages/preview-page/preview-page?id=${id}`
         })
       },
       fail: function (err) {
@@ -131,6 +145,6 @@ Page({
     wx.navigateTo({
       url: '../preview-page/preview-page',
     })
-  }
+  },
 
 })
