@@ -168,12 +168,29 @@ Page({
       source: 'url("/img/BenMoYouYuan-2.ttf")',
       success: console.log
     })
-
+    // const q = page.data.questions
+    // const new_qs = q.map(function (element) {
+    //   element.photo = element.choice_info[0].photo || '/img/askthecrowd-default.jpeg'
+    //   element.choice_text = element.choice_info[0].text || ''
+    //   return element
+    // })
+    // this.setData({
+    //   questions: new_qs
+    // })
   },
   onShow: function () {
     this.setData({
       TabCur: app.globalData.TabCur
     })
+    // const q = this.data.questions
+    // const new_qs = q.map(function (element) {
+    //   element.photo = element.choice_info[0].photo || '/img/askthecrowd-default.jpeg'
+    //   element.choice_text = element.choice_info[0].text || ''
+    //   return element
+    // })
+    // this.setData({
+    //   questions: new_qs
+    // })
   },
   getUserInfo: function(e) {
     console.log(e)
