@@ -7,7 +7,8 @@
     "pages/preview-page/preview-page",
     "pages/answering-page/answering-page",
     "pages/sharing-to-frnd/sharing-to-frnd",
-    "pages/new-home/new-home"
+    "pages/new-home/new-home",
+    "pages/landingpage/landingpage"
   ],
   "window": {
     "backgroundTextStyle": "light",

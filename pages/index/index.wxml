@@ -20,7 +20,6 @@
 </scroll-view>
 </view>
 
-
 <view class="page rel m-top">
 <text>{{TabCur}}</text>
 <text>{{TabCur == 1}}</text>

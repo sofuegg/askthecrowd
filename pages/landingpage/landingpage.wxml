@@ -1,0 +1,9 @@
+<!--pages/landingpage/landingpage.wxml-->
+
+<cover-image class="landing-page" src="https://blackberry.uk.com/wp-content/uploads/2017/11/blackberry-target-audience-blog.jpg"></cover-image>
+<view class="div">
+<view class="title">Ask The Crowd</view>
+<view class="slogan" >Making Decision Easier</view>
+</view>
+<button class="start-btn lg" bindtap="goToIndex">Start Now</button>
+
