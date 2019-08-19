@@ -81,16 +81,17 @@ Page({
     console.log('tab change', e)
   },
   kindToggle: function (e) {
-    // console.log(e)
+    console.log(e)
     const q = this.data.questions
     const new_qs1 = q.map(function (element) {
-      // console.log(element)
-        console.log(111111, element.id == e.currentTarget.dataset.id)
-        console.log(element.id)
-      console.log(5555, e.currentTarget.dataset)
+      console.log(element)
+        // console.log(111111, element.id == e.currentTarget.dataset.id)
+        // console.log(element.id)
+      // console.log(5555, e.currentTarget.dataset)
       if (element.id == e.currentTarget.dataset.id) {
         element.open = true
-
+        element.percentage_one = Math.round(element.percentage_one)
+        element.percentage_two = Math.round(element.percentage_two)
         return element
       } else {
         return element
@@ -165,12 +166,29 @@ Page({
       source: 'url("/img/BenMoYouYuan-2.ttf")',
       success: console.log
     })
-
+    // const q = page.data.questions
+    // const new_qs = q.map(function (element) {
+    //   element.photo = element.choice_info[0].photo || '/img/askthecrowd-default.jpeg'
+    //   element.choice_text = element.choice_info[0].text || ''
+    //   return element
+    // })
+    // this.setData({
+    //   questions: new_qs
+    // })
   },
   onShow: function () {
     this.setData({
       TabCur: app.globalData.TabCur
     })
+    // const q = this.data.questions
+    // const new_qs = q.map(function (element) {
+    //   element.photo = element.choice_info[0].photo || '/img/askthecrowd-default.jpeg'
+    //   element.choice_text = element.choice_info[0].text || ''
+    //   return element
+    // })
+    // this.setData({
+    //   questions: new_qs
+    // })
   },
   getUserInfo: function(e) {
     console.log(e)
