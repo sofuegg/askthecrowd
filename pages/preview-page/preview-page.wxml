@@ -18,17 +18,17 @@
 
   <view class="cu-bar bg-white flex solid-bottom padding justify-around select-box">
     <view class="radiusg borderg shadow-blur-lg select-btn {{toggleactive1}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_one.photo}});" data-text="{{question.choice_one.text}}" data-url="{{question.choice_one.photo}}" bindtap="SwitchImage1">
-      <view class="text-sl text-white font">{{c1text}}</view>
+      <view class="text-sl text-white font font-26">{{c1text}}</view>
     </view>
 
     <view class="radiusg borderg shadow-blur-lg select-btn {{toggleactive2}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_two.photo}});" data-text="{{question.choice_two.text}}" data-url="{{question.choice_two.photo}}" bindtap="SwitchImage2">
-      <view class="text-sl text-white font">{{c2text}}</view>
+      <view class="text-sl text-white font font-26">{{c2text}}</view>
     </view>
   </view>
 
 </view>
 
-<view class="flex solid-bottom justify-around button-bar">
+<view class="flex solid-bottom justify-around">
   <button style='opacity: 100;' class="button" hover-class="btn-hover" bindtap='onShareAppMessage' open-type="share">Ask Ur Friends 问朋友</button>
   <button class="button" hover-class="btn-hover" bindtap="toIndex">Ask the Crowd 问群众</button>
 </view>

@@ -12,6 +12,9 @@
  top: 15rpx;
  left: 15rpx;
 }
+.bottom-box {
+  padding: 50rpx;
+}
 .pad {
  padding: 10rpx 10rpx;
 }
@@ -32,6 +35,11 @@
 .select-btn {
   width: 200rpx;
   height: 200rpx;
+  padding: 15rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: cover;
 }
 .button {
   font-family: 'Concert One', 'BenMo';

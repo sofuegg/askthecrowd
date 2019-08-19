@@ -42,5 +42,5 @@
 
 
 <view class="submit-pos">
-  <button class="button pulse" hover-class="btn-hover" bindtap="submitQ">Submit 我要问</button>
+  <button class="button pulse" hover-class="btn-hover" bindtap="submitQ">Submit 提交</button>
 </view>

@@ -11,8 +11,9 @@
   border-radius: 30rpx;
 }
 .active {
-  color: rgba(0,0,200,0.4) !important;
-  box-shadow: 0px 0px 10px 1px rgba(0, 0, 200, .2) !important;
+  color: rgba(0,0,200,0.5) !important;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 200, 0.5) !important;
+  font-weight: bold;
 }
 .input-card {
   padding: 0 30rpx 30rpx 30rpx;
@@ -44,6 +45,7 @@
   width: 180px;
   padding: 0 30px;
   color: #fff;
+  line-height: 1.2;
   text-transform: uppercase;
   text-decoration: none;
   transition: background .2s, transform .2s, box-shadow .2s;

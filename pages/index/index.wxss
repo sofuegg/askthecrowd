@@ -203,7 +203,7 @@
   border-radius: 10px;
   height: 60px;
   width: 180px;
-  padding: 0 12px;
+  padding: 3px 12px;
   color: #fff;
   text-transform: uppercase;
   line-height: 1.2;
