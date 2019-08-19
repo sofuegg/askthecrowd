@@ -130,8 +130,9 @@ Page({
       method: 'post',
       data: page.data,
       success: function (res) {
+        console.log(res)
         const id = res.data.question_info.id
-        wx.switchTab({
+        wx.reLaunch({
           url: `/pages/preview-page/preview-page?id=${id}`
         })
       },
