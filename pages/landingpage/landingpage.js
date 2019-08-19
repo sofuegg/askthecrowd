@@ -12,7 +12,11 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    wx.loadFontFace({
+      family: 'Concert One',
+      source: 'url("/img/ConcertOne-Regular.ttf")',
+      success: console.log()
+    })
   },
 
   /**
