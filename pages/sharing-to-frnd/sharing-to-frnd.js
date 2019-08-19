@@ -6,8 +6,8 @@ Page({
   /**
    * Page initial data
    */
-  data: {
 
+  data: {
   },
 
   /**
@@ -23,7 +23,7 @@ Page({
       id,
       success: function (res) {
         const question = res.data.question_info
-        console.log(678, question)
+        console.log("question_information", question)
         page.setData({
           question
         })
@@ -32,7 +32,6 @@ Page({
         console.log(err)
       }
     }
-
     apiClient.getQuestion(getOptions)
   },
 
@@ -47,13 +46,18 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+  
   },
 
   /**
    * Lifecycle function--Called when page hide
    */
   onHide: function () {
+    // if (wx.hideLoading) {    // 基础库 1.1.0 微信6.5.6版本开始支持，低版本需做兼容处理
+    //   wx.hideLoading();
+    // } else {
+    //   wx.hideToast();
+    // }
 
   },
 
@@ -89,16 +93,16 @@ Page({
     const page = this
     const app = getApp()
     const question_id = page.data.question_id
-    console.log(888, question_id)
+    console.log("question_id", question_id)
     const choice_id = e.currentTarget.dataset.choice_id
-    console.log(23132, choice_id)
+    console.log("choice_id", choice_id)
     const user_id = wx.getStorageSync('userid')
     const newAnswer = {
       question_id,
       choice_id,
       user_id
     }
-    console.log(23241, newAnswer)
+    console.log("new_anser_info", newAnswer)    
     apiClient.createAnswer({ data: newAnswer })
 
     const getOptions = {
@@ -106,7 +110,7 @@ Page({
       success: function (res) {
         const question = res.data.question_info
         page.setData({
-          question
+          question,
         })
       },
       fail: function (err) {
@@ -115,5 +119,7 @@ Page({
     }
 
     apiClient.getQuestion(getOptions)
+    this.setData({ disabled: true })
+
   }
 })
