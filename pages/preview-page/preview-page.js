@@ -109,7 +109,7 @@ Page({
     }
     return {
       title: 'Help me out',
-      imageUrl: '/img/timg.jpg',//图片地址
+      imageUrl: '/img/timg.jpg', //图片地址
       path: `/pages/sharing-to-frnd/sharing-to-frnd?id=${question_id}`,// 用户点击首先进入的当前页面
       success: function (res) {
         console.log("转发成功:");
@@ -134,9 +134,8 @@ Page({
       bigtext: question.choice_two.text
     })
   },
-
   toIndex: function() {
-    wx.navigateTo({
+    wx.reLaunch({
       url: '../index/index',
     })
   },

@@ -10,7 +10,8 @@
     "pages/sharing-to-frnd/sharing-to-frnd",
     "pages/new-home/new-home",
     "pages/my_responses/my_responses",
-    "pages/asked_questions/asked_questions"
+    "pages/asked_questions/asked_questions",
+    "custom-tab-bar/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
