@@ -141,10 +141,6 @@ Page({
         console.log(err)
       }
     })
-
-    wx.navigateTo({
-      url: '../preview-page/preview-page',
-    })
   },
 
 })
