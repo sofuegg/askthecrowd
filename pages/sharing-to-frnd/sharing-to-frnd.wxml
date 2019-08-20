@@ -14,33 +14,31 @@
   </view>
 
   <view class="cu-bar bg-white flex solid-bottom padding justify-around select-box">
-    <view class="radiusg borderg shadow-blur-lg select-btn {{toggleactive1}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_one.photo}});" data-text="{{question.choice_one.text}}" data-url="{{question.choice_one.photo}}" bindtap="SwitchImage1">
+    <view class="bg-img bg-mask padding-tb-xl flex justify-center align-center radiusg borderg shadow-blur-lg select-btn {{toggleactive1}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_one.photo}});" data-text="{{question.choice_one.text}}" data-url="{{question.choice_one.photo}}" bindtap="SwitchImage1">
       <view class="text-sl text-white font font-26">{{c1text}}</view>
     </view>
 
-    <view class="radiusg borderg shadow-blur-lg select-btn {{toggleactive2}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_two.photo}});" data-text="{{question.choice_two.text}}" data-url="{{question.choice_two.photo}}" bindtap="SwitchImage2">
+    <view class="bg-img bg-mask padding-tb-xl flex justify-center align-center radiusg borderg shadow-blur-lg select-btn {{toggleactive2}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_two.photo}});" data-text="{{question.choice_two.text}}" data-url="{{question.choice_two.photo}}" bindtap="SwitchImage2">
       <view class="text-sl text-white font font-26">{{c2text}}</view>
     </view>
   </view>
 </view>
 
-<!--pages/sharing-to-frnd/sharing-to-frnd.wxml-->
-<view class="empty"></view>
+<view class="cu-bar bg-white flex solid-bottom padding justify-around">
+  <view class="kind-list">
+    <view class="kind-list__item">
 
-<view class="card-product"  >
-      <h2>{{question.title}}</h2>
-<!-- question.photo is a url, which is a string -->      
-      <ol>{{question.photo}}</ol> 
-<!-- here is a button to vote, which will trigger the action createAnswer -->
-      <button class="btn btn-flat" bindtap="newAnswer" data-id="{{question.id}}" data-choice_id="{{question.choice_one.id}}" disabled="{{disabled}}">Vote A</button>
-<!-- photo, text and stats for the first choice -->
-      <ol>{{question.choice_info[0].photo}} </ol>
-      <ol>{{question.choice_info[0].text}}</ol> 
-      <ol>{{question.percentage_one}}</ol>
-<!-- here is a button to vote, which will trigger the action createAnswer -->
-      <button class="btn btn-flat" bindtap="newAnswer" data-id="{{question.id}}" data-choice_id="{{question.choice_two.id}}" disabled="{{disabled}}">Vote B</button>
-<!-- photo, text and stats for the second choice -->
-      <ol>{{question.choice_info[1].photo}}</ol>
-      <ol>{{question.choice_info[1].text}}</ol>
-      <ol>{{question.percentage_two}}</ol>
+      <view class="weui-flex kind-list__item-hd">
+        <button data-id="{{question.id}}" class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg justify-center weui-flex__item {{question.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">Vote</button>
+      </view>
+
+      <view class="kind-list__item-bd {{question.open ? 'kind-list__item-bd_show' : ''}}">
+        <view class="weui-cells {{question.open ? 'weui-cells_show' : ''}}">
+          <wux-circle class="{{display}}" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_one }}">{{ question.percentage_one + '%' }}</wux-circle>
+          <wux-circle class="{{display}}" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_two }}">{{ question.percentage_two + '%' }}</wux-circle>
+        </view>
+      </view>
+
     </view>
+  </view>
+</view>
