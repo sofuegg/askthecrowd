@@ -20,13 +20,13 @@ App({
     
     // 登录
     const app = this
-    wx.getStorage({
-      key: 'userid',
-      success: function(res) {
-        console.log('existing user')
-      },
-      fail: function(err) {
-        console.log('new user')
+    // wx.getStorage({
+    //   key: 'userid',
+    //   success: function(res) {
+    //     console.log('existing user')
+    //   },
+    //   fail: function(err) {
+    //     console.log('new user')
         wx.login({
           success: res => {
             // 发送 res.code 到后台换取 openId, sessionKey, unionId
@@ -51,8 +51,8 @@ App({
             })
           }
         })
-      }
-    })
+    //   }
+    // })
     
     // 获取用户信息
     wx.getSetting({

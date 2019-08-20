@@ -24,6 +24,7 @@ Page({
     const getOptions = {
       id,
       success: function (res) {
+        console.log(res)
         const question = res.data.question_info
         if (question.choice_one.photo == null) { 
           question.choice_one.photo = '/img/black.jpg', 
@@ -49,12 +50,12 @@ Page({
 
     wx.loadFontFace({
       family: 'Concert One',
-      source: 'url("/img/ConcertOne-Regular.ttf")',
+      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/d8eab2fdfbc672c39e71/ConcertOne-Regular.ttf")',
       success: console.log()
     })
     wx.loadFontFace({
       family: 'BenMo',
-      source: 'url("/img/BenMoYouYuan-2.ttf")',
+      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/74ad43d3a3b717fba000/BenMoYouYuan-2.ttf")',
       success: console.log()
     })
   },
@@ -105,6 +106,9 @@ Page({
    * Called when user click on the top right corner to share
    */
   onShareAppMessage: function (ops) {
+    const page = this
+    const question_id = page.data.question_id
+    console.log(question_id)
     if (ops.from === 'button') {
       console.log(ops.target)
     }
@@ -121,6 +125,7 @@ Page({
       }
     }
   },
+
   SwitchImage1: function (e) {
     const question = this.data.question
     this.setData({ 

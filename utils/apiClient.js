@@ -45,7 +45,6 @@ const getAskedquestions = (options) => {
 }
 
 
-
 const getQuestion = options => {
   const { id, success, fail } = options
 

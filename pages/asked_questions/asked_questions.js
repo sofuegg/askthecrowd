@@ -156,9 +156,15 @@ Page({
        userid: {user_id},
       success: function (res) {
         const questions = res.data.question_lists
+        console.log(11111, questions)
+        const statsRoundedQs = questions.map(function (element){
+          Math.round(element.percentage_one)
+          Math.round(element.percentage_two)
+          return element
+        })
         console.log(questions)
          page.setData({
-          questions
+           questions: statsRoundedQs
          })
       }, 
       fail: function (err) {

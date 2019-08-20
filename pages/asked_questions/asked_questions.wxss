@@ -241,3 +241,8 @@
 .axis {
   z-index: 20;
 }
+
+.justify-around {
+  display: flex;
+  justify-content: around;
+}

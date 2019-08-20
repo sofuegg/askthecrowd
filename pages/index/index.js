@@ -80,15 +80,58 @@ Page({
   tabChange(e) {
     console.log('tab change', e)
   },
+
   kindToggle: function (e) {
+    const page = this
+    const app = getApp()
+    const question_id = page.data.question_id
+    console.log("question_id", question_id)
+    const choice_id = page.data.choice_id
+    console.log("choice_id", choice_id)
+    const user_id = wx.getStorageSync('userid')
+    console.log("user_id", user_id)
+    const newAnswer = {
+      question_id,
+      choice_id,
+      user_id
+    }
+    console.log("parameters_hash", newAnswer)
+    apiClient.createAnswer({ 
+      data: newAnswer,
+      success: function (res) {
+        console.log(res)
+        const question = res.data.question_lists
+        console.log(33333, question)
+        // get the current list of questions
+        // find the index of the updated question
+        // replace the current data with the updated data
+        // setData using the updated array
+        const questions = page.data.questions
+        questions.forEach(function (item, index) {
+          console.log(22222, item)
+          if(item.id === question.id) {
+            question.photo = item.photo
+            Object.assign(questions[index], question)
+          }  
+        });
+        
+        page.setData({
+          questions
+        })
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+       })
+
     console.log(e)
     const q = this.data.questions
     const new_qs1 = q.map(function (element) {
-      console.log(element)
+      // console.log(element)
         // console.log(111111, element.id == e.currentTarget.dataset.id)
         // console.log(element.id)
       // console.log(5555, e.currentTarget.dataset)
-      if (element.id == e.currentTarget.dataset.id) {
+      if (element.id === e.currentTarget.dataset.id) {
         element.open = true
         element.percentage_one = Math.round(element.percentage_one)
         element.percentage_two = Math.round(element.percentage_two)
@@ -144,6 +187,7 @@ Page({
     const page = this
     const options = {
       success: function (res) {
+        console.log(res)
         const questions = res.data.question_lists
         console.log(questions)
         page.setData({
@@ -158,13 +202,13 @@ Page({
 
     wx.loadFontFace({
       family: 'Concert One',
-      source: 'url("/img/ConcertOne-Regular.ttf")',
-      success: console.log
+      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/d8eab2fdfbc672c39e71/ConcertOne-Regular.ttf")',
+      success: console.log()
     })
     wx.loadFontFace({
       family: 'BenMo',
-      source: 'url("/img/BenMoYouYuan-2.ttf")',
-      success: console.log
+      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/74ad43d3a3b717fba000/BenMoYouYuan-2.ttf")',
+      success: console.log()
     })
     // const q = page.data.questions
     // const new_qs = q.map(function (element) {
@@ -232,6 +276,7 @@ Page({
       user_id
     }
     apiClient.createAnswer({data:newAnswer})
+    this.setData({ disabled: true })
 
     const options = {
       success: function (res) {
@@ -249,9 +294,18 @@ Page({
 
   },
   SwitchImage1: function (e) {
+    const page = this
     console.log(111111, e)
+    const choice_id = e.currentTarget.dataset.choice_id
+    console.log("choice_id", choice_id)
+    const question_id = e.currentTarget.dataset.qid    
+    console.log("question_id", question_id)
+    page.setData({
+      question_id: question_id,
+      choice_id: choice_id
+    })
     // console.log(e.target.dataset.url)
-    const q = this.data.questions
+    const q = page.data.questions
     const new_qs = q.map(function (element) {
       if (element.id == e.currentTarget.dataset.qid) {
         element.photo = e.currentTarget.dataset.url
@@ -269,8 +323,16 @@ Page({
     })
   },
   SwitchImage2: function (e) {
-    // console.log(e)
-    // console.log(1111, page)
+    const page = this
+    console.log(111111, e)
+    const choice_id = e.currentTarget.dataset.choice_id
+    console.log("choice_id", choice_id)
+    const question_id = e.currentTarget.dataset.qid
+    console.log("question_id", question_id)
+    page.setData({
+      question_id: question_id,
+      choice_id: choice_id
+    })
     const q = this.data.questions
     const new_qs = q.map(function (element) {
       if (element.id == e.currentTarget.dataset.qid) {

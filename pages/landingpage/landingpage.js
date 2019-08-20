@@ -14,7 +14,7 @@ Page({
   onLoad: function (options) {
     wx.loadFontFace({
       family: 'Concert One',
-      source: 'url("/img/ConcertOne-Regular.ttf")',
+      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/d8eab2fdfbc672c39e71/ConcertOne-Regular.ttf")',
       success: console.log()
     })
   },
