@@ -1,4 +1,4 @@
-<cu-custom bgColor="bg-gradual-pink" class="topbar" isBack="{{true}}">
+<cu-custom bgColor="bg-gradual-pink" class="topbar" isBack="{{false}}">
   <view slot="backText">
     <text class="font font-20">Back</text>
   </view>
