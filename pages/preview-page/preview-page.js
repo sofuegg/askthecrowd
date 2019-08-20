@@ -24,6 +24,7 @@ Page({
     const getOptions = {
       id,
       success: function (res) {
+        console.log(res)
         const question = res.data.question_info
         if (question.choice_one.photo == null) { 
           question.choice_one.photo = '/img/black.jpg', 
@@ -105,6 +106,9 @@ Page({
    * Called when user click on the top right corner to share
    */
   onShareAppMessage: function (ops) {
+    const page = this
+    const question_id = page.data.question_id
+    console.log(question_id)
     if (ops.from === 'button') {
       console.log(ops.target)
     }
@@ -121,6 +125,7 @@ Page({
       }
     }
   },
+
   SwitchImage1: function (e) {
     const question = this.data.question
     this.setData({ 
