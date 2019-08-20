@@ -125,6 +125,7 @@ Page({
       }
     }
   },
+
   SwitchImage1: function (e) {
     const question = this.data.question
     this.setData({ 

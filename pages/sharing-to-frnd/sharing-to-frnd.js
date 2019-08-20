@@ -17,11 +17,14 @@ Page({
     const page = this
     const { id } = options
     this.setData({
-      question_id: id
+      question_id: id,
     })
+    // const question_id = page.data
+    // console.log("question_id", question_id)
     const getOptions = {
       id,
       success: function (res) {
+        console.log(res)
         const question = res.data.question_info
         console.log("question_information", question)
         page.setData({
