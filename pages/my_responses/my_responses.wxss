@@ -168,8 +168,9 @@
 
 .m-top {
   margin-top: 100rpx;
+  margin-right: 50rpx;
+  margin-left: 50rpx; 
 }
-
 .radiusg {
  border-radius: 15rpx
 }
