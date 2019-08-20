@@ -19,7 +19,7 @@
   position: fixed;
   height: 80px;
   bottom: 0;
-  width: 100vw;
+  width: 100rpx%;
 }
 
 .page {
@@ -167,6 +167,8 @@
 
 .m-top {
   margin-top: 100rpx;
+  margin-right: 50rpx;
+  margin-left: 50rpx; 
 }
 
 .radiusg {
@@ -244,3 +246,4 @@
 .axis-0 {
   z-index: 0;
 }
+
