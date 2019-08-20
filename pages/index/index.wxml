@@ -20,9 +20,9 @@
 </scroll-view>
 </view>
 
-<view class="page rel m-top">
+<view class="page rel m-top shadow">
   <block wx:for="{{questions}}" wx:for-item="question">
-  <view class="cu-bar bg-white margin-top">
+  <view class="cu-bar bg-white margin-top">  
     <view class="action flex justify-center width">
       <view class="padding text-xl" >{{question.title}}</view>
     </view>
@@ -43,11 +43,11 @@
  
 </view>
 
-<view class="cu-bar bg-white flex solid-bottom padding justify-around">
+<view class="cu-bar bg-white flex solid-bottom  justify-around" >
           <view class="kind-list">
                 <view class="kind-list__item">
                     <view class="weui-flex kind-list__item-hd">
-                        <button data-id="{{question.id}}" class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg justify-center weui-flex__item {{question.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">Vote</button>
+                        <button data-id="{{question.id}}" class="cu-btn block bg-blue  margin-bottom-sm lg justify-center weui-flex__item {{question.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">Vote</button>
                     </view>
                     <view class="kind-list__item-bd {{question.open ? 'kind-list__item-bd_show' : ''}}">
                         <view class="weui-cells {{question.open ? 'weui-cells_show' : ''}}">
@@ -60,6 +60,7 @@
         </view>
 
 </view>
+
   </block>
 
 
@@ -83,7 +84,7 @@
     </view>
   </block>
 
-  <view class="div-fixed width bg-white d-flex justify-around align-center axis">
+  <view class="div-fixed width bg-white d-flex justify-around align-center axis" style= "left:0;">
     <button class="button flex align-center" hover-class="btn-hover" bindtap="goToAsk">Ask a Question!</button>
   </view>
 
