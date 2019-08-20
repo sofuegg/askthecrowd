@@ -45,13 +45,9 @@
  
 </view>
 
-<view class="cu-bar bg-white flex solid-bottom padding justify-around">
-          <view class="kind-list">
-                <view class="kind-list__item">
+<view class="cu-bar bg-white flex solid-bottom padding justify-around hidden">
                            <wux-circle class="{{display}}" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_one }}">{{ question.percentage_one + '%' }}</wux-circle>
                            <wux-circle class="{{display}}" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_two }}">{{ question.percentage_two + '%' }}</wux-circle>
-                </view>
-        </view>
 
 </view>
   </block>
