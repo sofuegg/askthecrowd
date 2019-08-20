@@ -23,46 +23,34 @@
 
 
 <view class="page rel m-top">
-  <!-- <block wx:for="{{questions}}" wx:for-item="question">
+  <block wx:for="{{questions}}" wx:for-item="question">
   <view class="cu-bar bg-white margin-top">
     <view class="action">
       <view class="padding margin-left-lg" >{{question.title}}</view>
     </view>
   </view>
-  <view class="bg-img bg-mask padding-tb-xl flex justify-center align-center" style="background-image: url('{{question.photo}}'); height: 414rpx;">
-    <view class="text-sl text-white">{{question.choice_text}}</view>
+  <view class="bg-img bg-mask padding-tb-xl flex justify-center align-center" style="background-image: url('{{question.photo ? question.photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}}'); height: 414rpx;">
+    <view class="text-sl text-white " style="text-align: center;">{{question.choice_text ? question.choice_text : "Checkout the results!"}}</view>
   </view>
 
 <view class="cu-bar bg-white flex solid-bottom padding justify-around" >
   
 
-<view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive1}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_info[0].photo}});" data-text="{{question.choice_info[0].text}}" data-url="{{question.choice_info[0].photo}}" bindtap="SwitchImage1">
+<view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive1}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_info[0].photo ? question.choice_info[0].photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}});" data-text="{{question.choice_info[0].text}}" data-url="{{question.choice_info[0].photo}}" bindtap="SwitchImage1">
   </view>
 
-  <view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive2}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_info[1].photo}});" data-text="{{question.choice_info[1].text}}" data-url="{{question.choice_info[1].photo}}" bindtap="SwitchImage2">
+  <view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive2}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_info[1].photo ? question.choice_info[1].photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}});" data-text="{{question.choice_info[1].text}}" data-url="{{question.choice_info[1].photo}}" bindtap="SwitchImage2">
   </view>
 
  
 </view>
 
-<view class="cu-bar bg-white flex solid-bottom padding justify-around">
-          <view class="kind-list">
-                <view class="kind-list__item">
-                    <view class="weui-flex kind-list__item-hd">
-                        <button data-id="{{question.id}}" class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg justify-center weui-flex__item {{question.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">Vote</button>
-                    </view>
-                    <view class="kind-list__item-bd {{question.open ? 'kind-list__item-bd_show' : ''}}">
-                        <view class="weui-cells {{question.open ? 'weui-cells_show' : ''}}">
+<view class="cu-bar bg-white flex solid-bottom padding justify-around hidden">
                            <wux-circle class="{{display}}" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_one }}">{{ question.percentage_one + '%' }}</wux-circle>
                            <wux-circle class="{{display}}" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_two }}">{{ question.percentage_two + '%' }}</wux-circle>
 
-                        </view>
-                    </view>
-                </view>
-        </view> -->
-<!-- 
 </view>
-  </block> -->
+  </block>
 
   <block wx:for="{{questions}}" wx:for-item="question">
     <view class="card-product"  >
@@ -85,7 +73,7 @@
 
   </block>
 
-    <view class="div-fixed width bg-white d-flex justify-around align-center axis">
+  <view class="div-fixed width bg-white d-flex justify-around align-center axis">
     <button class="button flex align-center" hover-class="btn-hover" bindtap="goToAsk">Ask a Question!</button>
   </view>
 

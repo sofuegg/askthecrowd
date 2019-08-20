@@ -26,6 +26,7 @@ Page({
       success: function (res) {
         console.log(res)
         const question = res.data.question_info
+        console.log("question", question)
         if (question.choice_one.photo == null) { 
           question.choice_one.photo = '/img/black.jpg', 
           page.setData({ c1text: question.choice_one.text })
