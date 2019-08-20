@@ -240,3 +240,7 @@
 .axis {
   z-index: 20;
 }
+
+.axis-0 {
+  z-index: 0;
+}
