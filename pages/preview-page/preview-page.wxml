@@ -25,7 +25,6 @@
       <view class="text-sl text-white font font-26">{{c2text}}</view>
     </view>
   </view>
-
 </view>
 
 <view class="flex solid-bottom justify-around">

@@ -5,8 +5,8 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    // const host = 'http://localhost:3000/'
-    const host = 'https://ask-the-crowd.wogengapp.cn/'
+    const host = 'http://localhost:3000/'
+    // const host = 'https://ask-the-crowd.wogengapp.cn/'
     console.log('beginning login')
 
     wx.getSystemInfo({
@@ -20,13 +20,13 @@ App({
     
     // 登录
     const app = this
-    wx.getStorage({
-      key: 'userid',
-      success: function(res) {
-        console.log('existing user')
-      },
-      fail: function(err) {
-        console.log('new user')
+    // wx.getStorage({
+    //   key: 'userid',
+    //   success: function(res) {
+    //     console.log('existing user')
+    //   },
+    //   fail: function(err) {
+    //     console.log('new user')
         wx.login({
           success: res => {
             // 发送 res.code 到后台换取 openId, sessionKey, unionId
@@ -51,8 +51,8 @@ App({
             })
           }
         })
-      }
-    })
+    //   }
+    // })
     
     // 获取用户信息
     wx.getSetting({
