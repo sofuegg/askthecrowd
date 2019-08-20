@@ -83,8 +83,8 @@
     </view>
   </block>
 
-  <view class="div-fixed width bg-gray d-flex justify-around">
-    <button class="button" hover-class="btn-hover" bindtap="goToAsk">Ask a Question!</button>
+  <view class="div-fixed width bg-white d-flex justify-around align-center axis">
+    <button class="button flex align-center" hover-class="btn-hover" bindtap="goToAsk">Ask a Question!</button>
   </view>
 
 </view>
