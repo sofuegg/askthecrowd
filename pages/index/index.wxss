@@ -250,3 +250,9 @@
 canvas {
   z-index: -100;
 }
+
+.grow {
+  -webkit-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  transform: scale(1.03);
+}

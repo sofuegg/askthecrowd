@@ -19,29 +19,6 @@ Page({
       choice_percent: '10'
     },
     ],
-    swiperList1: [{
-      id: 0,
-      type: 'image',
-      url: '../../img/black-dress.jpg',
-      choice: 'A',
-      choice_percent: '45'
-    }, {
-      id: 1,
-      type: 'image',
-      url: '../../img/red-dress.jpg',
-      choice: 'B',
-      choice_percent: '55'
-    },
-    ],
-    swiperList2: [{
-      choice: 'A',
-      percent: "70",
-      text: 'Yes'},
-      { choice: 'B',
-      percent: '30',
-      text: 'No'
-      }
-    ],
     percent: 50,
     navbaricon: [
       {
@@ -135,6 +112,7 @@ Page({
         element.open = true
         element.percentage_one = Math.round(element.percentage_one)
         element.percentage_two = Math.round(element.percentage_two)
+        element.grow = true
         return element
       } else {
         return element
