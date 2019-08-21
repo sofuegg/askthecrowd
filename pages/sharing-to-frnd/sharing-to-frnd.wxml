@@ -1,47 +1,59 @@
-<cu-custom bgColor="bg-gradual-pink" class="topbar" isBack="{{false}}">
-  <view slot="content">
-    <text class="font">Ask the Crowd 问群众</text>
-  </view>
-</cu-custom>
-
-<view class="page rel m-top">
-  <view class="cu-bar bg-white margin-top">
-    <view class="padding margin-left-lg font font-26">{{question.title}}</view>
-  </view>
-
-  <view class="bg-img bg-mask padding-tb-xl flex justify-center align-center" style="background-image: url('{{bigphoto}}'); height: 414rpx;">
-    <view class="text-sl text-white font font-36">{{bigtext}}</view>
-  </view>
-
-  <view class="cu-bar bg-white flex solid-bottom padding justify-around select-box">
-    <view class="bg-img bg-mask padding-tb-xl flex justify-center align-center radiusg borderg shadow-blur-lg select-btn {{toggleactive1}}" data-qid="{{question.id}}" data-choice_id="{{question.choice_one.id}}" style="background-image:url({{question.choice_one.photo}});" data-text="{{question.choice_one.text}}" data-url="{{question.choice_one.photo}}" bindtap="SwitchImage1">
-      <view class="text-sl text-white font font-26">{{c1text}}</view>
+<view>
+  <cu-custom bgColor="bg-gradual-pink" class="topbar" isBack="{{false}}">
+    <view slot="backText">
+      <text class="font font-20">Back</text>
     </view>
-
-    <view class="bg-img bg-mask padding-tb-xl flex justify-center align-center radiusg borderg shadow-blur-lg select-btn {{toggleactive2}}" data-qid="{{question.id}}" data-choice_id="{{question.choice_two.id}}" style="background-image:url({{question.choice_two.photo}});" data-text="{{question.choice_two.text}}" data-url="{{question.choice_two.photo}}" bindtap="SwitchImage2">
-      <view class="text-sl text-white font font-26">{{c2text}}</view>
+    <view slot="content">
+      <text class="font">Ask the Crowd 问群众</text>
     </view>
-  </view>
+  </cu-custom>
 </view>
 
-<view class="cu-bar bg-white flex solid-bottom padding justify-around">
-  <view class="kind-list">
-    <view class="kind-list__item">
-
-      <view class="weui-flex kind-list__item-hd">
-        <button data-id="{{question.id}}" class="cu-btn block bg-blue margin-top-lg margin-bottom-sm lg justify-center weui-flex__item {{question.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">Vote</button>
-      </view>
-
-      <view class="kind-list__item-bd {{question.open ? 'kind-list__item-bd_show' : ''}}">
-        <view class="weui-cells {{question.open ? 'weui-cells_show' : ''}}">
-          <wux-circle class="{{display}}" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_one }}">{{ question.percentage_one + '%' }}</wux-circle>
-          <wux-circle class="{{display}}" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_two }}">{{ question.percentage_two + '%' }}</wux-circle>
-        </view>
-      </view>
-
-
-
-
+<view class="page rel m-top shadow">
+  <view class="cu-bar bg-white margin-top">  
+    <view class="action flex justify-center width">
+      <view class="padding text-xl font" >{{question.title}}</view>
     </view>
   </view>
+  <view class="bg-img padding-tb-xl flex justify-center align-center" style="background-image: url('{{question.photo ? question.photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}}'); height: 450rpx; background-color: #FFFFFF;">
+    <view class="text-sl text-white font padding width text-center text-shadow">{{question.choice_text ? question.choice_text : ""}}</view>
+  </view>
+
+<view class="cu-bar bg-white flex solid-bottom padding justify-around" >
+ 
+
+<view class="cu-avatar xl radiusg borderg shadow-blur-lg {{question.grow ? 'grow' : '' }} {{toggleactive1}}" data-qid="{{question.id}}" data-choice_id="{{question.choice_one.id}}" style="background-image:url({{question.choice_one.photo ? question.choice_one.photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}});" data-text="{{question.choice_one.text}}" data-url="{{question.choice_one.photo }}" bindtap="SwitchImage1">
+  <text class="font text-sl text-shadow-black">A</text>
+  </view>
+  <view class="font text-sl">OR</view>
+  <view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive2}}" data-qid="{{question.id}}" data-choice_id="{{question.choice_two.id}}" style="background-image:url({{question.choice_two.photo ? question.choice_two.photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}});" data-text="{{question.choice_two.text}}" data-url="{{question.choice_two.photo}}" bindtap="SwitchImage2">
+  <text class="font text-sl text-shadow-black">B</text>
+  </view>
+
+ 
+</view>
+
+<view class="cu-bar bg-white flex solid-bottom  justify-around width" >
+                <view class="kind-list__item">
+                    <view class="weui-flex kind-list__item-hd justify-center">
+                        <view >
+                        <button data-id="{{question.id}}" class="{{hidden}} font cu-btn block bg-blue margin-bottom-sm lg justify-center weui-flex__item margin {{question.open ? 'hidden abs' : ''}}" bindtap="kindToggle" disabled="{{disabled}}" style="width:120rpx">Vote</button>
+                        </view>
+                    </view>
+                    <view class="kind-list__item-bd {{question.open ? 'kind-list__item-bd_show' : ''}}">
+                        <view class="weui-cells {{question.open ? 'weui-cells_show' : ''}}">
+                           <!-- <wux-circle class="axis-0 {{display}}" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_one }}">{{ question.percentage_one + '%' }}</wux-circle>
+                           <wux-circle class="axis-0 {{display}}" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_two }}">{{ question.percentage_two + '%' }}</wux-circle> -->
+ 
+  <view class="cu-progress radius striped active margin" style="height:70rpx;width:550rpx">
+    <view class="bg-olive font" style="font-size:45rpx;width:{{loading?question.percentage_one + '%':''}};">{{question.percentage_one}}%</view>
+    <view class="bg-cyan font" style="font-size:45rpx;width:{{loading?question.percentage_two + '%':''}};">{{question.percentage_two}}%</view>
+  </view>
+                        
+                    </view>
+                </view>
+        </view>
+
+</view>
+
 </view>

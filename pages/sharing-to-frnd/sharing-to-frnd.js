@@ -28,11 +28,11 @@ Page({
         console.log(res)
         const question = res.data.question_info
         if (question.choice_one.photo == null) {
-          question.choice_one.photo = '/img/black.jpg',
+          question.choice_one.photo = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg',
             page.setData({ c1text: question.choice_one.text })
         }
         if (question.choice_two.photo == null) {
-          question.choice_two.photo = '/img/black.jpg',
+          question.choice_two.photo = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg',
             page.setData({ c2text: question.choice_two.text })
         }
         page.setData({
@@ -60,7 +60,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-  
+
   },
 
   /**
@@ -163,6 +163,9 @@ Page({
 
   kindToggle: function (e) {
     const page = this
+    page.setData({
+      hidden: 'hidden'
+    })
     const app = getApp()
     const question_id = page.data.question_id
     console.log("question_id", question_id)
@@ -189,16 +192,21 @@ Page({
         // replace the current data with the updated data
         // setData using the updated array
         // Object.assign(question, question)
+        question.open = true
+        question.percentage_one = Math.round(question.percentage_one)
+        question.percentage_two = Math.round(question.percentage_two)
+        question.grow = true
+        console.log(1111111, question)
+      
         page.setData({
-          question
+          question,
+          loading: true
         })
       },
       fail: function (err) {
         console.log(err)
       }
     })
-    const pageone = this
-    console.log(pageone)
 
   },
 })
