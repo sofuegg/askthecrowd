@@ -5,8 +5,8 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    // const host = 'http://localhost:3000/'
-    const host = 'https://ask-the-crowd.wogengapp.cn/'
+    const host = 'http://localhost:3000/'
+    //const host = 'https://ask-the-crowd.wogengapp.cn/'
     console.log('beginning login')
 
     wx.getSystemInfo({

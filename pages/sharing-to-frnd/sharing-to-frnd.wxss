@@ -53,7 +53,7 @@
  border-style: solid;
 }
 .active {
- border: 2px solid yellow;
+  box-shadow: 0px 0px 10px rgba(0,0,0,1);
 }
 .select-btn {
   width: 200rpx;
@@ -115,3 +115,5 @@
 .font-18 {
   font-size: 18px;
 }
+
+ 

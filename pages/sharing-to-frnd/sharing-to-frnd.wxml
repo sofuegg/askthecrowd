@@ -9,16 +9,31 @@
     <view class="padding margin-left-lg font font-26">{{question.title}}</view>
   </view>
 
-  <view class="bg-img bg-mask padding-tb-xl flex justify-center align-center" style="background-image: url('{{bigphoto}}'); height: 414rpx;">
+  <view class="bg-img bg-mask padding-tb-xl flex justify-center align-center padding" style="background-image: url('{{bigphoto}}'); height: 414rpx;">
     <view class="text-sl text-white font font-36">{{bigtext}}</view>
   </view>
 
   <view class="cu-bar bg-white flex solid-bottom padding justify-around select-box">
-    <view class="bg-img bg-mask padding-tb-xl flex justify-center align-center radiusg borderg shadow-blur-lg select-btn {{toggleactive1}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_one.photo}});" data-text="{{question.choice_one.text}}" data-url="{{question.choice_one.photo}}" bindtap="SwitchImage1">
+
+
+
+
+
+
+
+    <view class="padding bg-img bg-mask padding-tb-xl flex borderg justify-center align-center radiusg borderg  select-btn {{toggleactive1}}" data-qid="{{question.id}}" data-choice_id="{{question.choice_info[0].id }}"style="background-image:url({{question.choice_one.photo}});" data-text="{{question.choice_one.text}}" data-url="{{question.choice_one.photo }}"bindtap="SwitchImage1">
       <view class="text-sl text-white font font-26">{{c1text}}</view>
     </view>
 
-    <view class="bg-img bg-mask padding-tb-xl flex justify-center align-center radiusg borderg shadow-blur-lg select-btn {{toggleactive2}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_two.photo}});" data-text="{{question.choice_two.text}}" data-url="{{question.choice_two.photo}}" bindtap="SwitchImage2">
+
+
+
+
+
+
+
+
+    <view class="padding bg-img bg-mask padding-tb-xl flex justify-center align-center radiusg borderg  select-btn {{toggleactive2}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_two.photo}});" data-text="{{question.choice_two.text}}" data-url="{{question.choice_two.photo}}" bindtap="SwitchImage2">
       <view class="text-sl text-white font font-26">{{c2text}}</view>
     </view>
   </view>
