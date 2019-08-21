@@ -113,61 +113,123 @@ Page({
 
   },
 
-  newAnswer: function (e) {
+
+    // this.setData({ disabled: true })
+
+
+  SwitchImage1: function (e) {
+    const page = this
+    console.log(111111, e)
+    const choice_id = e.currentTarget.dataset.choice_id
+    console.log("choice_id", choice_id)
+    const question_id = e.currentTarget.dataset.qid
+    console.log("question_id", question_id)
+    page.setData({
+      question_id: question_id,
+      choice_id: choice_id
+    })
+    // console.log(e.target.dataset.url)
+    // const q = page.data.questions
+    // const new_qs = q.map(function (element) {
+    //   if (element.id == e.currentTarget.dataset.qid) {
+    //     element.photo = e.currentTarget.dataset.url
+    //     element.choice_text = e.currentTarget.dataset.text
+    //     return element
+    //   } else {
+    //     return element
+    //   }
+    // });
+    // console.log(new_qs)
+    // this.setData({
+    //   questions: new_qs,
+    // })
+  },
+  SwitchImage2: function (e) {
+    const page = this
+    console.log(111111, e)
+    const choice_id = e.currentTarget.dataset.choice_id
+    console.log("choice_id", choice_id)
+    const question_id = e.currentTarget.dataset.qid
+    console.log("question_id", question_id)
+    page.setData({
+      question_id: question_id,
+      choice_id: choice_id
+    })
+    // const q = this.data.questions
+    // const new_qs = q.map(function (element) {
+    //   if (element.id == e.currentTarget.dataset.qid) {
+    //     element.photo = e.currentTarget.dataset.url
+    //     element.choice_text = e.currentTarget.dataset.text
+    //     return element
+    //   } else {
+    //     return element
+    //   }
+    // });
+    // this.setData({
+    //   questions: new_qs,
+    // })
+  },
+
+
+  kindToggle: function (e) {
     const page = this
     const app = getApp()
     const question_id = page.data.question_id
     console.log("question_id", question_id)
-    const choice_id = e.currentTarget.dataset.choice_id
+    const choice_id = page.data.choice_id
     console.log("choice_id", choice_id)
     const user_id = wx.getStorageSync('userid')
+    console.log("user_id", user_id)
     const newAnswer = {
       question_id,
       choice_id,
       user_id
     }
-    console.log("new_anser_info", newAnswer)    
-    apiClient.createAnswer({ data: newAnswer })
-
-    const getOptions = {
-      id: question_id,
+    console.log("parameters_hash", newAnswer)
+    apiClient.createAnswer({
+      data: newAnswer,
       success: function (res) {
-        const question = res.data.question_info
+        console.log(res)
+        const question = res.data.question_lists
+        console.log(33333, question)
+        const questiontwo = page.data.question
+        // get the current list of questions
+        // find the index of the updated question
+        // replace the current data with the updated data
+        // setData using the updated array
+        Object.assign(question, questiontwo)
         page.setData({
-          question,
+          questiontwo
         })
       },
       fail: function (err) {
         console.log(err)
       }
-    }
-
-    apiClient.getQuestion(getOptions)
-    this.setData({ disabled: true })
-
-  },
-  SwitchImage1: function (e) {
-    const question = this.data.question
-    this.setData({
-      bigphoto: question.choice_one.photo,
-      bigtext: question.choice_one.text
     })
+    const pageone = this
+    console.log(pageone)
+    const questionthree = pageone.data.questiontwo
+    console.log(questionthree)
+    questionthree.open = true
+    questionthree.percentage_one = Math.round(questionthree.percentage_one)
+    questionthree.percentage_two = Math.round(questionthree.percentage_two)
+    // const q = this.data.question
+    // const new_qs1 = q.map(function (element) {
+    //   // console.log(element)
+    //   // console.log(111111, element.id == e.currentTarget.dataset.id)
+    //   // console.log(element.id)
+    //   // console.log(5555, e.currentTarget.dataset)
+    //   if (element.id === e.currentTarget.dataset.id) {
+        const questiontwo = page.data.questiontwo
+
+    //     return element
+    //   } else {
+    //     return element
+    //   }
+    // })
+    // console.log(1111111, new_qs1)
+    // this.setData({
+    //   questions: new_qs1
+    // });
   },
-  SwitchImage2: function (e) {
-    const question = this.data.question
-    this.setData({
-      bigphoto: question.choice_two.photo,
-      bigtext: question.choice_two.text
-    })
-  },
-  kindToggle: function (e) {
-    console.log(e)
-    const q = this.data.question
-    q.open = true
-    q.percentage_one = Math.round(q.percentage_one)
-    q.percentage_two = Math.round(q.percentage_two)
-    this.setData({
-      question: q
-    });
-  }
 })

@@ -316,8 +316,6 @@ Page({
       }
     });
     console.log(new_qs)
-    
-   
     this.setData({
       questions: new_qs,
     })
