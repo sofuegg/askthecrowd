@@ -18,17 +18,12 @@ page {
 }
 
 .title {
-  font-family: 'Archivo Black', sans-serif;
   color: white;
   text-transform: uppercase;
-  font-size: 60rpx;
-  font-weight: 700;
   margin-top: 150rpx;
 }
 
 .slogan {
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 30rpx;
   color: white;
   text-align: center;
   margin-top: 50rpx;
@@ -37,12 +32,6 @@ page {
 .start-btn {
 margin-top: 150rpx;
 border-radius: 10rpx;
-}
-
-.font {
-  font-family: 'Concert One';
-  font-style: cursive;
-  font-weight: 400;
 }
 
 .font-80 {

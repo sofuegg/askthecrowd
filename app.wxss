@@ -2,6 +2,24 @@
 @import "colorui/main.wxss";
 @import "colorui/icon.wxss";
 @import 'weui/dist/style/weui.wxss';
+@font-face {
+font-family: 'Concert One';
+src: url("http://lc-qinkssxt.cn-n1.lcfile.com/d8eab2fdfbc672c39e71/ConcertOne-Regular.ttf");
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: 'BenMo';
+src: url("http://lc-qinkssxt.cn-n1.lcfile.com/74ad43d3a3b717fba000/BenMoYouYuan-2.ttf");
+font-weight: normal;
+font-style: normal;
+}
+
+.font {
+  font-family: 'Concert One', 'BenMo';
+  font-style: cursive;
+  font-weight: 400;
+}
 .container {
   height: 100%;
   display: flex;
@@ -11,4 +29,38 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 }
-
+.div-fixed {
+  position: fixed;
+  height: 90px;
+  bottom: 0;
+  width: 100%;
+}
+.d-flex {
+  display: flex;
+}
+.button {
+  font-family: 'Concert One', 'BenMo';
+  font-size: 40rpx;
+  font-weight: 500;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center !important;
+  background: rgba(125, 0, 163, 0.763);
+  /* box-shadow: 0 3px 2px 0 rgba(0,0,0,0.1); */
+  box-shadow: 0 4px 17px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  height: 60px;
+  width: 180px;
+  padding: 3px 12px;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background .2s, transform .2s, box-shadow .2s;
+  will-change: transform;
+}
+.btn-hover {
+  background: darken(#C06C84,10%);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+  transform: translate3d(0, 5px, 0);
+}
