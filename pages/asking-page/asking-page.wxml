@@ -40,7 +40,7 @@
   </view>
 </view>
 
-
-<view class="submit-pos">
+<view class="div-fixed width bg-white d-flex justify-around align-center axis" style= "left:0;">
+<!-- <view class="submit-pos"> -->
   <button class="button pulse" hover-class="btn-hover" bindtap="submitQ">Submit 提交</button>
 </view>
