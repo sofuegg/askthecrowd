@@ -19,33 +19,10 @@ Page({
       choice_percent: '10'
     },
     ],
-    swiperList1: [{
-      id: 0,
-      type: 'image',
-      url: '../../img/black-dress.jpg',
-      choice: 'A',
-      choice_percent: '45'
-    }, {
-      id: 1,
-      type: 'image',
-      url: '../../img/red-dress.jpg',
-      choice: 'B',
-      choice_percent: '55'
-    },
-    ],
-    swiperList2: [{
-      choice: 'A',
-      percent: "70",
-      text: 'Yes'},
-      { choice: 'B',
-      percent: '30',
-      text: 'No'
-      }
-    ],
     percent: 50,
     navbaricon: [
       {
-        title: "My questions",
+        title: "My Responses",
         icon: "/icons/Question.png"
       },
       {
@@ -75,12 +52,31 @@ Page({
     ],
     TabCur: 1,
     scrollLeft: 0,
-    active: "active"
   },
   tabChange(e) {
     console.log('tab change', e)
   },
-
+  showModal(e) {
+    this.setData({
+      modalName: e.currentTarget.dataset.target
+    })
+  },
+  hideModal(e) {
+    this.setData({
+      modalName: null
+    })
+  },
+  SetColor(e) {
+    this.setData({
+      color: e.currentTarget.dataset.color,
+      modalName: null
+    })
+  },
+  SetActive(e) {
+    this.setData({
+      active: e.detail.value
+    })
+  },
   kindToggle: function (e) {
     const page = this
     const app = getApp()
@@ -135,6 +131,7 @@ Page({
         element.open = true
         element.percentage_one = Math.round(element.percentage_one)
         element.percentage_two = Math.round(element.percentage_two)
+        element.grow = true
         return element
       } else {
         return element
@@ -185,6 +182,13 @@ Page({
     }
 
     const page = this
+
+    setTimeout(function () {
+      page.setData({
+        loading: true
+      })
+    }, 500)
+
     const options = {
       success: function (res) {
         console.log(res)
