@@ -18,9 +18,9 @@
 
 .div-fixed {
   position: fixed;
-  height: 80px;
+  height: 150rpx;
   bottom: 0;
-  width: 100vw;
+  width: 100%;
 }
 
 .page {
@@ -153,8 +153,8 @@
 }
 
 .img {
-  width: 20px;
-  height: 20px;
+  width: 45rpx;
+  height: 45rpx;
 }
 
 .stats {
@@ -183,7 +183,7 @@
  visibility: visible !important;
 }
 
-.active {
+.hidden {
   visibility: hidden;
 }
 
@@ -199,12 +199,12 @@
   /* display: inline-flex; */
   justify-content: center;
   align-items: center !important;
-  background: rgba(125, 0, 163, 0.763);
+  background: rgba(125, 0, 163);
   box-shadow: 0 3px 2px 0 rgba(0,0,0,0.1);
   border-radius: 10px;
-  height: 60px;
-  width: 180px;
-  padding: 0 12px;
+  height: 90rpx;
+  width: 355rpx;
+  padding: 3rpx 12rpx;
   color: #fff;
   text-transform: uppercase;
   line-height: 1.2;
@@ -235,4 +235,8 @@
 
 .axis {
   z-index: 20;
+}
+
+.text-shadow-black {
+	text-shadow: 0rpx 0rpx 15rpx black;
 }

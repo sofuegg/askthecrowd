@@ -48,7 +48,7 @@ Page({
     percent: 50,
     navbaricon: [
       {
-        title: "My questions",
+        title: "My Responses",
         icon: "/icons/Question.png"
       },
       {
@@ -61,7 +61,7 @@ Page({
       }
     ],
     list: [{
-      text: "My questions",
+      text: "My Responses",
       iconPath: "/icons/Question.png",
       selectedIconPath: "",
     },
@@ -78,7 +78,27 @@ Page({
     ],
     TabCur: 1,
     scrollLeft: 0,
-    active: "active"
+  },
+  showModal(e) {
+    this.setData({
+      modalName: e.currentTarget.dataset.target
+    })
+  },
+  hideModal(e) {
+    this.setData({
+      modalName: null
+    })
+  },
+  SetColor(e) {
+    this.setData({
+      color: e.currentTarget.dataset.color,
+      modalName: null
+    })
+  },
+  SetActive(e) {
+    this.setData({
+      active: e.detail.value
+    })
   },
   tabChange(e) {
     console.log('tab change', e)
@@ -140,7 +160,12 @@ Page({
       })
     }
     
-    
+    setTimeout(function () {
+      page.setData({
+        loading: true
+      })
+    }, 500)
+
   },
 
   /**
