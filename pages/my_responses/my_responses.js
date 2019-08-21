@@ -159,12 +159,6 @@ Page({
         }
       })
     }
-    
-    setTimeout(function () {
-      page.setData({
-        loading: true
-      })
-    }, 500)
 
   },
 
@@ -196,7 +190,11 @@ Page({
       }
     }
     apiClient.getMyresponses(options)
-
+    setTimeout(function () {
+      page.setData({
+        loading: true
+      })
+    }, 500)
   },
 
   /**
