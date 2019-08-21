@@ -270,8 +270,6 @@ Page({
       user_id
     }
     apiClient.createAnswer({data:newAnswer})
-    this.setData({ disabled: true })
-
     const options = {
       success: function (res) {
         const questions = res.data.question_lists
@@ -300,6 +298,7 @@ Page({
     })
     // console.log(e.target.dataset.url)
     const q = page.data.questions
+    console.log(q)
     const new_qs = q.map(function (element) {
       if (element.id == e.currentTarget.dataset.qid) {
         element.photo = e.currentTarget.dataset.url
@@ -326,6 +325,7 @@ Page({
       choice_id: choice_id
     })
     const q = this.data.questions
+    console.log(q)
     const new_qs = q.map(function (element) {
       if (element.id == e.currentTarget.dataset.qid) {
         element.photo = e.currentTarget.dataset.url
