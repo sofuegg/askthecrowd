@@ -181,15 +181,16 @@ Page({
       success: function (res) {
         console.log(res)
         const question = res.data.question_lists
+        question.choice_one = question.choice_info[0]
+        question.choice_two = question.choice_info[1]
         console.log(33333, question)
-        const questiontwo = page.data.question
         // get the current list of questions
         // find the index of the updated question
         // replace the current data with the updated data
         // setData using the updated array
-        Object.assign(question, questiontwo)
+        // Object.assign(question, question)
         page.setData({
-          questiontwo
+          question
         })
       },
       fail: function (err) {
@@ -198,28 +199,6 @@ Page({
     })
     const pageone = this
     console.log(pageone)
-    const questionthree = pageone.data.questiontwo
-    console.log(questionthree)
-    questionthree.open = true
-    questionthree.percentage_one = Math.round(questionthree.percentage_one)
-    questionthree.percentage_two = Math.round(questionthree.percentage_two)
-    // const q = this.data.question
-    // const new_qs1 = q.map(function (element) {
-    //   // console.log(element)
-    //   // console.log(111111, element.id == e.currentTarget.dataset.id)
-    //   // console.log(element.id)
-    //   // console.log(5555, e.currentTarget.dataset)
-    //   if (element.id === e.currentTarget.dataset.id) {
-        const questiontwo = page.data.questiontwo
 
-    //     return element
-    //   } else {
-    //     return element
-    //   }
-    // })
-    // console.log(1111111, new_qs1)
-    // this.setData({
-    //   questions: new_qs1
-    // });
   },
 })
