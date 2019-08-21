@@ -114,9 +114,15 @@ Page({
     console.log("choice_id", choice_id)
     const question_id = e.currentTarget.dataset.qid
     console.log("question_id", question_id)
+    const photo = e.currentTarget.dataset.url
+    const text = e.currentTarget.dataset.text
     page.setData({
       question_id: question_id,
-      choice_id: choice_id
+      choice_id: choice_id,
+      toggleactive1: "active",
+      toggleactive2: "",
+      bigphoto: photo,
+      bigtext: text
     })
     // console.log(e.target.dataset.url)
     // const q = page.data.questions
@@ -141,9 +147,16 @@ Page({
     console.log("choice_id", choice_id)
     const question_id = e.currentTarget.dataset.qid
     console.log("question_id", question_id)
+    const photo = e.currentTarget.dataset.url
+    const text = e.currentTarget.dataset.text
+    console.log(photo)
     page.setData({
       question_id: question_id,
-      choice_id: choice_id
+      choice_id: choice_id,
+      toggleactive1: "",
+      toggleactive2: "active",
+      bigphoto: photo,
+      bigtext: text
     })
     // const q = this.data.questions
     // const new_qs = q.map(function (element) {
