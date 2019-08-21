@@ -140,23 +140,7 @@ Page({
       })
     }
     
-    const page = this
-    const user_id = wx.getStorageSync('userid')
-    console.log(user_id)
-    const options = {    
-      userid: {user_id},
-      success: function (res) {
-        const questions = res.data.question_lists
-        console.log(questions)
-        page.setData({
-          questions
-        })
-      },
-      fail: function (err) {
-        console.log(err)
-      }
-    }
-    apiClient.getMyresponses(options)
+    
   },
 
   /**
@@ -170,6 +154,23 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+    this.setData({
+      TabCur: app.globalData.TabCur
+    })
+    const page = this
+    const options = {
+      success: function (res) {
+        const questions = res.data.question_lists
+        console.log(questions)
+        page.setData({
+          questions
+        })
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+    }
+    apiClient.getMyresponses(options)
 
   },
 
@@ -206,12 +207,6 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  
-  onShow: function () {
-    this.setData({
-      TabCur: app.globalData.TabCur
-    })
   },
   
   getUserInfo: function (e) {
