@@ -64,3 +64,6 @@ font-style: normal;
   box-shadow: 0 6px 25px rgba(0,0,0,0.3);
   transform: translate3d(0, 5px, 0);
 }
+.line-height {
+  line-height: 1.3;
+}
