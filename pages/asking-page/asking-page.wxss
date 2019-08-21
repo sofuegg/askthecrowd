@@ -38,3 +38,7 @@
 .font-18 {
   font-size: 20px;
 }
+
+.placeholder {
+  color: rgba(130, 130, 130, 0.5)
+}
