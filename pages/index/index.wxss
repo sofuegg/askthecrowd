@@ -183,7 +183,7 @@
  visibility: visible !important;
 }
 
-.active {
+.hidden {
   visibility: hidden;
 }
 
@@ -255,4 +255,8 @@ canvas {
   -webkit-transform: scale(1.03);
   -ms-transform: scale(1.03);
   transform: scale(1.03);
+}
+
+.text-shadow-black {
+	text-shadow: 10rpx 10rpx 10rpx black;
 }
