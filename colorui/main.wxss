@@ -570,7 +570,7 @@ radio.white[checked] .wx-radio-input {
 }
 
 .solid-bottom::after {
-	border-bottom: 1rpx solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1rpx solid rgba(0, 0, 0, 0.0);
 }
 
 .solid-left::after {
@@ -932,8 +932,8 @@ button.icon.lg {
 
 .cu-avatar {
 	font-variant: small-caps;
-	margin: 0;
-	padding: 0;
+	/* margin: 0;
+	padding: 0; */
 	display: inline-flex;
 	text-align: center;
 	justify-content: center;

@@ -11,8 +11,8 @@
   <view class="flex text-center">
     <view class="cu-item flex-sub {{index==TabCur?'text-black cur':''}}" wx:for="{{navbaricon}}" wx:key bindtap="tabSelect" data-id="{{index}}">
       <view class="column flex align-center justify-center">
-      <image style="margin-top: 5px;" class="img" src="{{item.icon}}"></image>
-      <text style="margin: -10px;" class="text-sm font">{{item.title}}</text>
+      <image style="margin-top: 5rpx;" class="img" src="{{item.icon}}"></image>
+      <text style="margin: -25rpx;" class="text-sm font">{{item.title}}</text>
       </view>
     </view>
   </view>
@@ -26,7 +26,7 @@
       <view class="padding text-xl font" >{{question.title}}</view>
     </view>
   </view>
-  <view class="bg-img bg-mask padding-tb-xl flex justify-center align-center" style="background-image: url('{{question.photo ? question.photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}}'); height: 450rpx; background-color: #FFFFFF;">
+  <view class="bg-img padding-tb-xl flex justify-center align-center" style="background-image: url('{{question.photo ? question.photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}}'); height: 450rpx; background-color: #FFFFFF;">
     <view class="text-sl text-white font padding width text-center text-shadow">{{question.choice_text ? question.choice_text : ""}}</view>
   </view>
 
@@ -48,7 +48,7 @@
                 <view class="kind-list__item">
                     <view class="weui-flex kind-list__item-hd justify-center">
                         <view >
-                        <button data-id="{{question.id}}" class=" font cu-btn block bg-blue margin-bottom-sm lg justify-center weui-flex__item {{question.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle" disabled="{{disabled}}" style="width:100rpx">Vote</button>
+                        <button data-id="{{question.id}}" class=" font cu-btn block bg-blue margin-bottom-sm lg justify-center weui-flex__item margin {{question.open ? 'hidden abs' : ''}}" bindtap="kindToggle" disabled="{{disabled}}" style="width:120rpx">Vote</button>
                         </view>
                     </view>
                     <view class="kind-list__item-bd {{question.open ? 'kind-list__item-bd_show' : ''}}">
@@ -56,7 +56,7 @@
                            <!-- <wux-circle class="axis-0 {{display}}" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_one }}">{{ question.percentage_one + '%' }}</wux-circle>
                            <wux-circle class="axis-0 {{display}}" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_two }}">{{ question.percentage_two + '%' }}</wux-circle> -->
  
-  <view class="cu-progress radius striped active" style="height:70rpx;width:550rpx">
+  <view class="cu-progress radius striped active margin" style="height:70rpx;width:550rpx">
     <view class="bg-olive font" style="font-size:45rpx;width:{{loading?question.percentage_one + '%':''}};">{{question.percentage_one}}%</view>
     <view class="bg-cyan font" style="font-size:45rpx;width:{{loading?question.percentage_two + '%':''}};">{{question.percentage_two}}%</view>
   </view>
@@ -90,7 +90,7 @@
     </view>
   </block>
 
-  <view class="div-fixed width bg-white d-flex justify-around align-center axis" style= "left:0;">
+  <view class="div-fixed width d-flex justify-around align-center axis" style= "left:0;">
     <button class="button flex align-center" hover-class="btn-hover" bindtap="goToAsk">Ask a Question!</button>
   </view>
 
