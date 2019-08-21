@@ -14,7 +14,7 @@
 </view>
 
 <view class="cu-form-group input-card">
-  <textarea class="input-text font font-input" placeholder="Type here" placeholder-class="placeholder" maxlength="72" bindinput="handleChange" data-name="title"></textarea>
+  <textarea class="input-text font font-input" placeholder="Type here" placeholder-class="placeholder" maxlength="108" bindinput="handleChange" data-name="title"></textarea>
   <!-- <view class="solids cam-box {{shadowq}}" bindtap="getPhoto" data-name="photoq">
     <text class="cuIcon-cameraadd cam-icon {{shadowq}}"></text>
   </view> -->
@@ -27,14 +27,14 @@
 </view>
 
 <view class="cu-form-group input-card">
-  <textarea class="input-text font" placeholder="Answer A" placeholder-class="placeholder" maxlength="48" bindinput="handleChange" data-name="texta"></textarea>
+  <textarea class="input-text font" placeholder="Answer A" placeholder-class="placeholder" maxlength="32" bindinput="handleChange" data-name="texta"></textarea>
   <view class="solids cam-box {{shadowa}}" bindtap="getPhoto" data-name="photoa">
     <text class="cuIcon-cameraadd cam-icon"></text>
   </view>
 </view>
 
 <view class="cu-form-group input-card">
-  <textarea class="input-text font" placeholder="Answer B" placeholder-class="placeholder" maxlength="48" bindinput="handleChange" data-name="textb"></textarea>
+  <textarea class="input-text font" placeholder="Answer B" placeholder-class="placeholder" maxlength="32" bindinput="handleChange" data-name="textb"></textarea>
   <view class="solids cam-box {{shadowb}}" bindtap="getPhoto" data-name="photob">
     <text class="cuIcon-cameraadd cam-icon"></text>
   </view>
