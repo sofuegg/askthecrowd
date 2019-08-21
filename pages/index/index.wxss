@@ -258,5 +258,5 @@ canvas {
 }
 
 .text-shadow-black {
-	text-shadow: 10rpx 10rpx 10rpx black;
+	text-shadow: 0rpx 0rpx 15rpx black;
 }

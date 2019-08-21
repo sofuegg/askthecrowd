@@ -963,8 +963,8 @@ button.icon.lg {
 }
 
 .cu-avatar.xl {
-	width: 128rpx;
-	height: 128rpx;
+	width: 170rpx;
+	height: 170rpx;
 	font-size: 2.5em;
 }
 
@@ -1619,7 +1619,7 @@ button.icon.lg {
 }
 
 .cu-bar .cu-avatar:first-child {
-	margin-left: 20rpx;
+	margin-left: 0rpx;
 }
 
 .cu-bar .action:first-child>text[class*="cuIcon-"] {
