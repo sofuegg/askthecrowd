@@ -53,7 +53,7 @@
  border-style: solid;
 }
 .active {
- border: 2px solid yellow;
+ box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
 }
 .select-btn {
   width: 200rpx;
