@@ -17,16 +17,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    wx.loadFontFace({
-      family: 'Concert One',
-      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/d8eab2fdfbc672c39e71/ConcertOne-Regular.ttf")',
-      success: console.log()
-    })
-    wx.loadFontFace({
-      family: 'BenMo',
-      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/74ad43d3a3b717fba000/BenMoYouYuan-2.ttf")',
-      success: console.log()
-    })
+    
   },
 
   /**
@@ -133,17 +124,13 @@ Page({
       success: function (res) {
         console.log(res)
         const id = res.data.question_info.id
-        wx.reLaunch({
+        wx.navigateTo({
           url: `/pages/preview-page/preview-page?id=${id}`
         })
       },
       fail: function (err) {
         console.log(err)
       }
-    })
-
-    wx.navigateTo({
-      url: '../preview-page/preview-page',
     })
   },
 

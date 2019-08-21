@@ -168,8 +168,9 @@
 
 .m-top {
   margin-top: 100rpx;
+  margin-right: 50rpx;
+  margin-left: 50rpx; 
 }
-
 .radiusg {
  border-radius: 15rpx
 }
@@ -222,12 +223,6 @@
   justify-content: center;
   align-items: center;
   padding: 50rpx;
-}
-
-.font {
-  font-family: 'Concert One', 'BenMo';
-  font-style: cursive;
-  font-weight: 400;
 }
 
 .font-20 {

@@ -16,8 +16,8 @@ Page({
   
   onLoad: function (options) {
     const page = this
+    const id = options.id
     console.log(options)
-    const { id } = options
     this.setData({
       question_id:id
     })
@@ -26,6 +26,7 @@ Page({
       success: function (res) {
         console.log(res)
         const question = res.data.question_info
+        console.log("question", question)
         if (question.choice_one.photo == null) { 
           question.choice_one.photo = '/img/black.jpg', 
           page.setData({ c1text: question.choice_one.text })
@@ -48,16 +49,6 @@ Page({
 
     apiClient.getQuestion(getOptions)
 
-    wx.loadFontFace({
-      family: 'Concert One',
-      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/d8eab2fdfbc672c39e71/ConcertOne-Regular.ttf")',
-      success: console.log()
-    })
-    wx.loadFontFace({
-      family: 'BenMo',
-      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/74ad43d3a3b717fba000/BenMoYouYuan-2.ttf")',
-      success: console.log()
-    })
   },
 
   /**
@@ -140,6 +131,43 @@ Page({
       bigtext: question.choice_two.text
     })
   },
+
+  activateQuestion: function(){
+    const page = this
+    const id = page.data.question_id
+    console.log(id)
+    const getOptions = {
+      id,
+      success: function (res) {
+        wx.reLaunch({
+          url: '../index/index',
+        })
+        console.log(res)
+        const question = res.data.question_info
+        console.log("question", question)
+        if (question.choice_one.photo == null) {
+          question.choice_one.photo = '/img/black.jpg',
+            page.setData({ c1text: question.choice_one.text })
+        }
+        if (question.choice_two.photo == null) {
+          question.choice_two.photo = '/img/black.jpg',
+            page.setData({ c2text: question.choice_two.text })
+        }
+        page.setData({
+          question,
+          bigphoto: question.choice_one.photo,
+          bigtext: question.choice_one.text
+        })
+        console.log(question)
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+    }
+
+    apiClient.activateQuestion(getOptions)
+  },
+
   toIndex: function() {
     wx.reLaunch({
       url: '../index/index',

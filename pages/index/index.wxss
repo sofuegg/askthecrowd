@@ -15,6 +15,7 @@
   right: 50rpx;
 }
 
+
 .div-fixed {
   position: fixed;
   height: 150rpx;
@@ -24,10 +25,6 @@
 
 .page {
   padding-bottom: 80rpx;
-}
-
-.d-flex {
-  display: flex;
 }
 
 .align-items-center {
@@ -128,10 +125,6 @@
   text-anchor: middle;
 }
 
-.width {
-  width: 100%;
-}
-
 .height-title {
   height: 100rpx;
 }
@@ -185,7 +178,6 @@
 .column {
   flex-direction: column;
 }
-
 
 .button {
   font-family: 'Concert One', 'BenMo';

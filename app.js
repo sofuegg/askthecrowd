@@ -8,7 +8,7 @@ App({
     // const host = 'http://localhost:3000/'
     const host = 'https://ask-the-crowd.wogengapp.cn/'
     console.log('beginning login')
-
+    
     wx.getSystemInfo({
       success: e => {
         this.globalData.StatusBar = e.statusBarHeight;

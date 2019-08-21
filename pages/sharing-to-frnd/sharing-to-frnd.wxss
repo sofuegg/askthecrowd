@@ -97,12 +97,6 @@
   padding: 50rpx;
 }
 
-.font {
-  font-family: 'Concert One', 'BenMo';
-  font-style: cursive;
-  font-weight: 400;
-}
-
 .font-36{
   font-size: 36px;
 }

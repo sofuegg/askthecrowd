@@ -204,16 +204,6 @@ Page({
     }
     apiClient.getQuestions(options)
 
-    wx.loadFontFace({
-      family: 'Concert One',
-      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/d8eab2fdfbc672c39e71/ConcertOne-Regular.ttf")',
-      success: console.log()
-    })
-    wx.loadFontFace({
-      family: 'BenMo',
-      source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/74ad43d3a3b717fba000/BenMoYouYuan-2.ttf")',
-      success: console.log()
-    })
     // const q = page.data.questions
     // const new_qs = q.map(function (element) {
     //   element.photo = element.choice_info[0].photo || '/img/askthecrowd-default.jpeg'
@@ -320,8 +310,6 @@ Page({
       }
     });
     console.log(new_qs)
-    
-   
     this.setData({
       questions: new_qs,
     })
