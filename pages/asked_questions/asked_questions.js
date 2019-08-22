@@ -239,6 +239,7 @@ Page({
     const page = this
     const options = {
       success: function (res) {
+        console.log("res", res)
         const questions = res.data.question_lists
         console.log(questions)
         page.setData({

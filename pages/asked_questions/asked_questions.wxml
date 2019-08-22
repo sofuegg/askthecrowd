@@ -52,8 +52,8 @@
                 <view class="kind-list__item">
  
   <view class="cu-progress radius striped active margin" style="height:70rpx;width:550rpx">
-    <view class="bg-olive font" style="font-size:45rpx;width:{{loading?question.percentage_one + '%':''}};">{{question.percentage_one}}%</view>
-    <view class="bg-cyan font" style="font-size:45rpx;width:{{loading?question.percentage_two + '%':''}};">{{question.percentage_two}}%</view>
+    <view class="bg-olive font" style="font-size:45rpx;width:{{loading?question.percentage_one + '%':''}};">{{question.percentage_one != 0 ? 'A: ' + question.percentage_one + '%' : '' }}</view>
+    <view class="bg-cyan font" style="font-size:45rpx;width:{{loading?question.percentage_two + '%':''}};">{{question.percentage_two != 0 ? 'B: ' + question.percentage_two + '%' : '' }}</view>
   </view>
 </view>
 
