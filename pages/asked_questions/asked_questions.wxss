@@ -266,3 +266,7 @@
   border-bottom-left-radius: 20rpx;
   border-bottom-right-radius: 20rpx;
 }
+
+.choice-shadow {
+  box-shadow: 0rpx 0rpx 15rpx rgba(0,0,0,0.5);
+}
