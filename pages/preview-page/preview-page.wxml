@@ -11,7 +11,7 @@
 <view class="card bradius">
   <view class="cu-bar bg-white bradius-top">
 <view class="action flex justify-center width">
-    <view class="padding margin-left-lg font font-26">{{question.title}}</view>
+    <view class="margin-left-lg font font-24">{{question.title}}</view>
   </view>
 </view>
 
