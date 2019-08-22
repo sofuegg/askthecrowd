@@ -45,7 +45,7 @@
       <view class="cu-bar bg-white flex solid-bottom justify-around width bradius-bottom">
         <view class="kind-list__item">
           <view class="weui-flex kind-list__item-hd justify-center">
-            <button data-id="{{question.id}}" class=" font cu-btn block bg-blue margin-bottom-sm lg justify-center weui-flex__item margin {{question.open ? 'hidden abs' : ''}}" bindtap="kindToggle" disabled="{{disabled}}" style="width:120rpx">Vote</button>
+            <button data-id="{{question.id}}" class=" font cu-btn block bg-blue margin-bottom-sm lg justify-center weui-flex__item margin {{question.open ? 'hidden abs' : ''}}" bindtap="kindToggle" disabled="{{question.chosen ? false : true}}" style="width:120rpx">Vote</button>
           </view>
           <view class="kind-list__item-bd {{question.open ? 'kind-list__item-bd_show' : ''}}">
             <view class="weui-cells {{question.open ? 'weui-cells_show' : ''}}">

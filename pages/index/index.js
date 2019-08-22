@@ -304,6 +304,7 @@ Page({
         element.choice_text = e.currentTarget.dataset.text
         element.shadow = true
         element.shadow1 = false
+        element.chosen = true
         // element.shadow = element.shadow != true
         // element.shadowfalse = false
         element.grow = true
@@ -336,6 +337,7 @@ Page({
         element.choice_text = e.currentTarget.dataset.text
         element.shadow1 = true
         element.shadow = false
+        element.chosen = true
         
         // element.shadowfalse1 = false
         element.grow = true
