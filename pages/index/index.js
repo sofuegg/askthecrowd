@@ -131,7 +131,6 @@ Page({
         element.open = true
         element.percentage_one = Math.round(element.percentage_one)
         element.percentage_two = Math.round(element.percentage_two)
-        element.grow = true
         return element
       } else {
         return element
@@ -303,6 +302,11 @@ Page({
       if (element.id == e.currentTarget.dataset.qid) {
         element.photo = e.currentTarget.dataset.url
         element.choice_text = e.currentTarget.dataset.text
+        element.shadow = true
+        element.shadow1 = false
+        // element.shadow = element.shadow != true
+        // element.shadowfalse = false
+        element.grow = true
         return element
       } else {
         return element
@@ -330,6 +334,11 @@ Page({
       if (element.id == e.currentTarget.dataset.qid) {
         element.photo = e.currentTarget.dataset.url
         element.choice_text = e.currentTarget.dataset.text
+        element.shadow1 = true
+        element.shadow = false
+        
+        // element.shadowfalse1 = false
+        element.grow = true
         return element
       } else {
         return element

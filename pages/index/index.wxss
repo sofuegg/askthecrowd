@@ -255,11 +255,13 @@
 canvas {
   z-index: -100;
 }
-
+.choice-shadow {
+  box-shadow: 0rpx 0rpx 15rpx rgba(0,0,0,0.5);
+}
 .grow {
-  -webkit-transform: scale(1.03);
-  -ms-transform: scale(1.03);
-  transform: scale(1.03);
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
 }
 
 .text-shadow-black {
