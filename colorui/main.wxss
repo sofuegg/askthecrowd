@@ -701,6 +701,10 @@ radio.white[checked] .wx-radio-input {
 	display: none;
 }
 
+/* .cu-btn:disabled {
+  opacity: 0.9;
+} */
+
 .cu-btn:not([class*="bg-"]) {
 	background-color: #f0f0f0;
 }
@@ -787,8 +791,8 @@ button.icon.lg {
 }
 
 .cu-btn[disabled] {
-	opacity: 0.6;
-	color: var(--white);
+	opacity: 0.9;
+	/* color: var(--white); */
 }
 
 /* ==================
@@ -3807,6 +3811,7 @@ scroll-view.cu-steps .cu-item {
 
 .text-sl {
 	font-size: 80rpx;
+  line-height: 80rpx !important;
 }
 
 .text-xsl {

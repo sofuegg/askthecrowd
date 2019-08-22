@@ -28,12 +28,12 @@
           <view class="padding text-xl font line-height" >{{question.title}}</view>
         </view>
       </view>
-      <view class="bg-img padding-tb-xl flex justify-center align-center" style="background-image: url('{{question.photo ? question.photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}}'); height: 450rpx; background-color: #FFFFFF;">
+      <view class="bg-img padding-tb-xl flex justify-center align-center" style="background-image: url({{question.photo ? question.photo : question.choice_info[0].photo ? question.choice_info[0].photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg' }}); height: 450rpx; background-color: #FFFFFF;">
         <view class="text-sl text-white font padding width text-center text-shadow">{{question.choice_text ? question.choice_text : ""}}</view>
       </view>
 
       <view class="cu-bar bg-white flex solid-bottom padding justify-around" >
-        <view class="cu-avatar xl radiusg borderg shadow-blur-lg {{question.shadow ? 'choice-shadow' : '' }} {{toggleactive1}}" data-qid="{{question.id}}" data-choice_id="{{question.choice_info[0].id}}" style="background-image:url({{question.choice_info[0].photo ? question.choice_info[0].photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}});" data-text="{{question.choice_info[0].text}}" data-url="{{question.choice_info[0].photo }}" bindtap="SwitchImage1">
+        <view class="cu-avatar xl radiusg borderg shadow-blur-lg {{question.shadow ? 'choice-shadow' : '' }} {{toggleactive1}}" data-qid="{{question.id}}" data-choice_id="{{question.choice_info[0].id}}" style="background-image:url({{question.choice_info[0].photo ? question.choice_info[0].photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg' }});" data-text="{{question.choice_info[0].text}}" data-url="{{question.choice_info[0].photo }}" bindtap="SwitchImage1">
           <text class="font text-sl text-shadow-black">A</text>
         </view>
         <view class="font text-sl">OR</view>

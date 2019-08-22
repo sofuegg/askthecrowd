@@ -175,11 +175,6 @@
 .radiusg {
  border-radius: 15rpx
 }
-.borderg {
- border-color:lightblue;
- border-width: 5rpx;
- border-style: solid;
-}
 .display {
  visibility: visible !important;
 }
@@ -204,7 +199,7 @@
   box-shadow: 0 3px 2px 0 rgba(0,0,0,0.1);
   border-radius: 10px;
   height: 90rpx;
-  width: 355rpx;
+  width: 560rpx;
   padding: 3rpx 12rpx;
   color: #fff;
   text-transform: uppercase;
