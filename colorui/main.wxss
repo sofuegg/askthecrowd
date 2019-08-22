@@ -3731,7 +3731,7 @@ scroll-view.cu-steps .cu-item {
 
 .bg-img {
 	/* background-size: contain; */
-  background-size: cover;
+  background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
   background-color: white !important;

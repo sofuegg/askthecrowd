@@ -167,6 +167,7 @@ Page({
        const options = {
        userid: {user_id},
       success: function (res) {
+        console.log(res)
         const questions = res.data.question_lists
         console.log(11111, questions)
         const statsRoundedQs = questions.map(function (element){
@@ -196,9 +197,6 @@ Page({
   /**
    * Lifecycle function--Called when page show
    */
-  onShow: function () {
-
-  },
 
   /**
    * Lifecycle function--Called when page hide
@@ -242,6 +240,7 @@ Page({
     const page = this
     const options = {
       success: function (res) {
+        console.log("res", res)
         const questions = res.data.question_lists
         console.log(questions)
         page.setData({
@@ -252,7 +251,7 @@ Page({
         console.log(err)
       }
     }
-    apiClient.getMyresponses(options)
+    apiClient.getAskedquestions(options)
     setTimeout(function () {
       page.setData({
         loading: true
