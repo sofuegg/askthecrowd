@@ -7,28 +7,36 @@
   </view>
 </cu-custom>
 
-<view class="page rel m-top">
-  <view class="cu-bar bg-white margin-top">
+<view class="page rel m-top shadow">
+<view class="card bradius">
+  <view class="cu-bar bg-white bradius-top">
+<view class="action flex justify-center width">
     <view class="padding margin-left-lg font font-26">{{question.title}}</view>
   </view>
+</view>
 
-  <view class="bg-img bg-mask padding-tb-xl flex justify-center align-center" style="background-image: url('{{bigphoto}}'); height: 414rpx;">
-    <view class="text-sl text-white font font-36">{{bigtext}}</view>
+  <view class="bg-img bg-mask padding-tb-xl flex justify-center align-center" style="background-image: url('{{question.photo ? question.photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}}'); height: 450rpx; background-color: #FFFFFF;">
+
+<view class="text-sl text-white font padding width text-center text-shadow text-shadow">{{true ? bigtext : ""}}</view>
   </view>
 
-  <view class="cu-bar bg-white flex solid-bottom padding justify-around select-box">
-    <view class="bg-img bg-mask padding-tb-xl flex justify-center align-center radiusg borderg shadow-blur-lg select-btn {{toggleactive1}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_one.photo}});" data-text="{{question.choice_one.text}}" data-url="{{question.choice_one.photo}}" bindtap="SwitchImage1">
-      <view class="text-sl text-white font font-26">{{c1text}}</view>
+  <view class="cu-bar bg-white flex solid-bottom padding justify-around bradius-bottom">
+    <view class="cu-avatar xl radiusg borderg shadow-blur-lg {{question.grow ? 'grow' : '' }} {{toggleactive1}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_one.photo ? question.choice_one.photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}});" data-text="{{question.choice_one.text}}" data-url="{{question.choice_one.photo}}" bindtap="SwitchImage1">
+<text class="font text-sl text-shadow-black">A</text>
     </view>
+<view class="font text-sl">OR</view>
 
-    <view class="bg-img bg-mask padding-tb-xl flex justify-center align-center radiusg borderg shadow-blur-lg select-btn {{toggleactive2}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_two.photo}});" data-text="{{question.choice_two.text}}" data-url="{{question.choice_two.photo}}" bindtap="SwitchImage2">
-      <view class="text-sl text-white font font-26">{{c2text}}</view>
+    <view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive2}}"  data-qid="{{question.id}}"style="background-image:url({{question.choice_one.photo ? question.choice_one.photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}});" data-text="{{question.choice_two.text}}" data-url="{{question.choice_two.photo}}" bindtap="SwitchImage2">
+      <text class="font text-sl text-shadow-black">B</text>
     </view>
   </view>
+</view>
 </view>
 
 <view class="div-fixed width d-flex justify-around align-center axis" style= "left:0;">
 <!-- <view class="flex solid-bottom justify-around"> -->
   <button style='opacity: 100;' class="button" hover-class="btn-hover" bindtap='onShareAppMessage' open-type="share">Ask Ur Friends 问朋友</button>
-  <button class="button" hover-class="btn-hover" bindtap="activateQuestion">Ask the Crowd 问群众</button>
+  <button class="button" hover-class="btn-hover" bindtap="activateQuestion">Ask the Crowd    
+  问群众</button>
 </view>
+
