@@ -131,7 +131,6 @@ Page({
         element.open = true
         element.percentage_one = Math.round(element.percentage_one)
         element.percentage_two = Math.round(element.percentage_two)
-        element.grow = true
         return element
       } else {
         return element
@@ -176,9 +175,9 @@ Page({
         }
       })
       
-      this.setData({
-        TabCur: app.globalData.TabCur
-      })
+      // this.setData({
+      //   TabCur: app.globalData.TabCur
+      // })
     }
 
     const page = this
@@ -215,9 +214,9 @@ Page({
     // })
   },
   onShow: function () {
-    this.setData({
-      TabCur: app.globalData.TabCur
-    })
+    // this.setData({
+    //   TabCur: app.globalData.TabCur
+    // })
     // const q = this.data.questions
     // const new_qs = q.map(function (element) {
     //   element.photo = element.choice_info[0].photo || '/img/askthecrowd-default.jpeg'
@@ -305,6 +304,12 @@ Page({
       if (element.id == e.currentTarget.dataset.qid) {
         element.photo = e.currentTarget.dataset.url
         element.choice_text = e.currentTarget.dataset.text
+        element.shadow = true
+        element.shadow1 = false
+        element.chosen = true
+        // element.shadow = element.shadow != true
+        // element.shadowfalse = false
+        element.grow = true
         return element
       } else {
         return element
@@ -334,6 +339,12 @@ Page({
       if (element.id == e.currentTarget.dataset.qid) {
         element.photo = e.currentTarget.dataset.url
         element.choice_text = e.currentTarget.dataset.text
+        element.shadow1 = true
+        element.shadow = false
+        element.chosen = true
+        
+        // element.shadowfalse1 = false
+        element.grow = true
         return element
       } else {
         return element

@@ -9,7 +9,7 @@
     </view>
   </cu-custom>
 
-<scroll-view scroll-x class="bg-white nav sticky">
+<scroll-view class="bg-white nav sticky">
   <view class="flex text-center">
     <view class="cu-item flex-sub {{index==TabCur?'text-black cur':''}}" wx:for="{{navbaricon}}" wx:key bindtap="tabSelect" data-id="{{index}}">
       <view class="column flex align-center justify-center">
@@ -24,30 +24,31 @@
 
 <view class="page rel m-top">
   <block wx:for="{{questions}}" wx:for-item="question">
-  <view class="cu-bar bg-white margin-top">
+  <view class="card bradius">
+  <view class="cu-bar bg-white margin-top bradius-top">
     <view class="action">
-      <view class="padding margin-left-lg" >{{question.title}}</view>
+      <view class="padding font text-xl line-height" >{{question.title}}</view>
     </view>
   </view>
   <view class="bg-img padding-tb-xl flex justify-center align-center" style="background-image: url('{{question.photo ? question.photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}}'); height: 450rpx;">
-    <view class="text-sl text-white " style="text-align: center;">{{question.choice_text ? question.choice_text : ""}}</view>
+    <view class="text-sl text-white font text-shadow-black" style="text-align: center;">{{question.choice_text ? question.choice_text : ""}}</view>
   </view>
 
 <view class="cu-bar bg-white flex solid-bottom padding justify-around" >
   
 
-<view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive1}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_info[0].photo ? question.choice_info[0].photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}});" data-text="{{question.choice_info[0].text}}" data-url="{{question.choice_info[0].photo}}" bindtap="SwitchImage1">
+<view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive1}} {{question.shadow ? 'choice-shadow' : '' }}" data-qid="{{question.id}}" style="background-image:url({{question.choice_info[0].photo ? question.choice_info[0].photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}});" data-text="{{question.choice_info[0].text}}" data-url="{{question.choice_info[0].photo}}" bindtap="SwitchImage1">
   <text class="font text-sl text-shadow-black">A</text>
   </view>
   <view class="font text-sl">OR</view>
-  <view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive2}}" data-qid="{{question.id}}" style="background-image:url({{question.choice_info[1].photo ? question.choice_info[1].photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}});" data-text="{{question.choice_info[1].text}}" data-url="{{question.choice_info[1].photo}}" bindtap="SwitchImage2">
+  <view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive2}} {{question.shadow1 ? 'choice-shadow' : '' }}" data-qid="{{question.id}}" style="background-image:url({{question.choice_info[1].photo ? question.choice_info[1].photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}});" data-text="{{question.choice_info[1].text}}" data-url="{{question.choice_info[1].photo}}" bindtap="SwitchImage2">
   <text class="font text-sl text-shadow-black">B</text>
   </view>
 
  
 </view>
 
-<view class="cu-bar bg-white flex solid-bottom  justify-around width" >
+<view class="cu-bar bg-white flex solid-bottom  justify-around width bradius-bottom" >
                 <view class="kind-list__item">
  
   <view class="cu-progress radius striped active margin" style="height:70rpx;width:550rpx">
@@ -57,6 +58,7 @@
 </view>
 
 </view>
+  </view>
   </block>
 
   <block wx:for="{{questions}}" wx:for-item="question">
