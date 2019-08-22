@@ -5,15 +5,18 @@
 @font-face {
 font-family: 'Concert One';
 src: url("http://lc-qinkssxt.cn-n1.lcfile.com/d8eab2fdfbc672c39e71/ConcertOne-Regular.ttf");
+/* src: url("http://lc-qinkssxt.cn-n1.lcfile.com/8d0e47c1785e3a316bc8/ConcertOne-Regular.ttf"); */
+/* src: "BASE64"; */
 font-weight: normal;
 font-style: normal;
 }
-@font-face {
+/* @font-face {
 font-family: 'BenMo';
 src: url("http://lc-qinkssxt.cn-n1.lcfile.com/74ad43d3a3b717fba000/BenMoYouYuan-2.ttf");
+src: "BASE64";
 font-weight: normal;
 font-style: normal;
-}
+} */
 
 .font {
   font-family: 'Concert One', 'BenMo';

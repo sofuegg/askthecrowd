@@ -1,5 +1,17 @@
 //app.js
 App({
+  // loadFont: function() {
+  //   wx.loadFontFace({
+  //     family: 'Concert One',
+  //     source: 'url("http://lc-qinkssxt.cn-n1.lcfile.com/d8eab2fdfbc672c39e71/ConcertOne-Regular.ttf")',
+  //     success: res => {
+  //       console.log('font load success', res)
+  //     },
+  //     fail: err => {
+  //       console.log('font load fail', err)
+  //     }
+  //   })
+  // },
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -8,7 +20,7 @@ App({
     // const host = 'http://localhost:3000/'
     const host = 'https://ask-the-crowd.wogengapp.cn/'
     console.log('beginning login')
-    
+   
     wx.getSystemInfo({
       success: e => {
         this.globalData.StatusBar = e.statusBarHeight;
