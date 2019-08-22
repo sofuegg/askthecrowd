@@ -53,7 +53,7 @@ font-style: normal;
   width: 180px;
   padding: 3px 12px;
   color: #fff;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   line-height: 1.2;
   text-decoration: none;
   transition: background .1s, transform .1s, box-shadow .1s;

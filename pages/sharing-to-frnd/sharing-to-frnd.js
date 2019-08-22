@@ -227,4 +227,9 @@ Page({
 
     }
   },
+  goToHome () {
+    wx.reLaunch({
+      url: '../index/index',
+    })
+  }
 })
