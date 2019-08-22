@@ -24,9 +24,10 @@
 
 <view class="page rel m-top">
   <block wx:for="{{questions}}" wx:for-item="question">
-  <view class="cu-bar bg-white margin-top">
+  <view class="card bradius">
+  <view class="cu-bar bg-white margin-top bradius-top">
     <view class="action">
-      <view class="padding margin-left-lg" >{{question.title}}</view>
+      <view class="padding font text-xl line-height" >{{question.title}}</view>
     </view>
   </view>
   <view class="bg-img padding-tb-xl flex justify-center align-center" style="background-image: url('{{question.photo ? question.photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}}'); height: 450rpx;">
@@ -47,7 +48,7 @@
  
 </view>
 
-<view class="cu-bar bg-white flex solid-bottom  justify-around width" >
+<view class="cu-bar bg-white flex solid-bottom  justify-around width bradius-bottom" >
                 <view class="kind-list__item">
  
   <view class="cu-progress radius striped active margin" style="height:70rpx;width:550rpx">
@@ -57,6 +58,7 @@
 </view>
 
 </view>
+  </view>
   </block>
 
   <block wx:for="{{questions}}" wx:for-item="question">
