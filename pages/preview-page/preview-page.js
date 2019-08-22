@@ -28,11 +28,11 @@ Page({
         const question = res.data.question_info
         console.log("question", question)
         if (question.choice_one.photo == null) {
-          question.choice_one.photo = '/img/black.jpg',
+          question.choice_one.photo = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg',
             page.setData({ c1text: question.choice_one.text })
         }
         if (question.choice_two.photo == null) {
-          question.choice_two.photo = '/img/black.jpg',
+          question.choice_two.photo = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg',
             page.setData({ c2text: question.choice_two.text })
         }
         page.setData({
