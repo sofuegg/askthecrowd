@@ -121,14 +121,18 @@ Page({
     const question = this.data.question
     this.setData({ 
       bigphoto: question.choice_one.photo,
-      bigtext: question.choice_one.text
+      bigtext: question.choice_one.text,
+      toggleactive1: 'active',
+      toggleactive2: ''
     })
   },
   SwitchImage2: function (e) {
     const question = this.data.question
     this.setData({
       bigphoto: question.choice_two.photo,
-      bigtext: question.choice_two.text
+      bigtext: question.choice_two.text,
+      toggleactive1: '',
+      toggleactive2: 'active'
     })
   },
 

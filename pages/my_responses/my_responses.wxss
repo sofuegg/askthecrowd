@@ -167,9 +167,9 @@
 }
 
 .m-top {
-  margin-top: 100rpx;
-  margin-right: 50rpx;
-  margin-left: 50rpx; 
+  margin-top: 118rpx;
+  margin-right: 25rpx;
+  margin-left: 25rpx;
 }
 .radiusg {
  border-radius: 15rpx
@@ -239,4 +239,28 @@
 
 .text-shadow-black {
 	text-shadow: 0rpx 0rpx 15rpx black;
+}
+
+.card {
+  /* border: 1px solid black; */
+  margin: 30rpx 0rpx;
+  box-shadow: 0rpx 0rpx 15rpx rgba(10, 10, 10, 0.2);
+}
+
+.bradius {
+  border-radius: 20rpx;
+}
+
+.bradius-top {
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+
+.bradius-bottom {
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+
+.choice-shadow {
+  box-shadow: 0rpx 0rpx 15rpx rgba(0,0,0,0.5);
 }

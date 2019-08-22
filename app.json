@@ -3,15 +3,11 @@
     "pages/landingpage/landingpage",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/camera/camera",
     "pages/asking-page/asking-page",
     "pages/preview-page/preview-page",
-    "pages/answering-page/answering-page",
     "pages/sharing-to-frnd/sharing-to-frnd",
-    "pages/new-home/new-home",
     "pages/my_responses/my_responses",
-    "pages/asked_questions/asked_questions",
-    "custom-tab-bar/index"
+    "pages/asked_questions/asked_questions"
   ],
   "window": {
     "backgroundTextStyle": "light",

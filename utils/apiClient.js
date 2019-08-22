@@ -3,9 +3,10 @@ const baseUrl = "https://ask-the-crowd.wogengapp.cn/api/v1/"
 
 const getQuestions = (options) => {
   const { success, fail } = options
-
+  const user_id = wx.getStorageSync('userid')
+  console.log("user id in index", user_id)
   return wx.request({
-    url: baseUrl + "questions/",
+    url: baseUrl + `questions?user_id=${user_id}`,
     method: "get",
     success,
     fail
@@ -37,9 +38,9 @@ const getAskedquestions = (options) => {
 
 const getQuestion = options => {
   const { id, success, fail } = options
-
+  const user_id = wx.getStorageSync('userid')
   return wx.request({
-    url: baseUrl + `questions/${id}/`,
+    url: baseUrl + `questions/${id}/?user_id=${user_id}`,
     method: "get",
     success,
     fail

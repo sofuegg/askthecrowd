@@ -77,7 +77,7 @@ Page({
       selectedIconPath: "",
     },
     ],
-    TabCur: 1,
+    TabCur: 2,
     scrollLeft: 0,
     active: "active"
   },
@@ -299,6 +299,8 @@ Page({
       if (element.id == e.currentTarget.dataset.qid) {
         element.photo = e.currentTarget.dataset.url
         element.choice_text = e.currentTarget.dataset.text
+        element.shadow = true
+        element.shadow1 = false
         return element
       } else {
         return element
@@ -309,6 +311,8 @@ Page({
 
     this.setData({
       questions: new_qs,
+      toggleactive1: 'active',
+      toggleactive2: ''
     })
   },
   SwitchImage2: function (e) {
@@ -319,6 +323,8 @@ Page({
       if (element.id == e.currentTarget.dataset.qid) {
         element.photo = e.currentTarget.dataset.url
         element.choice_text = e.currentTarget.dataset.text
+        element.shadow1 = true
+        element.shadow = false
         return element
       } else {
         return element
@@ -326,6 +332,8 @@ Page({
     });
     this.setData({
       questions: new_qs,
+      toggleactive1: '',
+      toggleactive2: 'active'
     })
   },
   choose: function (e) {

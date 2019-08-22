@@ -131,7 +131,6 @@ Page({
         element.open = true
         element.percentage_one = Math.round(element.percentage_one)
         element.percentage_two = Math.round(element.percentage_two)
-        element.grow = true
         return element
       } else {
         return element
@@ -176,9 +175,9 @@ Page({
         }
       })
       
-      this.setData({
-        TabCur: app.globalData.TabCur
-      })
+      // this.setData({
+      //   TabCur: app.globalData.TabCur
+      // })
     }
 
     const page = this
@@ -215,9 +214,9 @@ Page({
     // })
   },
   onShow: function () {
-    this.setData({
-      TabCur: app.globalData.TabCur
-    })
+    // this.setData({
+    //   TabCur: app.globalData.TabCur
+    // })
     // const q = this.data.questions
     // const new_qs = q.map(function (element) {
     //   element.photo = element.choice_info[0].photo || '/img/askthecrowd-default.jpeg'
@@ -287,14 +286,16 @@ Page({
   },
   SwitchImage1: function (e) {
     const page = this
-    console.log(111111, e)
+    console.log('SwitchImage1 event', e)
     const choice_id = e.currentTarget.dataset.choice_id
     console.log("choice_id", choice_id)
     const question_id = e.currentTarget.dataset.qid    
     console.log("question_id", question_id)
     page.setData({
       question_id: question_id,
-      choice_id: choice_id
+      choice_id: choice_id,
+      toggleactive1: 'active',
+      toggleactive2: ''
     })
     // console.log(e.target.dataset.url)
     const q = page.data.questions
@@ -303,6 +304,12 @@ Page({
       if (element.id == e.currentTarget.dataset.qid) {
         element.photo = e.currentTarget.dataset.url
         element.choice_text = e.currentTarget.dataset.text
+        element.shadow = true
+        element.shadow1 = false
+        element.chosen = true
+        // element.shadow = element.shadow != true
+        // element.shadowfalse = false
+        element.grow = true
         return element
       } else {
         return element
@@ -322,7 +329,9 @@ Page({
     console.log("question_id", question_id)
     page.setData({
       question_id: question_id,
-      choice_id: choice_id
+      choice_id: choice_id,
+      toggleactive1: '',
+      toggleactive2: 'active'
     })
     const q = this.data.questions
     console.log(q)
@@ -330,6 +339,12 @@ Page({
       if (element.id == e.currentTarget.dataset.qid) {
         element.photo = e.currentTarget.dataset.url
         element.choice_text = e.currentTarget.dataset.text
+        element.shadow1 = true
+        element.shadow = false
+        element.chosen = true
+        
+        // element.shadowfalse1 = false
+        element.grow = true
         return element
       } else {
         return element

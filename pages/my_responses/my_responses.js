@@ -76,7 +76,7 @@ Page({
       selectedIconPath: "",
     },
     ],
-    TabCur: 1,
+    TabCur: 0,
     scrollLeft: 0,
   },
   showModal(e) {
@@ -173,9 +173,9 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    this.setData({
-      TabCur: app.globalData.TabCur
-    })
+    // this.setData({
+    //   TabCur: app.globalData.TabCur
+    // })
     const page = this
     const options = {
       success: function (res) {
@@ -271,6 +271,8 @@ Page({
       if (element.id == e.currentTarget.dataset.qid) {
         element.photo = e.currentTarget.dataset.url
         element.choice_text = e.currentTarget.dataset.text
+        element.shadow = true
+        element.shadow1 = false
         return element
       } else {
         return element
@@ -281,6 +283,8 @@ Page({
 
     this.setData({
       questions: new_qs,
+      toggleactive1: 'active',
+      toggleactive2: ''
     })
   },
   SwitchImage2: function (e) {
@@ -291,6 +295,8 @@ Page({
       if (element.id == e.currentTarget.dataset.qid) {
         element.photo = e.currentTarget.dataset.url
         element.choice_text = e.currentTarget.dataset.text
+        element.shadow1 = true
+        element.shadow = false
         return element
       } else {
         return element
@@ -298,6 +304,8 @@ Page({
     });
     this.setData({
       questions: new_qs,
+      toggleactive1: '',
+      toggleactive2: 'active'
     })
   },
   choose: function (e) {
