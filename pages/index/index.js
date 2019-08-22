@@ -287,14 +287,16 @@ Page({
   },
   SwitchImage1: function (e) {
     const page = this
-    console.log(111111, e)
+    console.log('SwitchImage1 event', e)
     const choice_id = e.currentTarget.dataset.choice_id
     console.log("choice_id", choice_id)
     const question_id = e.currentTarget.dataset.qid    
     console.log("question_id", question_id)
     page.setData({
       question_id: question_id,
-      choice_id: choice_id
+      choice_id: choice_id,
+      toggleactive1: 'active',
+      toggleactive2: ''
     })
     // console.log(e.target.dataset.url)
     const q = page.data.questions
@@ -322,7 +324,9 @@ Page({
     console.log("question_id", question_id)
     page.setData({
       question_id: question_id,
-      choice_id: choice_id
+      choice_id: choice_id,
+      toggleactive1: '',
+      toggleactive2: 'active'
     })
     const q = this.data.questions
     console.log(q)
