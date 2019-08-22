@@ -281,6 +281,8 @@ Page({
 
     this.setData({
       questions: new_qs,
+      toggleactive1: 'active',
+      toggleactive2: ''
     })
   },
   SwitchImage2: function (e) {
@@ -298,6 +300,8 @@ Page({
     });
     this.setData({
       questions: new_qs,
+      toggleactive1: '',
+      toggleactive2: 'active'
     })
   },
   choose: function (e) {

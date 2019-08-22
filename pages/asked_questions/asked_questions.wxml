@@ -13,7 +13,7 @@
   <view class="flex text-center">
     <view class="cu-item flex-sub {{index==TabCur?'text-black cur':''}}" wx:for="{{navbaricon}}" wx:key bindtap="tabSelect" data-id="{{index}}">
       <view class="column flex align-center justify-center">
-      <image style="margin-top: 5rpx;" class="img" src="{{item.icon}}"></image>
+      <image style="margin-top: 10rpx;" class="img" src="{{item.icon}}"></image>
       <text style="margin: -25rpx;" class="text-sm font">{{item.title}}</text>
       </view>
     </view>

@@ -27,7 +27,7 @@
   </view>
 </view>
 
-<view class="div-fixed width bg-white d-flex justify-around align-center axis" style= "left:0;">
+<view class="div-fixed width d-flex justify-around align-center axis" style= "left:0;">
 <!-- <view class="flex solid-bottom justify-around"> -->
   <button style='opacity: 100;' class="button" hover-class="btn-hover" bindtap='onShareAppMessage' open-type="share">Ask Ur Friends 问朋友</button>
   <button class="button" hover-class="btn-hover" bindtap="activateQuestion">Ask the Crowd 问群众</button>
