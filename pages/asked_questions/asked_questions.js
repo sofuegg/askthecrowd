@@ -77,7 +77,7 @@ Page({
       selectedIconPath: "",
     },
     ],
-    TabCur: 2,
+    TabCur: 1,
     scrollLeft: 0,
     active: "active"
   },
@@ -167,7 +167,7 @@ Page({
        const options = {
        userid: {user_id},
       success: function (res) {
-        const questions = res.data.question_lists
+        const questions = res.data.question_lists     
         console.log(11111, questions)
         const statsRoundedQs = questions.map(function (element){
           Math.round(element.percentage_one)
@@ -196,9 +196,6 @@ Page({
   /**
    * Lifecycle function--Called when page show
    */
-  onShow: function () {
-
-  },
 
   /**
    * Lifecycle function--Called when page hide
@@ -252,7 +249,7 @@ Page({
         console.log(err)
       }
     }
-    apiClient.getMyresponses(options)
+    apiClient.getAskedquestions(options)
     setTimeout(function () {
       page.setData({
         loading: true

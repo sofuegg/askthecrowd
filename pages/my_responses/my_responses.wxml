@@ -61,26 +61,7 @@
 
   </block>
 
-  <block wx:for="{{questions}}" wx:for-item="question">
-    <view class="card-product"  >
-      <h2>{{question.title}}</h2>
-<!-- question.photo is a url, which is a string -->      
-      <ol>{{question.photo}}</ol> 
-<!-- here is a button to vote, which will trigger the action createAnswer -->
-      <button class="btn btn-flat" bindtap="newAnswer" data-id="{{question.id}}" data-choice_id="{{question.choice_info[0].id}}">Vote A</button>
-<!-- photo, text and stats for the first choice -->
-      <ol>{{question.choice_info[0].photo}} </ol>
-      <ol>{{question.choice_info[0].text}}</ol> 
-      <ol>{{question.percentage_one}}</ol>
-<!-- here is a button to vote, which will trigger the action createAnswer -->
-      <button class="btn btn-flat" bindtap="newAnswer" data-id="{{question.id}}" data-choice_id="{{question.choice_info[1].id}}">Vote B</button>
-<!-- photo, text and stats for the second choice -->
-      <ol>{{question.choice_info[1].photo}}</ol>
-      <ol>{{question.choice_info[1].text}}</ol>
-      <ol>{{question.percentage_two}}</ol>
-    </view>
 
-  </block>
 
   <view class="div-fixed width d-flex justify-around align-center axis" style= "left:0;">
     <button class="button flex align-center" hover-class="btn-hover" bindtap="goToAsk">Ask a Question!</button>
