@@ -66,7 +66,7 @@
 
 
   <view class="div-fixed width d-flex justify-around align-center axis" style= "left:0;">
-    <button class="button flex align-center" hover-class="btn-hover" bindtap="goToAsk">Ask a Question!</button>
+    <button class="button flex align-center" hover-class="btn-hover" bindtap="goToAsk">ASK A QUESTION!</button>
   </view>
 
 </view>
