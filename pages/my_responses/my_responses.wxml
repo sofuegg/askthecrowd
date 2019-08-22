@@ -31,7 +31,7 @@
     </view>
   </view>
   <view class="bg-img padding-tb-xl flex justify-center align-center" style="background-image: url({{question.photo ? question.photo : question.choice_info[0].photo ? question.choice_info[0].photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg' }}); height: 450rpx;">
-    <view class="text-sl text-white font text-shadow-black" style="text-align: center;">{{question.choice_text ? question.choice_text : ''}}</view>
+    <view class="text-sl text-white font text-shadow-black" style="text-align: center;">{{question.choice_text ? question.choice_text : question.choice_info[0].text ? question.choice_info[0].text : '' }}</view>
   </view>
 
 <view class="cu-bar bg-white flex solid-bottom padding justify-around" >
