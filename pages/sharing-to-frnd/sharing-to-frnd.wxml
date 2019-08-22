@@ -10,21 +10,13 @@
 </view>
 
 <view class="page rel m-top shadow">
-<view class="card bradius"> 
-  <view class="cu-bar bg-white bradius-top">  
+  <view class="cu-bar bg-white margin-top">  
     <view class="action flex justify-center width">
-      <view class="padding text-xl font line-height" >{{question.title}}</view>
+      <view class="padding text-xl font" >{{question.title}}</view>
     </view>
-  
   </view>
-  <view class="bg-img padding-tb-xl flex justify-center align-center 
-
-
-
-style="background-image: url('{{question.photo ? question.photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}}'); height: 450rpx; background-color: #FFFFFF;">
-
-
-    <view class="text-sl text-white font padding width text-center text-shadow text-shadow">{{true ? bigtext : ""}}</view>
+  <view class="bg-img padding-tb-xl flex justify-center align-center" style="background-image: url('{{true ? bigphoto : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}}'); height: 450rpx; background-color: #FFFFFF;">
+    <view class="text-sl text-white font padding width text-center text-shadow text-shadow-black">{{true ? bigtext : ""}}</view>
   </view>
 
 <view class="cu-bar bg-white flex solid-bottom padding justify-around" >
@@ -34,19 +26,19 @@ style="background-image: url('{{question.photo ? question.photo : 'https://timgs
   <text class="font text-sl text-shadow-black">A</text>
   </view>
   <view class="font text-sl">OR</view>
-  <view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive2}}" data-qid="{{question.id}}" data-choice_id="{{question.choice_two.id}}" style="background-image:url({{question.choice_info[1].photo ? question.choice_info[1].photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}});" data-text="{{question.choice_two.text}}" data-url="{{question.choice_two.photo}}" bindtap="SwitchImage2">
+  <view class="cu-avatar xl radiusg borderg shadow-blur-lg {{toggleactive2}}" data-qid="{{question.id}}" data-choice_id="{{question.choice_two.id}}" style="background-image:url({{question.choice_two.photo ? question.choice_two.photo : 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566219256408&di=a37943a37730803c1fc2f78c7ddf4158&imgtype=0&src=http%3A%2F%2Fdata.whicdn.com%2Fimages%2F2446679%2Flarge.jpg'}});" data-text="{{question.choice_two.text}}" data-url="{{question.choice_two.photo}}" bindtap="SwitchImage2">
   <text class="font text-sl text-shadow-black">B</text>
   </view>
 
  
 </view>
 
-<view class="cu-bar bg-white flex solid-bottom  justify-around width bradius-bottom" >
+<view class="cu-bar bg-white flex solid-bottom  justify-around width" >
                 <view class="kind-list__item">
                     <view class="weui-flex kind-list__item-hd justify-center">
-                        
+                        <view >
                         <button data-id="{{question.id}}" class="{{hidden}} font cu-btn block bg-blue margin-bottom-sm lg justify-center weui-flex__item margin {{question.open ? 'hidden abs' : ''}}" bindtap="kindToggle" disabled="{{disabled}}" style="width:120rpx">Vote</button>
-                        
+                        </view>
                     </view>
                     <view class="kind-list__item-bd {{question.open ? 'kind-list__item-bd_show' : ''}}">
                         <view class="weui-cells {{question.open ? 'weui-cells_show' : ''}}">
@@ -63,7 +55,7 @@ style="background-image: url('{{question.photo ? question.photo : 'https://timgs
         </view>
 
 </view>
-</view>
+
 </view>
 
 <view class="div-fixed width d-flex justify-around align-center axis" style= "left:0;">

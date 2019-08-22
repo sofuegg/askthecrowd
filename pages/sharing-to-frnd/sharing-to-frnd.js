@@ -8,7 +8,7 @@ Page({
    */
 
   data: {
-    
+
   },
 
   /**
@@ -46,7 +46,7 @@ Page({
       }
     }
     apiClient.getQuestion(getOptions)
-    
+
   },
 
   /**
@@ -104,7 +104,7 @@ Page({
   },
 
 
-    // this.setData({ disabled: true })
+  // this.setData({ disabled: true })
 
 
   SwitchImage1: function (e) {
@@ -213,7 +213,7 @@ Page({
           question.percentage_two = Math.round(question.percentage_two)
           question.grow = true
           console.log(1111111, question)
-        
+
           page.setData({
             question,
             loading: true
@@ -227,7 +227,7 @@ Page({
 
     }
   },
-  goToHome () {
+  goToHome() {
     wx.reLaunch({
       url: '../index/index',
     })
