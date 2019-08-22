@@ -175,51 +175,56 @@ Page({
 
 
   kindToggle: function (e) {
-    const page = this
-    page.setData({
-      hidden: 'hidden'
-    })
-    const app = getApp()
-    const question_id = page.data.question_id
-    console.log("question_id", question_id)
-    const choice_id = page.data.choice_id
-    console.log("choice_id", choice_id)
-    const user_id = wx.getStorageSync('userid')
-    console.log("user_id", user_id)
-    const newAnswer = {
-      question_id,
-      choice_id,
-      user_id
-    }
-    console.log("parameters_hash", newAnswer)
-    apiClient.createAnswer({
-      data: newAnswer,
-      success: function (res) {
-        console.log(res)
-        const question = res.data.question_lists
-        question.choice_one = question.choice_info[0]
-        question.choice_two = question.choice_info[1]
-        console.log(33333, question)
-        // get the current list of questions
-        // find the index of the updated question
-        // replace the current data with the updated data
-        // setData using the updated array
-        // Object.assign(question, question)
-        question.open = true
-        question.percentage_one = Math.round(question.percentage_one)
-        question.percentage_two = Math.round(question.percentage_two)
-        question.grow = true
-        console.log(1111111, question)
-      
-        page.setData({
-          question,
-          loading: true
-        })
-      },
-      fail: function (err) {
-        console.log(err)
+    const toggleactive1 = this.data.toggleactive1
+    const toggleactive2 = this.data.toggleactive2
+    if (toggleactive1 == 'active' || toggleactive2 == 'active') {
+      const page = this
+      page.setData({
+        hidden: 'hidden'
+      })
+      const app = getApp()
+      const question_id = page.data.question_id
+      console.log("question_id", question_id)
+      const choice_id = page.data.choice_id
+      console.log("choice_id", choice_id)
+      const user_id = wx.getStorageSync('userid')
+      console.log("user_id", user_id)
+      const newAnswer = {
+        question_id,
+        choice_id,
+        user_id
       }
-    })
+      console.log("parameters_hash", newAnswer)
+      apiClient.createAnswer({
+        data: newAnswer,
+        success: function (res) {
+          console.log(res)
+          const question = res.data.question_lists
+          question.choice_one = question.choice_info[0]
+          question.choice_two = question.choice_info[1]
+          console.log(33333, question)
+          // get the current list of questions
+          // find the index of the updated question
+          // replace the current data with the updated data
+          // setData using the updated array
+          // Object.assign(question, question)
+          question.open = true
+          question.percentage_one = Math.round(question.percentage_one)
+          question.percentage_two = Math.round(question.percentage_two)
+          question.grow = true
+          console.log(1111111, question)
+        
+          page.setData({
+            question,
+            loading: true
+          })
+        },
+        fail: function (err) {
+          console.log(err)
+        }
+      })
+    } else {
 
+    }
   },
 })
