@@ -57,3 +57,8 @@
 </view>
 
 </view>
+
+<view class="div-fixed width d-flex justify-around align-center axis" style= "left:0;">
+<!-- <view class="submit-pos"> -->
+  <button class="button pulse" hover-class="btn-hover" bindtap="goToHome">Explore more! 你的提问呢?</button>
+</view>
