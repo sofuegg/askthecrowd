@@ -77,7 +77,7 @@ Page({
       selectedIconPath: "",
     },
     ],
-    TabCur: 1,
+    TabCur: 2,
     scrollLeft: 0,
     active: "active"
   },

@@ -7,7 +7,7 @@
       <text class="font">Ask the Crowd 问群众</text>
     </view>
   </cu-custom>
-<scroll-view scroll-x class="bg-white nav sticky">
+<scroll-view class="bg-white nav sticky">
   <view class="flex text-center">
     <view class="cu-item flex-sub {{index==TabCur?'text-black cur':''}}" wx:for="{{navbaricon}}" wx:key bindtap="tabSelect" data-id="{{index}}">
       <view class="column flex align-center justify-center">

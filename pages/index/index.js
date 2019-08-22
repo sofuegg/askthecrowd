@@ -176,9 +176,9 @@ Page({
         }
       })
       
-      this.setData({
-        TabCur: app.globalData.TabCur
-      })
+      // this.setData({
+      //   TabCur: app.globalData.TabCur
+      // })
     }
 
     const page = this
@@ -215,9 +215,9 @@ Page({
     // })
   },
   onShow: function () {
-    this.setData({
-      TabCur: app.globalData.TabCur
-    })
+    // this.setData({
+    //   TabCur: app.globalData.TabCur
+    // })
     // const q = this.data.questions
     // const new_qs = q.map(function (element) {
     //   element.photo = element.choice_info[0].photo || '/img/askthecrowd-default.jpeg'

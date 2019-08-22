@@ -76,7 +76,7 @@ Page({
       selectedIconPath: "",
     },
     ],
-    TabCur: 1,
+    TabCur: 0,
     scrollLeft: 0,
   },
   showModal(e) {
@@ -173,9 +173,9 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    this.setData({
-      TabCur: app.globalData.TabCur
-    })
+    // this.setData({
+    //   TabCur: app.globalData.TabCur
+    // })
     const page = this
     const options = {
       success: function (res) {
