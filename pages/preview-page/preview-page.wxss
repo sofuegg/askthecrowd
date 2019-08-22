@@ -154,7 +154,7 @@
 }
 
 .m-top {
-  margin-top: 118rpx;
+  margin-top: 60rpx;
   margin-right: 25rpx;
   margin-left: 25rpx;
 }
@@ -219,7 +219,11 @@
 }
 
 .font-18 {
-  font-size: 20px;
+  font-size: 18px;
+}
+
+.font-24 {
+  font-size: 24px;
 }
 
 .axis {
