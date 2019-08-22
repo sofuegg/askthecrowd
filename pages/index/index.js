@@ -202,7 +202,6 @@ Page({
       }
     }
     apiClient.getQuestions(options)
-
     // const q = page.data.questions
     // const new_qs = q.map(function (element) {
     //   element.photo = element.choice_info[0].photo || '/img/askthecrowd-default.jpeg'

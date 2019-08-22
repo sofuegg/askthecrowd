@@ -13,7 +13,7 @@
   </view>
 
   <view class="bg-img bg-mask padding-tb-xl flex justify-center align-center" style="background-image: url('{{bigphoto}}'); height: 414rpx;">
-    <view class="text-sl text-white font font-36">{{bigtext}}</view>
+    <view class="text-sl text-white font font-36">{{bigtext ? bigtext : "" }}</view>
   </view>
 
   <view class="cu-bar bg-white flex solid-bottom padding justify-around select-box">
