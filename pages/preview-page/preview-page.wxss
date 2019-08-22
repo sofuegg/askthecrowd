@@ -51,3 +51,7 @@
 .font-18 {
   font-size: 18px;
 }
+
+.bg-img-cover {
+  background-size: cover !important;
+}
