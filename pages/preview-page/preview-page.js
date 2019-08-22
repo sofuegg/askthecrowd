@@ -2,24 +2,24 @@
 import apiClient from "../../utils/apiClient.js"
 
 Page({
-  
+
   /**
    * Page initial data
    */
   data: {
-    
+
   },
 
   /**
    * Lifecycle function--Called when page load
    */
-  
+
   onLoad: function (options) {
     const page = this
     const id = options.id
     console.log(options)
     this.setData({
-      question_id:id
+      question_id: id
     })
     const getOptions = {
       id,
@@ -27,14 +27,14 @@ Page({
         console.log(res)
         const question = res.data.question_info
         console.log("question", question)
-        if (question.choice_one.photo == null) { 
-          question.choice_one.photo = '/img/black.jpg', 
-          page.setData({ c1text: question.choice_one.text })
-          }
-        if (question.choice_two.photo == null) { 
+        if (question.choice_one.photo == null) {
+          question.choice_one.photo = '/img/black.jpg',
+            page.setData({ c1text: question.choice_one.text })
+        }
+        if (question.choice_two.photo == null) {
           question.choice_two.photo = '/img/black.jpg',
-          page.setData({ c2text: question.choice_two.text })
-          }
+            page.setData({ c2text: question.choice_two.text })
+        }
         page.setData({
           question,
           bigphoto: question.choice_one.photo,
@@ -63,7 +63,7 @@ Page({
    */
   onShow: function () {
 
-  }, 
+  },
 
   /**
    * Lifecycle function--Called when page hide
@@ -109,7 +109,7 @@ Page({
       path: `/pages/sharing-to-frnd/sharing-to-frnd?id=${question_id}`,// 用户点击首先进入的当前页面
       success: function (res) {
         console.log("转发成功:");
-        
+
       },
       fail: function (res) {
         console.log("转发失败:");
@@ -119,7 +119,7 @@ Page({
 
   SwitchImage1: function (e) {
     const question = this.data.question
-    this.setData({ 
+    this.setData({
       bigphoto: question.choice_one.photo,
       bigtext: question.choice_one.text,
       toggleactive1: 'active',
@@ -136,7 +136,7 @@ Page({
     })
   },
 
-  activateQuestion: function(){
+  activateQuestion: function () {
     const page = this
     const id = page.data.question_id
     console.log(id)
@@ -172,7 +172,7 @@ Page({
     apiClient.activateQuestion(getOptions)
   },
 
-  toIndex: function() {
+  toIndex: function () {
     wx.reLaunch({
       url: '../index/index',
     })
