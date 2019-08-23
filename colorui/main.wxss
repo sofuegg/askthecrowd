@@ -3787,7 +3787,7 @@ scroll-view.cu-steps .cu-item {
 }
 
 .text-sm {
-	font-size: 24rpx;
+	font-size: 24rpx !important;
 }
 
 .text-df {

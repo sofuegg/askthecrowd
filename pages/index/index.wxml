@@ -53,8 +53,8 @@
             <wux-circle class="axis-0 {{display}}" size="80" data-qid="{{question.id}}" percent="{{ question.percentage_two }}">{{ question.percentage_two + '%' }}</wux-circle> -->
 
               <view class="cu-progress radius striped active margin" style="height:70rpx;width:550rpx">
-                <view class="bg-olive font" style="font-size:45rpx;width:{{loading?question.percentage_one + '%':''}};">{{question.percentage_one != 0 ? 'A: ' + question.percentage_one + '%' : '' }}</view>
-                <view class="bg-cyan font" style="font-size:45rpx;width:{{loading?question.percentage_two + '%':''}};">{{question.percentage_two != 0 ? 'B: ' + question.percentage_two + '%' : '' }}</view>
+                <view class="bg-olive font {{ question.percentage_one < 24 ? 'text-sm' : '' }}" style="font-size:45rpx;width:{{loading?question.percentage_one + '%':''}};">{{question.percentage_one != 0 ? 'A: ' + question.percentage_one + '%': '' }}</view>
+                <view class="bg-cyan font {{ question.percentage_two < 24 ? 'text-sm' : '' }}" style="font-size:45rpx;width:{{loading?question.percentage_two + '%':''}};">{{question.percentage_two != 0 ? 'B: ' + question.percentage_two + '%': '' }}</view>
               </view>
               
             </view>
